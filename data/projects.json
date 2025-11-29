@@ -10,9 +10,7 @@
       "distributor": "Distribution France : ARP",
       "release": "Sortie salle 22/01/25",
       "sales": "Vendeur International : Urban Sales",
-      "year": 2024,
-      "imdb": "https://www.imdb.com/title/tt28224891/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BODQzZDcwMTctYTQzNi00NzYxLTkwYjEtMDRhYjU2ZjQyMGY2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2024
     },
     {
       "id": "par-amour",
@@ -23,9 +21,7 @@
       "distributor": "Distribution France : Tandem",
       "release": "Sortie salle 15/01/25",
       "sales": "Vendeur International : Playtime",
-      "year": 2024,
-      "imdb": "https://www.imdb.com/title/tt27767229/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMjRhZWU3NDEtZWQzZi00MDA3LWE2NDQtNGI0YzYyOGZkZGU2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2024
     },
     {
       "id": "six-jours",
@@ -37,9 +33,7 @@
       "distributor": "Distribution France : SND",
       "release": "Sortie salle 01/01/25",
       "sales": "Vendeur International : SND",
-      "year": 2025,
-      "imdb": "https://www.imdb.com/title/tt26618814/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BYTNjYjI0MTYtY2JkZS00MDRhLWE0MTktNzY1YjFiN2RkYTU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2025
     },
     {
       "id": "les-pistolets-en-plastique",
@@ -51,9 +45,7 @@
       "distributor": "Distribution France : BAC Films",
       "release": "Sortie salle 26/06/24",
       "sales": "Vendeur International : Charades",
-      "year": 2024,
-      "imdb": "https://www.imdb.com/title/tt32163974/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNDdiYzcyZDQtZTk0NC00MTBjLTgwOWUtNTA5OWM2OGU0MTRjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2024
     },
     {
       "id": "linda-veut-du-poulet",
@@ -65,9 +57,7 @@
       "distributor": "Distribution France : Gebeka Films",
       "release": "Sortie salle 06/12/23",
       "sales": "Vendeur International : Charades",
-      "year": 2023,
-      "imdb": "https://www.imdb.com/title/tt14176626/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BZDdlMDM2ZDItNGE0Mi00N2E5LTg4N2MtYzE2NzhmMDcxNDY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2023
     },
     {
       "id": "la-meilleure-version-de-moi-meme",
@@ -77,9 +67,7 @@
       "producer": "Mamma Roman",
       "distributor": "Canal+",
       "release": "Diffusion Décembre 2021",
-      "year": 2021,
-      "imdb": "https://www.imdb.com/title/tt15434152/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNmJlOTFjYWQtOGJmMC00MzEzLWI1Y2ItMjE2MzIyZTljOGY5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2021
     }
   ],
   "other": [
@@ -93,9 +81,7 @@
       "distributor": "Distribution France : ARP Sélection",
       "release": "Sortie salle 17/11/21",
       "sales": "Vendeur International : Pulsar Content",
-      "year": 2021,
-      "imdb": "https://www.imdb.com/title/tt14501076/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNzY2YzE3OWUtODlhMy00NzFkLWJkNTQtMTA2NzI0NjdmYjAzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2021
     },
     {
       "id": "carrement-craignos-s2",
@@ -105,9 +91,7 @@
       "producer": "Papa Films, Douze Doigt Productions et Les Films Balthazar",
       "distributor": "France Télévisions",
       "release": "Diffusion 2021",
-      "year": 2021,
-      "imdb": "https://www.imdb.com/title/tt11712176/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNTk5NTRkOWQtYzk0My00YmI3LWI1MTAtZWRhYTgzYzlmMTJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2021
     },
     {
       "id": "abou-leila",
@@ -119,9 +103,7 @@
       "distributor": "Distribution France : UFO",
       "release": "Sortie salle 27/05/20",
       "sales": "Vendeur International : Films Boutique",
-      "year": 2019,
-      "imdb": "https://www.imdb.com/title/tt8202250/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMDIwZWY1YTYtNTE0Ni00ZDNiLWJkMDMtZDA2YWVkNGY5MGVkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "year": 2019
     },
     {
       "id": "zama",
@@ -133,9 +115,7 @@
       "distributor": "Distribution France : Shellac",
       "release": "Sortie salle 11/07/18",
       "sales": "Vendeur International : Film Factory",
-      "year": 2017,
-      "imdb": "https://www.imdb.com/title/tt4614612/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNTEwOTgzODY0N15BMl5BanBnXkFtZTgwMzE5MTA0NDM@._V1_FMjpg_UX1000_.jpg"
+      "year": 2017
     },
     {
       "id": "droles-d-oiseaux",
@@ -147,10 +127,7 @@
       "distributor": "Distribution France : Shellac",
       "release": "Sortie salle 31/05/17",
       "sales": "Vendeur International : MPM Film",
-      "year": 2017,
-      "imdb": "https://www.imdb.com/title/tt5652316/",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMjI3NTI4MTU5M15BMl5BanBnXkFtZTgwNTk5MzY1NDE@._V1_FMjpg_UX1000_.jpg"
+      "year": 2017
     }
   ]
 }
-
