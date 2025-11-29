@@ -191,7 +191,7 @@ const Projects = () => {
   const [showAllProjects, setShowAllProjects] = useState(false)
 
   return (
-    <section id="projects" className="section-padding bg-cinema-dark relative overflow-hidden vignette">
+    <section id="projects" className="py-32 md:py-40 px-6 md:px-12 lg:px-24 bg-cinema-dark relative overflow-hidden vignette">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -205,17 +205,18 @@ const Projects = () => {
             <Film className="mx-4 text-cinema-gold" size={24} />
             <div className="h-px w-20 bg-gradient-to-l from-transparent to-cinema-gold"></div>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-wide">
-            <span className="text-cinema-white">Sélection de </span>
-            <span className="text-gradient-gold">Projets</span>
+          <h2 className="text-6xl md:text-7xl font-bold mb-6 tracking-wide">
+            <span className="text-gradient-gold">Portfolio</span>
           </h2>
-          <p className="text-cinema-silver text-lg max-w-2xl mx-auto mt-6">
-            Films et séries supervisés en post-production, sélectionnés dans les plus prestigieux festivals internationaux
+          <p className="text-cinema-silver text-xl max-w-3xl mx-auto mt-8 leading-relaxed font-light">
+            Films et séries supervisés en post-production
+            <br className="hidden md:block" />
+            présentés dans les plus prestigieux festivals internationaux
           </p>
         </motion.div>
 
         {/* Featured Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
           {projectsData.featured.map((project) => (
             <ProjectCard
               key={project.id}

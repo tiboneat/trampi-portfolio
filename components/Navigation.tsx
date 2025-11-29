@@ -16,9 +16,9 @@ const Navigation = () => {
   }, [])
 
   const navLinks = [
-    { href: '#about', label: 'À propos' },
-    { href: '#projects', label: 'Projets' },
+    { href: '#projects', label: 'Portfolio' },
     { href: '#experience', label: 'Parcours' },
+    { href: '#about', label: 'À propos' },
     { href: '#formation', label: 'Formation' },
     { href: '#contact', label: 'Contact' },
   ]
@@ -66,14 +66,6 @@ const Navigation = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-px bg-cinema-gold group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
-            <a
-              href="/cv-fabien-trampont.pdf"
-              download
-              className="btn-cinema text-xs"
-            >
-              <Download size={14} />
-              CV
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,14 +92,6 @@ const Navigation = () => {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/cv-fabien-trampont.pdf"
-                download
-                className="btn-cinema text-xs mt-4"
-              >
-                <Download size={14} />
-                Télécharger le CV
-              </a>
             </div>
           </div>
         )}

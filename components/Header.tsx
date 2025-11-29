@@ -1,11 +1,11 @@
 'use client'
 
-import { Mail, Phone, MapPin, Download, Film } from 'lucide-react'
+import { Mail, Phone, MapPin, Film } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const Header = () => {
   return (
-    <header className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cinema-black">
+    <header className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-cinema-black">
       {/* Background avec effet cinéma */}
       <div className="absolute inset-0">
         {/* Grain de film */}
@@ -19,100 +19,80 @@ const Header = () => {
         
         {/* Vignettage */}
         <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-cinema-black"></div>
-        
-        {/* Bandes lumineuses subtiles */}
-        <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cinema-gold/20 to-transparent"></div>
-        <div className="absolute bottom-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cinema-gold/20 to-transparent"></div>
       </div>
 
-      <div className="container-custom relative z-10 px-6 md:px-12 py-32">
-        <div className="max-w-5xl mx-auto">
-          {/* Titre principal avec effet cinématographique */}
+      <div className="container-custom relative z-10 px-6 md:px-12 py-20">
+        <div className="max-w-4xl mx-auto">
+          {/* Titre principal discret et élégant */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             {/* Ornement supérieur */}
             <div className="flex items-center justify-center mb-8">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-cinema-gold"></div>
-              <Film className="mx-4 text-cinema-gold" size={28} />
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-cinema-gold"></div>
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-cinema-gold"></div>
+              <Film className="mx-3 text-cinema-gold" size={20} />
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-cinema-gold"></div>
             </div>
 
-            {/* Nom */}
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-wider">
-              <span className="text-cinema-white">Fabien</span>
-              <br />
-              <span className="text-gradient-gold animate-glow">TRAMPONT</span>
+            {/* Nom discret */}
+            <h1 className="text-3xl md:text-4xl font-light mb-4 tracking-[0.3em] text-cinema-silver uppercase">
+              Fabien Trampont
             </h1>
 
-            {/* Titre / Fonction */}
-            <div className="relative inline-block">
-              <div className="absolute inset-0 bg-cinema-gold/10 blur-xl"></div>
-              <p className="relative text-2xl md:text-3xl text-cinema-gold-light font-light tracking-[0.3em] uppercase">
+            {/* Titre / Fonction - PLUS IMPORTANT */}
+            <div className="relative inline-block mb-8">
+              <p className="relative text-4xl md:text-5xl text-cinema-gold font-light tracking-[0.2em] uppercase">
                 Directeur de Post-Production
               </p>
             </div>
 
             {/* Ligne décorative */}
-            <div className="mt-8 mb-10">
-              <div className="h-px w-32 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto"></div>
+            <div className="mb-8">
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto"></div>
             </div>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-cinema-silver max-w-2xl mx-auto leading-relaxed">
-              Supervision de plus de <span className="text-cinema-gold font-medium">30 films et séries</span>
+            <p className="text-base md:text-lg text-cinema-silver max-w-xl mx-auto leading-relaxed font-light">
+              Supervision de plus de 30 films et séries
               <br className="hidden md:block" />
-              sélectionnés dans les plus grands festivals internationaux
+              présentés dans les plus grands festivals internationaux
             </p>
           </motion.div>
 
-          {/* Coordonnées élégantes */}
+          {/* Coordonnées minimalistes */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="grid md:grid-cols-3 gap-6 mb-12"
+            className="flex flex-wrap items-center justify-center gap-6 text-sm"
           >
             <a 
               href="mailto:fabien.trampont@gmail.com"
-              className="flex items-center justify-center gap-3 p-4 bg-cinema-dark/50 backdrop-blur-sm border-cinema rounded-sm hover-cinema group"
+              className="flex items-center gap-2 text-cinema-silver hover:text-cinema-gold transition-colors"
             >
-              <Mail className="text-cinema-gold group-hover:text-cinema-gold-light transition-colors" size={20} />
-              <span className="text-cinema-white text-sm">fabien.trampont@gmail.com</span>
+              <Mail size={16} />
+              <span>fabien.trampont@gmail.com</span>
             </a>
+            
+            <span className="text-cinema-gold/30">•</span>
             
             <a 
               href="tel:0621152533"
-              className="flex items-center justify-center gap-3 p-4 bg-cinema-dark/50 backdrop-blur-sm border-cinema rounded-sm hover-cinema group"
+              className="flex items-center gap-2 text-cinema-silver hover:text-cinema-gold transition-colors"
             >
-              <Phone className="text-cinema-gold group-hover:text-cinema-gold-light transition-colors" size={20} />
-              <span className="text-cinema-white text-sm">06 21 15 25 33</span>
+              <Phone size={16} />
+              <span>06 21 15 25 33</span>
             </a>
             
-            <div className="flex items-center justify-center gap-3 p-4 bg-cinema-dark/50 backdrop-blur-sm border-cinema rounded-sm">
-              <MapPin className="text-cinema-gold" size={20} />
-              <span className="text-cinema-white text-sm">Paris 9ème</span>
+            <span className="text-cinema-gold/30">•</span>
+            
+            <div className="flex items-center gap-2 text-cinema-silver">
+              <MapPin size={16} />
+              <span>Paris</span>
             </div>
-          </motion.div>
-
-          {/* CTA Download CV */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="text-center"
-          >
-            <a
-              href="/cv-fabien-trampont.pdf"
-              download
-              className="btn-cinema inline-flex"
-            >
-              <Download size={20} />
-              Télécharger le CV
-            </a>
           </motion.div>
         </div>
 
@@ -120,14 +100,13 @@ const Header = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          transition={{ delay: 1.2, duration: 1 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <div className="flex flex-col items-center gap-3 text-cinema-silver/50">
-            <span className="text-xs uppercase tracking-[0.3em] font-light">Découvrir</span>
-            <div className="w-px h-16 bg-gradient-to-b from-cinema-gold/50 to-transparent">
+          <div className="flex flex-col items-center gap-2 text-cinema-silver/40">
+            <div className="w-px h-12 bg-gradient-to-b from-cinema-gold/30 to-transparent">
               <motion.div
-                animate={{ y: [0, 48, 0] }}
+                animate={{ y: [0, 36, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="w-1 h-1 bg-cinema-gold rounded-full mx-auto"
               />

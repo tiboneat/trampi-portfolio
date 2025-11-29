@@ -33,7 +33,7 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="section-padding bg-cinema-dark relative overflow-hidden">
+    <section id="experience" className="py-32 md:py-40 px-6 md:px-12 lg:px-24 bg-cinema-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cinema-gold/5 rounded-full filter blur-3xl"></div>
       
@@ -45,13 +45,20 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-cinema-gold">Parcours</span> Professionnel
+          <div className="flex items-center justify-center mb-6">
+            <div className="h-px w-20 bg-gradient-to-r from-transparent to-cinema-gold"></div>
+            <span className="mx-4 text-cinema-gold text-sm uppercase tracking-[0.3em]">Expérience</span>
+            <div className="h-px w-20 bg-gradient-to-l from-transparent to-cinema-gold"></div>
+          </div>
+          <h2 className="text-6xl md:text-7xl font-bold mb-6 tracking-wide">
+            <span className="text-gradient-gold">Parcours</span>
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-cinema-gold to-cinema-blue mx-auto"></div>
+          <p className="text-cinema-silver text-xl max-w-3xl mx-auto mt-8 leading-relaxed font-light">
+            Plus de 8 années d'expérience dans la post-production cinématographique
+          </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Timeline */}
           <div className="relative">
             {/* Vertical line */}
@@ -73,7 +80,7 @@ const Experience = () => {
                   <div className="absolute inset-0 bg-cinema-gold rounded-full animate-ping opacity-75"></div>
                 </div>
 
-                <div className={`card-cinema p-8 ${exp.highlight ? 'border-2 border-cinema-gold' : ''}`}>
+                <div className={`bg-cinema-dark/50 backdrop-blur-sm border-cinema rounded-sm p-10 md:p-12 ${exp.highlight ? 'border-2 border-cinema-gold' : ''}`}>
                   <div className="flex items-center gap-3 mb-4">
                     <Briefcase className="text-cinema-gold" size={24} />
                     <span className="text-cinema-gold font-medium">{exp.period}</span>
