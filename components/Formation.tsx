@@ -24,7 +24,7 @@ const Formation = () => {
   ]
 
   return (
-    <section id="formation" className="section-padding bg-cinema-black relative overflow-hidden">
+    <section id="formation" className="section-padding bg-cinema-black relative overflow-hidden vignette">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-cinema-gold/5 rounded-full filter blur-3xl"></div>
       

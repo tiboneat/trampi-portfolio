@@ -2,17 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-cinema-black text-white;
+    @apply bg-cinema-black text-cinema-white;
+    position: relative;
+  }
+
+  /* Effet de grain de film sur tout le site */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 9999;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-montserrat;
+    @apply font-cinzel;
+    letter-spacing: 0.02em;
   }
 
   p, li, span {
@@ -26,31 +44,174 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-32 px-6 md:px-12 lg:px-24;
+    @apply py-24 md:py-32 px-6 md:px-12 lg:px-24;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
 
+  /* Effet doré premium */
   .gradient-gold {
-    background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+    background: linear-gradient(135deg, #C9A961 0%, #E5D4A6 50%, #C9A961 100%);
   }
 
-  .gradient-blue {
-    background: linear-gradient(135deg, #4a90e2 0%, #67b3ff 100%);
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-cinema-gold via-cinema-gold-light to-cinema-gold bg-clip-text text-transparent;
   }
 
-  .text-shadow-gold {
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  /* Bordures élégantes */
+  .border-cinema {
+    border: 1px solid rgba(201, 169, 97, 0.2);
   }
 
-  .hover-scale {
-    @apply transition-transform duration-300 hover:scale-105;
+  /* Effet hover cinématographique */
+  .hover-cinema {
+    @apply transition-all duration-500 ease-out;
   }
 
+  .hover-cinema:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 169, 97, 0.1);
+  }
+
+  /* Card premium */
   .card-cinema {
-    @apply bg-cinema-gray border border-cinema-anthracite rounded-lg overflow-hidden;
+    @apply bg-cinema-gray border-cinema rounded-sm overflow-hidden relative;
+  }
+
+  .card-cinema::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.3), transparent);
+  }
+
+  /* Section avec lignes décoratives */
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A961, transparent);
+  }
+
+  /* Effet de vignettage */
+  .vignette {
+    position: relative;
+  }
+
+  .vignette::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+  }
+
+  /* Titre avec effet cinématographique */
+  .cinema-title {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+  }
+
+  .cinema-title::before,
+  .cinema-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A961);
+  }
+
+  .cinema-title::before {
+    right: 100%;
+  }
+
+  .cinema-title::after {
+    left: 100%;
+    background: linear-gradient(90deg, #C9A961, transparent);
+  }
+
+  /* Image avec overlay */
+  .image-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-overlay:hover::after {
+    opacity: 0.3;
+  }
+
+  /* Bouton premium */
+  .btn-cinema {
+    @apply relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-cinema-gold text-cinema-gold font-medium tracking-wider uppercase text-sm overflow-hidden;
+    transition: all 0.4s ease;
+  }
+
+  .btn-cinema::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-cinema:hover::before {
+    left: 100%;
+  }
+
+  .btn-cinema:hover {
+    background: rgba(201, 169, 97, 0.1);
+    box-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
+  }
+
+  /* Effet de scan horizontal (pellicule) */
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .film-scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.01) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9998;
+    animation: scanline 8s linear infinite;
+    opacity: 0.3;
   }
 }
 
@@ -64,6 +225,30 @@
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(201, 169, 97, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(201, 169, 97, 0.8);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
 .shimmer {
   animation: shimmer 2s infinite;
   background: linear-gradient(
@@ -75,21 +260,32 @@
   background-size: 1000px 100%;
 }
 
-/* Scrollbar personnalisée */
+/* Scrollbar personnalisée élégante */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #0D0D0D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4af37;
-  border-radius: 5px;
+  background: linear-gradient(180deg, #C9A961 0%, #8B7355 100%);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f4e4a6;
+  background: linear-gradient(180deg, #E5D4A6 0%, #C9A961 100%);
 }
 
+/* Selection text */
+::selection {
+  background: rgba(201, 169, 97, 0.3);
+  color: #E5D4A6;
+}
+
+/* Effet de focus élégant */
+*:focus-visible {
+  outline: 2px solid rgba(201, 169, 97, 0.5);
+  outline-offset: 2px;
+}

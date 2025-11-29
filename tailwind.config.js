@@ -8,15 +8,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'cinema-black': '#0a0a0a',
-        'cinema-gray': '#1a1a1a',
-        'cinema-anthracite': '#2d2d2d',
-        'cinema-gold': '#d4af37',
-        'cinema-blue': '#4a90e2',
+        'cinema-black': '#000000',
+        'cinema-dark': '#0D0D0D',
+        'cinema-gray': '#1A1A1A',
+        'cinema-gray-light': '#2A2A2A',
+        'cinema-anthracite': '#3A3A3A',
+        'cinema-gold': '#C9A961',
+        'cinema-gold-light': '#E5D4A6',
+        'cinema-silver': '#B8B8B8',
+        'cinema-white': '#F5F5F5',
       },
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
+        'cinzel': ['Cinzel', 'serif'],
+        'playfair': ['Playfair Display', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in-out',
