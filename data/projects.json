@@ -10,7 +10,8 @@
       "distributor": "Distribution France : ARP",
       "release": "Sortie salle 22/01/25",
       "sales": "Vendeur International : Urban Sales",
-      "year": 2024
+      "year": 2024,
+      "poster": "/posters/brule-le-sang.jpg"
     },
     {
       "id": "par-amour",
@@ -21,7 +22,8 @@
       "distributor": "Distribution France : Tandem",
       "release": "Sortie salle 15/01/25",
       "sales": "Vendeur International : Playtime",
-      "year": 2024
+      "year": 2024,
+      "poster": "/posters/par-amour.jpg"
     },
     {
       "id": "six-jours",
@@ -33,7 +35,8 @@
       "distributor": "Distribution France : SND",
       "release": "Sortie salle 01/01/25",
       "sales": "Vendeur International : SND",
-      "year": 2025
+      "year": 2025,
+      "poster": "/posters/six-jours.jpg"
     },
     {
       "id": "les-pistolets-en-plastique",
@@ -45,7 +48,8 @@
       "distributor": "Distribution France : BAC Films",
       "release": "Sortie salle 26/06/24",
       "sales": "Vendeur International : Charades",
-      "year": 2024
+      "year": 2024,
+      "poster": "/posters/les-pistolets-en-plastique.jpg"
     },
     {
       "id": "linda-veut-du-poulet",
@@ -57,7 +61,8 @@
       "distributor": "Distribution France : Gebeka Films",
       "release": "Sortie salle 06/12/23",
       "sales": "Vendeur International : Charades",
-      "year": 2023
+      "year": 2023,
+      "poster": "/posters/linda-veut-du-poulet.jpg"
     },
     {
       "id": "la-meilleure-version-de-moi-meme",
@@ -67,7 +72,8 @@
       "producer": "Mamma Roman",
       "distributor": "Canal+",
       "release": "Diffusion Décembre 2021",
-      "year": 2021
+      "year": 2021,
+      "poster": "/posters/la-meilleure-version.jpg"
     }
   ],
   "other": [
@@ -81,7 +87,8 @@
       "distributor": "Distribution France : ARP Sélection",
       "release": "Sortie salle 17/11/21",
       "sales": "Vendeur International : Pulsar Content",
-      "year": 2021
+      "year": 2021,
+      "poster": "/posters/olga.jpg"
     },
     {
       "id": "carrement-craignos-s2",
@@ -91,7 +98,8 @@
       "producer": "Papa Films, Douze Doigt Productions et Les Films Balthazar",
       "distributor": "France Télévisions",
       "release": "Diffusion 2021",
-      "year": 2021
+      "year": 2021,
+      "poster": "/posters/carrement-craignos.jpg"
     },
     {
       "id": "abou-leila",
@@ -103,7 +111,8 @@
       "distributor": "Distribution France : UFO",
       "release": "Sortie salle 27/05/20",
       "sales": "Vendeur International : Films Boutique",
-      "year": 2019
+      "year": 2019,
+      "poster": "/posters/abou-leila.jpg"
     },
     {
       "id": "zama",
@@ -115,7 +124,8 @@
       "distributor": "Distribution France : Shellac",
       "release": "Sortie salle 11/07/18",
       "sales": "Vendeur International : Film Factory",
-      "year": 2017
+      "year": 2017,
+      "poster": "/posters/zama.jpg"
     },
     {
       "id": "droles-d-oiseaux",
@@ -127,7 +137,8 @@
       "distributor": "Distribution France : Shellac",
       "release": "Sortie salle 31/05/17",
       "sales": "Vendeur International : MPM Film",
-      "year": 2017
+      "year": 2017,
+      "poster": "/posters/droles-oiseaux.jpg"
     }
   ]
 }
