@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Film, Calendar, Award, X, ExternalLink } from 'lucide-react'
+import PosterImage from './PosterImage'
 import projectsData from '@/data/projects.json'
 
 interface Project {
@@ -20,9 +21,7 @@ interface Project {
   imdb?: string
 }
 
-const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => void }) => {
-  const [imageError, setImageError] = useState(false)
-
+const ProjectCard = ({ project, onClick, index }: { project: Project; onClick: () => void; index: number }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -33,60 +32,34 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
       className="group cursor-pointer relative"
     >
       <div className="relative h-[500px] overflow-hidden rounded-sm border-cinema bg-cinema-dark">
-        {!imageError ? (
-          <>
-            <img
-              src={project.poster}
-              alt={`Affiche de ${project.title}`}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              onError={() => setImageError(true)}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-cinema-black via-cinema-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-          </>
-        ) : (
-          <>
-            <div className="relative w-full h-full bg-gradient-to-br from-amber-900/20 to-cinema-black flex items-center justify-center p-8">
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-10 left-10 w-32 h-32 border border-cinema-gold rounded-full"></div>
-                <div className="absolute bottom-10 right-10 w-24 h-24 border border-cinema-gold rounded-full"></div>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-cinema-black via-cinema-black/80 to-transparent opacity-60"></div>
-              <div className="relative z-10 text-center">
-                <Film className="w-16 h-16 mx-auto text-cinema-gold opacity-60 mb-6" />
-                <h3 className="text-3xl font-bold mb-4 text-white tracking-wide leading-tight">{project.title}</h3>
-                <p className="text-cinema-gold-light text-lg mb-3 font-light">{project.director}</p>
-              </div>
-            </div>
-          </>
-        )}
+        <PosterImage 
+          title={project.title}
+          director={project.director}
+          year={project.year}
+          index={index}
+          className="transition-transform duration-700 group-hover:scale-105"
+        />
         
-        <div className="absolute top-4 right-4 bg-cinema-black/80 backdrop-blur-sm px-3 py-1 rounded-sm border-cinema">
-          <span className="text-cinema-gold text-sm font-medium">{project.year}</span>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-          <div className="flex items-center gap-2 text-cinema-gold mb-2">
-            <Film size={16} />
-            <span className="text-xs uppercase tracking-wider">{project.type}</span>
-          </div>
-          <h3 className="text-2xl font-bold mb-2 text-white tracking-wide">{project.title}</h3>
-          <p className="text-cinema-gold-light text-sm mb-3">{project.director}</p>
-          
-          {project.festival && (
-            <div className="flex items-start gap-2 text-cinema-silver text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <Award size={14} className="mt-0.5 flex-shrink-0 text-cinema-gold" />
-              <span className="line-clamp-2">{project.festival}</span>
+        <div className="absolute inset-0 bg-gradient-to-t from-cinema-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+            <div className="flex items-center gap-2 text-cinema-gold mb-2">
+              <Film size={16} />
+              <span className="text-xs uppercase tracking-wider">{project.type}</span>
             </div>
-          )}
+            {project.festival && (
+              <div className="flex items-start gap-2 text-cinema-silver text-sm">
+                <Award size={14} className="mt-0.5 flex-shrink-0 text-cinema-gold" />
+                <span className="line-clamp-2">{project.festival}</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
   )
 }
 
-const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => {
-  const [imageError, setImageError] = useState(false)
-
+const ProjectModal = ({ project, onClose, index }: { project: Project; onClose: () => void; index: number }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -111,20 +84,14 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
 
         <div className="grid md:grid-cols-5 gap-8 p-8">
           <div className="md:col-span-2">
-            {!imageError ? (
-              <div className="relative h-[600px] rounded-sm overflow-hidden border-cinema">
-                <img
-                  src={project.poster}
-                  alt={`Affiche de ${project.title}`}
-                  className="w-full h-full object-cover"
-                  onError={() => setImageError(true)}
-                />
-              </div>
-            ) : (
-              <div className="relative h-[600px] rounded-sm overflow-hidden border-cinema bg-gradient-to-br from-amber-900/20 to-cinema-black flex items-center justify-center">
-                <Film className="w-32 h-32 text-cinema-gold opacity-20" />
-              </div>
-            )}
+            <div className="relative h-[600px] rounded-sm overflow-hidden border-cinema">
+              <PosterImage 
+                title={project.title}
+                director={project.director}
+                year={project.year}
+                index={index}
+              />
+            </div>
           </div>
 
           <div className="md:col-span-3 space-y-6">
@@ -188,6 +155,7 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [selectedIndex, setSelectedIndex] = useState<number>(0)
   const [showAllProjects, setShowAllProjects] = useState(false)
 
   return (
@@ -216,11 +184,15 @@ const Projects = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-          {projectsData.featured.map((project) => (
+          {projectsData.featured.map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project as Project}
-              onClick={() => setSelectedProject(project as Project)}
+              index={index}
+              onClick={() => {
+                setSelectedProject(project as Project)
+                setSelectedIndex(index)
+              }}
             />
           ))}
         </div>
@@ -239,11 +211,15 @@ const Projects = () => {
                 <h3 className="text-3xl font-bold text-cinema-white mb-2">Autres Projets</h3>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {projectsData.other.map((project) => (
+                {projectsData.other.map((project, index) => (
                   <ProjectCard
                     key={project.id}
                     project={project as Project}
-                    onClick={() => setSelectedProject(project as Project)}
+                    index={index + 6}
+                    onClick={() => {
+                      setSelectedProject(project as Project)
+                      setSelectedIndex(index + 6)
+                    }}
                   />
                 ))}
               </div>
@@ -280,6 +256,7 @@ const Projects = () => {
         {selectedProject && (
           <ProjectModal
             project={selectedProject}
+            index={selectedIndex}
             onClose={() => setSelectedProject(null)}
           />
         )}
