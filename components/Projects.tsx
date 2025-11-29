@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Film, Calendar, Award, X, ExternalLink } from 'lucide-react'
-import Image from 'next/image'
 import projectsData from '@/data/projects.json'
 
 interface Project {
@@ -34,12 +33,10 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
       {/* Affiche du film */}
       <div className="relative h-[500px] overflow-hidden rounded-sm border-cinema bg-cinema-dark">
         <div className="relative w-full h-full">
-          <Image
+          <img
             src={project.poster}
             alt={`Affiche de ${project.title}`}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           {/* Overlay avec dégradé */}
           <div className="absolute inset-0 bg-gradient-to-t from-cinema-black via-cinema-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
@@ -99,12 +96,10 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
           {/* Affiche */}
           <div className="md:col-span-2">
             <div className="relative h-[600px] rounded-sm overflow-hidden border-cinema">
-              <Image
+              <img
                 src={project.poster}
                 alt={`Affiche de ${project.title}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 40vw"
+                className="w-full h-full object-cover"
               />
             </div>
             
