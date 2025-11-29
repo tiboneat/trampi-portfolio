@@ -1,0 +1,140 @@
+{
+  "featured": [
+    {
+      "id": "brule-le-sang",
+      "title": "BRÛLE LE SANG",
+      "director": "Akaki Popkhadze",
+      "type": "Long métrage",
+      "producer": "Adastra Films",
+      "festival": "Sélection Festival San Sebastian 2024",
+      "distributor": "Distribution France : ARP",
+      "release": "Sortie salle 22/01/25",
+      "sales": "Vendeur International : Urban Sales",
+      "year": 2024,
+      "posterColor": "#8B4513"
+    },
+    {
+      "id": "par-amour",
+      "title": "PAR AMOUR",
+      "director": "Elise Otzenberger",
+      "type": "Long métrage",
+      "producer": "Mamma Roman",
+      "distributor": "Distribution France : Tandem",
+      "release": "Sortie salle 15/01/25",
+      "sales": "Vendeur International : Playtime",
+      "year": 2024,
+      "posterColor": "#DC143C"
+    },
+    {
+      "id": "six-jours",
+      "title": "SIX JOURS",
+      "director": "Juan Carlos Medina",
+      "type": "Long métrage",
+      "producer": "Empreinte Cinéma & SND",
+      "festival": "Sélection Festival Rotterdam 2025",
+      "distributor": "Distribution France : SND",
+      "release": "Sortie salle 01/01/25",
+      "sales": "Vendeur International : SND",
+      "year": 2025,
+      "posterColor": "#2C3E50"
+    },
+    {
+      "id": "les-pistolets-en-plastique",
+      "title": "LES PISTOLETS EN PLASTIQUE",
+      "director": "Jean-Christophe Meurisse",
+      "type": "Long métrage",
+      "producer": "Mamma Roman",
+      "festival": "Quinzaine des Cinéastes – Festival de Cannes 2024",
+      "distributor": "Distribution France : BAC Films",
+      "release": "Sortie salle 26/06/24",
+      "sales": "Vendeur International : Charades",
+      "year": 2024,
+      "posterColor": "#FF6B6B"
+    },
+    {
+      "id": "linda-veut-du-poulet",
+      "title": "LINDA VEUT DU POULET",
+      "director": "Chiara Malta & Sébastien Laudenbach",
+      "type": "Long métrage",
+      "producer": "Miyu Productions",
+      "festival": "Cristal d'or - compétition officielle - Festival Annecy 2023",
+      "distributor": "Distribution France : Gebeka Films",
+      "release": "Sortie salle 06/12/23",
+      "sales": "Vendeur International : Charades",
+      "year": 2023,
+      "posterColor": "#FFD700"
+    },
+    {
+      "id": "la-meilleure-version-de-moi-meme",
+      "title": "LA MEILLEURE VERSION DE MOI-MÊME",
+      "director": "Blanche Gardin",
+      "type": "Série 9×30'",
+      "producer": "Mamma Roman",
+      "distributor": "Canal+",
+      "release": "Diffusion Décembre 2021",
+      "year": 2021,
+      "posterColor": "#4A90E2"
+    }
+  ],
+  "other": [
+    {
+      "id": "olga",
+      "title": "OLGA",
+      "director": "Elie Grappe",
+      "type": "Long métrage",
+      "producer": "Cinema Defacto",
+      "festival": "Semaine de la Critique – Festival de Cannes 2021 – Prix SACD",
+      "distributor": "Distribution France : ARP Sélection",
+      "release": "Sortie salle 17/11/21",
+      "sales": "Vendeur International : Pulsar Content",
+      "year": 2021
+    },
+    {
+      "id": "carrement-craignos-s2",
+      "title": "CARRÉMENT CRAIGNOS - Saison 2",
+      "director": "Jean-Pascal Zadi",
+      "type": "Série 9×26'",
+      "producer": "Papa Films, Douze Doigt Productions et Les Films Balthazar",
+      "distributor": "France Télévisions",
+      "release": "Diffusion 2021",
+      "year": 2021
+    },
+    {
+      "id": "abou-leila",
+      "title": "ABOU LEILA",
+      "director": "Amin Sidi-Boumedienne",
+      "type": "Long métrage",
+      "producer": "In Vivo Films",
+      "festival": "Semaine de la Critique – Festival de Cannes 2019",
+      "distributor": "Distribution France : UFO",
+      "release": "Sortie salle 27/05/20",
+      "sales": "Vendeur International : Films Boutique",
+      "year": 2019
+    },
+    {
+      "id": "zama",
+      "title": "ZAMA",
+      "director": "Lucrecia Martel",
+      "type": "Long métrage",
+      "producer": "MPM Film",
+      "festival": "Sélection Officielle – Mostra de Venise 2017",
+      "distributor": "Distribution France : Shellac",
+      "release": "Sortie salle 11/07/18",
+      "sales": "Vendeur International : Film Factory",
+      "year": 2017
+    },
+    {
+      "id": "droles-d-oiseaux",
+      "title": "DRÔLES D'OISEAUX",
+      "director": "Elise Girard",
+      "type": "Long métrage",
+      "producer": "Kinoelektron",
+      "festival": "Sélection Forum – Berlinale 2017",
+      "distributor": "Distribution France : Shellac",
+      "release": "Sortie salle 31/05/17",
+      "sales": "Vendeur International : MPM Film",
+      "year": 2017
+    }
+  ]
+}
+
