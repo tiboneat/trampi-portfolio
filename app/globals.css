@@ -480,6 +480,132 @@ html[data-theme="light"]::after {
   );
 }
 
+/* Marques de synchronisation / repères d'étalonnage */
+.sync-marks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9989;
+}
+
+.sync-mark {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0.25;
+}
+
+.sync-mark::before,
+.sync-mark::after {
+  content: '';
+  position: absolute;
+  background: #C9A961;
+}
+
+/* Croix horizontale */
+.sync-mark::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+/* Croix verticale */
+.sync-mark::after {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+/* Cercle central */
+.sync-mark span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #C9A961;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Positions */
+.sync-mark.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.sync-mark.top-right {
+  top: 20px;
+  right: 20px;
+  left: auto;
+}
+
+.sync-mark.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  top: auto;
+}
+
+.sync-mark.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  top: auto;
+  left: auto;
+}
+
+html[data-theme="light"] .sync-mark {
+  opacity: 0.2;
+}
+
+html[data-theme="light"] .sync-mark::before,
+html[data-theme="light"] .sync-mark::after {
+  background: #8B7355;
+}
+
+html[data-theme="light"] .sync-mark span {
+  border-color: #8B7355;
+}
+
+@media (max-width: 640px) {
+  .sync-mark {
+    width: 16px;
+    height: 16px;
+    opacity: 0.15;
+  }
+  
+  .sync-mark span {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .sync-mark.top-left,
+  .sync-mark.top-right,
+  .sync-mark.bottom-left,
+  .sync-mark.bottom-right {
+    top: 12px;
+    left: 12px;
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .sync-mark.top-right,
+  .sync-mark.bottom-right {
+    left: auto;
+  }
+  
+  .sync-mark.bottom-left,
+  .sync-mark.bottom-right {
+    top: auto;
+  }
+}
+
 /* Time-code défilant */
 .timecode {
   position: fixed;
