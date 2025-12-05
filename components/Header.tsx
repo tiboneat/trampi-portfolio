@@ -41,7 +41,7 @@ const Header = () => {
 
   return (
     <header 
-      className="relative min-h-[100svh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden bg-cinema-black"
+      className="relative min-h-[100svh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden bg-cinema-black dark:bg-cinema-black light:bg-light-bg transition-colors duration-300"
       role="banner"
       aria-label="Introduction Fabien Trampont"
     >
@@ -74,7 +74,7 @@ const Header = () => {
           {/* Nom */}
           <motion.h1 
             variants={itemVariants}
-            className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-silver uppercase"
+            className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-silver dark:text-cinema-silver light:text-light-text uppercase"
           >
             Fabien Trampont
           </motion.h1>
@@ -98,7 +98,7 @@ const Header = () => {
           {/* Phrase */}
           <motion.p 
             variants={itemVariants}
-            className="text-sm sm:text-base md:text-lg text-cinema-silver max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
+            className="text-sm sm:text-base md:text-lg text-cinema-silver dark:text-cinema-silver light:text-light-text-muted max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
           >
             {t(
               'Rendre la post-production fluide, sereine et fidèle à la vision du projet',
@@ -124,7 +124,7 @@ const Header = () => {
                 delay: 0.5 + index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
-              className="text-center p-3 sm:p-4 bg-cinema-dark/30 backdrop-blur-sm border border-white/5 rounded-sm"
+              className="text-center p-3 sm:p-4 bg-cinema-dark/30 dark:bg-cinema-dark/30 light:bg-white/50 backdrop-blur-sm border border-white/5 dark:border-white/5 light:border-light-border rounded-sm"
               role="listitem"
             >
               {stat.isEmoji ? (
@@ -134,7 +134,7 @@ const Header = () => {
               ) : (
                 <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-cinema-gold" aria-hidden="true" />
               )}
-              <div className="text-cinema-silver/70 text-[10px] sm:text-xs uppercase tracking-wider leading-tight">{stat.label}</div>
+              <div className="text-cinema-silver/70 dark:text-cinema-silver/70 light:text-light-text-muted text-[10px] sm:text-xs uppercase tracking-wider leading-tight">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -146,7 +146,7 @@ const Header = () => {
         >
           <a 
             href="mailto:fabien.trampont@gmail.com"
-            className="flex items-center gap-2 text-cinema-silver hover:text-cinema-gold transition-colors min-h-[44px] px-2"
+            className="flex items-center gap-2 text-cinema-silver dark:text-cinema-silver light:text-light-text-muted hover:text-cinema-gold transition-colors min-h-[44px] px-2"
             aria-label={t('Envoyer un email à Fabien Trampont', 'Send an email to Fabien Trampont')}
           >
             <Mail size={16} aria-hidden="true" />
@@ -157,7 +157,7 @@ const Header = () => {
           
           <a 
             href="tel:+33621152533"
-            className="flex items-center gap-2 text-cinema-silver hover:text-cinema-gold transition-colors min-h-[44px] px-2"
+            className="flex items-center gap-2 text-cinema-silver dark:text-cinema-silver light:text-light-text-muted hover:text-cinema-gold transition-colors min-h-[44px] px-2"
             aria-label={t('Appeler Fabien Trampont', 'Call Fabien Trampont')}
           >
             <Phone size={16} aria-hidden="true" />
@@ -166,7 +166,7 @@ const Header = () => {
           
           <span className="text-cinema-gold/30 hidden sm:inline" aria-hidden="true">•</span>
           
-          <div className="flex items-center gap-2 text-cinema-silver min-h-[44px] px-2">
+          <div className="flex items-center gap-2 text-cinema-silver dark:text-cinema-silver light:text-light-text-muted min-h-[44px] px-2">
             <MapPin size={16} aria-hidden="true" />
             <span>Paris</span>
           </div>

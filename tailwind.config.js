@@ -5,6 +5,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -17,6 +18,12 @@ module.exports = {
         'cinema-gold-light': '#E5D4A6',
         'cinema-silver': '#B8B8B8',
         'cinema-white': '#F5F5F5',
+        // Light mode colors
+        'light-bg': '#F8F6F1',
+        'light-card': '#FFFFFF',
+        'light-text': '#1A1A1A',
+        'light-text-muted': '#666666',
+        'light-border': '#E5E5E5',
       },
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],
@@ -42,4 +49,3 @@ module.exports = {
   },
   plugins: [],
 }
-

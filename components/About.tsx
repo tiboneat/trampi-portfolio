@@ -33,7 +33,7 @@ const About = () => {
   return (
     <section 
       id="about" 
-      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black relative overflow-hidden"
+      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black dark:bg-cinema-black light:bg-light-bg relative overflow-hidden transition-colors duration-300"
       aria-labelledby="about-title"
     >
       <div className="max-w-4xl mx-auto relative z-10">
@@ -57,7 +57,7 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="space-y-4 sm:space-y-6 text-white/80 text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
+          className="space-y-4 sm:space-y-6 text-white/80 dark:text-white/80 light:text-light-text text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
         >
           <motion.p variants={itemVariants}>
             {t(
@@ -114,11 +114,11 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
-          className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-white/10"
+          className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-white/10 dark:border-white/10 light:border-light-border"
         >
           <div className="flex items-center gap-3 mb-4 sm:mb-6">
             <BookOpen className="text-cinema-gold" size={20} aria-hidden="true" />
-            <h3 className="text-lg sm:text-xl font-light text-white">
+            <h3 className="text-lg sm:text-xl font-light text-white dark:text-white light:text-light-text">
               {t('Enseignement & Interventions', 'Teaching & Lectures')}
             </h3>
           </div>
@@ -130,7 +130,7 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                 viewport={{ once: true }}
-                className="px-4 sm:px-5 py-2 bg-cinema-dark/50 border border-cinema-gold/30 text-cinema-gold text-xs sm:text-sm tracking-wider"
+                className="px-4 sm:px-5 py-2 bg-cinema-dark/50 dark:bg-cinema-dark/50 light:bg-white border border-cinema-gold/30 text-cinema-gold text-xs sm:text-sm tracking-wider"
               >
                 {school}
               </motion.span>

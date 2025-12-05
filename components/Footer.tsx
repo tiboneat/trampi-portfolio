@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <footer 
       id="contact" 
-      className="bg-cinema-black border-t border-white/10"
+      className="bg-cinema-black dark:bg-cinema-black light:bg-light-bg border-t border-white/10 dark:border-white/10 light:border-light-border transition-colors duration-300"
       role="contentinfo"
     >
       <motion.div 
@@ -53,7 +53,7 @@ const Footer = () => {
             <address className="space-y-3 sm:space-y-4 not-italic">
               <a
                 href="mailto:fabien.trampont@gmail.com"
-                className="flex items-center gap-3 text-white/70 hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
+                className="flex items-center gap-3 text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
                 aria-label={t('Envoyer un email', 'Send an email')}
               >
                 <Mail size={16} aria-hidden="true" />
@@ -61,13 +61,13 @@ const Footer = () => {
               </a>
               <a
                 href="tel:+33621152533"
-                className="flex items-center gap-3 text-white/70 hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
+                className="flex items-center gap-3 text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
                 aria-label={t('Appeler', 'Call')}
               >
                 <Phone size={16} aria-hidden="true" />
                 <span>06 21 15 25 33</span>
               </a>
-              <div className="flex items-center gap-3 text-white/70 text-xs sm:text-sm">
+              <div className="flex items-center gap-3 text-white/70 dark:text-white/70 light:text-light-text-muted text-xs sm:text-sm">
                 <MapPin size={16} aria-hidden="true" />
                 <span>Paris</span>
               </div>
@@ -81,7 +81,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#projects"
-                  className="text-white/70 hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
+                  className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
                 >
                   Portfolio
                 </a>
@@ -89,7 +89,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#about"
-                  className="text-white/70 hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
+                  className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
                 >
                   {t('Qui je suis / Ma vision', 'About / Vision')}
                 </a>
@@ -97,7 +97,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#contact"
-                  className="text-white/70 hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
+                  className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
                 >
                   Contact
                 </a>
@@ -116,7 +116,7 @@ const Footer = () => {
                   href="https://www.imdb.com/fr/name/nm8268744/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/70 hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
+                  className="flex items-center gap-3 text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
                   aria-label={t('Profil IMDb de Fabien Trampont (s\'ouvre dans un nouvel onglet)', 'Fabien Trampont\'s IMDb profile (opens in new tab)')}
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -130,7 +130,7 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/fabien-trampont-43811967/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/70 hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
+                  className="flex items-center gap-3 text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
                   aria-label={t('Profil LinkedIn de Fabien Trampont (s\'ouvre dans un nouvel onglet)', 'Fabien Trampont\'s LinkedIn profile (opens in new tab)')}
                 >
                   <Linkedin size={16} aria-hidden="true" />
@@ -144,7 +144,7 @@ const Footer = () => {
         {/* Copyright */}
         <motion.div 
           variants={itemVariants}
-          className="pt-6 sm:pt-8 border-t border-white/10 text-center text-white/40 text-xs sm:text-sm"
+          className="pt-6 sm:pt-8 border-t border-white/10 dark:border-white/10 light:border-light-border text-center text-white/40 dark:text-white/40 light:text-light-text-muted text-xs sm:text-sm"
         >
           <p>© {currentYear} Fabien Trampont — {t('Directeur de Post-Production', 'Post-Production Director')}</p>
         </motion.div>

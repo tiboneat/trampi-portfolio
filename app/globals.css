@@ -19,13 +19,21 @@
   }
 
   body {
-    @apply bg-cinema-black text-cinema-white;
     position: relative;
     min-height: 100vh;
     min-height: 100svh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body, html.dark body {
+    @apply bg-cinema-black text-cinema-white;
+  }
+
+  .light body, html.light body {
+    @apply bg-light-bg text-light-text;
   }
 
   @supports (-webkit-touch-callout: none) {
@@ -34,9 +42,9 @@
     }
   }
 
-  /* Effet de grain de film sur tout le site - désactivé sur mobile pour perf */
+  /* Effet de grain de film sur tout le site - désactivé sur mobile et en mode clair */
   @media (min-width: 768px) {
-    body::before {
+    html.dark body::before {
       content: '';
       position: fixed;
       top: 0;
