@@ -1,12 +1,14 @@
 'use client'
 
-import { Mail, Phone, MapPin, Film, Calendar, Award } from 'lucide-react'
+import { Mail, Phone, MapPin, Film, Calendar, Award, Users, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const Header = () => {
   const stats = [
     { icon: Calendar, value: '10', label: "années d'expérience" },
     { icon: Film, value: '40', label: 'Films et séries' },
+    { icon: Sparkles, value: '😉', label: 'Un nombre incalculable de sélections en festivals', isEmoji: true },
+    { icon: Users, label: "Management d'équipes" },
     { icon: Award, label: 'Enseignement' },
   ]
 
@@ -74,7 +76,7 @@ const Header = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-12 max-w-xs sm:max-w-2xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-4xl mx-auto"
           role="list"
           aria-label="Statistiques clés"
         >
@@ -84,10 +86,12 @@ const Header = () => {
               className="text-center p-3 sm:p-4 bg-cinema-dark/30 backdrop-blur-sm border border-white/5 rounded-sm"
               role="listitem"
             >
-              {stat.value ? (
+              {stat.isEmoji ? (
+                <div className="text-xl sm:text-2xl mb-1">{stat.value}</div>
+              ) : stat.value ? (
                 <div className="text-xl sm:text-2xl md:text-3xl font-light text-cinema-gold mb-1">{stat.value}</div>
               ) : (
-                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 text-cinema-gold" aria-hidden="true" />
+                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-cinema-gold" aria-hidden="true" />
               )}
               <div className="text-cinema-silver/70 text-[10px] sm:text-xs uppercase tracking-wider leading-tight">{stat.label}</div>
             </div>
