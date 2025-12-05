@@ -33,6 +33,15 @@ const ProjectCard = ({ project, onClick, lang }: { project: Project; onClick: ()
   const type = lang === 'en' && project.typeEn ? project.typeEn : project.type
   const festival = lang === 'en' && project.festivalEn ? project.festivalEn : project.festival
 
+  // Effet projecteur avec suivi de la souris
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    e.currentTarget.style.setProperty('--mouse-x', `${x}%`)
+    e.currentTarget.style.setProperty('--mouse-y', `${y}%`)
+  }
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 40 }}
@@ -49,7 +58,10 @@ const ProjectCard = ({ project, onClick, lang }: { project: Project; onClick: ()
       onKeyDown={(e) => e.key === 'Enter' && onClick()}
       aria-label={`${lang === 'fr' ? 'Voir les détails de' : 'View details of'} ${title}`}
     >
-      <div className="relative h-[380px] sm:h-[420px] md:h-[480px] overflow-hidden rounded-sm border border-white/10 bg-cinema-dark">
+      <div 
+        className="poster-spotlight relative h-[380px] sm:h-[420px] md:h-[480px] overflow-hidden rounded-sm border border-white/10 bg-cinema-dark"
+        onMouseMove={handleMouseMove}
+      >
         <motion.img
           src={project.poster}
           alt={`${lang === 'fr' ? 'Affiche du film' : 'Movie poster'} ${title}`}
