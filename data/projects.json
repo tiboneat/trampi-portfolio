@@ -10,7 +10,8 @@
       "distributor": "Distribution France : UFO Distribution",
       "sales": "Vendeur International : WTFilms",
       "year": 2026,
-      "poster": "/posters/grand ciel.webp"
+      "poster": "/posters/grand ciel.webp",
+      "imdb": "https://www.imdb.com/title/tt21374332/"
     },
     {
       "id": "brule-le-sang",
@@ -22,7 +23,8 @@
       "distributor": "Distribution France : ARP",
       "sales": "Vendeur International : Urban Sales",
       "year": 2025,
-      "poster": "/posters/Brule-le-sang_120x160_HD-scaled.jpg"
+      "poster": "/posters/Brule-le-sang_120x160_HD-scaled.jpg",
+      "imdb": "https://www.imdb.com/title/tt27466134/"
     },
     {
       "id": "par-amour",
@@ -33,7 +35,8 @@
       "distributor": "Distribution France : Tandem - Sortie salles",
       "sales": "Vendeur International : Playtime",
       "year": 2025,
-      "poster": "/posters/Par amour.jpg"
+      "poster": "/posters/Par amour.jpg",
+      "imdb": "https://www.imdb.com/title/tt21083696/"
     },
     {
       "id": "six-jours",
@@ -43,7 +46,8 @@
       "producer": "Empreinte Cinéma et SND",
       "distributor": "Vendeur International et Distribution France : SND",
       "year": 2025,
-      "poster": "/posters/6 jours.jpg"
+      "poster": "/posters/6 jours.jpg",
+      "imdb": "https://www.imdb.com/title/tt15525872/"
     },
     {
       "id": "les-pistolets-en-plastique",
@@ -55,7 +59,8 @@
       "distributor": "Distribution France : Bac Films",
       "sales": "Vendeur International : Charades",
       "year": 2024,
-      "poster": "/posters/les pistolets en plastique.jpg"
+      "poster": "/posters/les pistolets en plastique.jpg",
+      "imdb": "https://www.imdb.com/title/tt27411346/"
     },
     {
       "id": "la-meilleure-version-de-moi-meme",
@@ -65,7 +70,8 @@
       "producer": "Mamma Roman",
       "distributor": "Diffusion Canal+",
       "year": 2022,
-      "poster": "/posters/la meilleure version de moi meme.webp"
+      "poster": "/posters/la meilleure version de moi meme.webp",
+      "imdb": "https://www.imdb.com/title/tt15768674/"
     }
   ],
   "other": [
@@ -78,7 +84,8 @@
       "festival": "Festival de Cannes 2023 - Semaine de la Critique",
       "distributor": "Distribution France : Rezo Films",
       "year": 2023,
-      "poster": "/posters/Levante.jpg"
+      "poster": "/posters/Levante.jpg",
+      "imdb": "https://www.imdb.com/title/tt14670516/"
     },
     {
       "id": "linda-veut-du-poulet",
@@ -90,7 +97,8 @@
       "distributor": "Distribution France : Gebeka Films",
       "sales": "Vendeur International : Charades",
       "year": 2023,
-      "poster": "/posters/linda veut du poulet.jpg"
+      "poster": "/posters/linda veut du poulet.jpg",
+      "imdb": "https://www.imdb.com/title/tt15665784/"
     },
     {
       "id": "le-paradis",
@@ -101,7 +109,8 @@
       "distributor": "Distribution France : Rezo Films",
       "sales": "Vendeur International : Indie Sales",
       "year": 2023,
-      "poster": "/posters/Le paradis.jpg"
+      "poster": "/posters/Le paradis.jpg",
+      "imdb": "https://www.imdb.com/title/tt14521724/"
     },
     {
       "id": "saules-aveugles",
@@ -113,7 +122,8 @@
       "distributor": "Distribution France : Gebeka",
       "sales": "Vendeur International : Match Factory",
       "year": 2023,
-      "poster": "/posters/saules aveugles femme endormie.jpg"
+      "poster": "/posters/saules aveugles femme endormie.jpg",
+      "imdb": "https://www.imdb.com/title/tt11390330/"
     },
     {
       "id": "un-varon",
@@ -125,7 +135,8 @@
       "distributor": "Distribution France : Destiny Films",
       "sales": "Vendeur International : Cercamon",
       "year": 2023,
-      "poster": "/posters/Un Varon.jpg"
+      "poster": "/posters/Un Varon.jpg",
+      "imdb": "https://www.imdb.com/title/tt21374332/"
     },
     {
       "id": "pulse",
@@ -137,7 +148,8 @@
       "distributor": "Distribution France : Wayna Pitch",
       "sales": "Vendeur International : Kinology",
       "year": 2023,
-      "poster": "/posters/Pulse.jpg"
+      "poster": "/posters/Pulse.jpg",
+      "imdb": "https://www.imdb.com/title/tt15525676/"
     },
     {
       "id": "dodo",
@@ -148,7 +160,8 @@
       "festival": "Sélection Cannes Première",
       "distributor": "Vendeur International et Distribution France : Pyramide Films",
       "year": 2022,
-      "poster": "/posters/dodo.jpg"
+      "poster": "/posters/dodo.jpg",
+      "imdb": "https://www.imdb.com/title/tt11319252/"
     },
     {
       "id": "le-pion-du-general",
@@ -160,7 +173,8 @@
       "distributor": "Distribution France : Destiny Film",
       "sales": "Vendeur International : Alpha Violet",
       "year": 2022,
-      "poster": "/posters/Le pion du général.jpg"
+      "poster": "/posters/Le pion du général.jpg",
+      "imdb": "https://www.imdb.com/title/tt15525676/"
     },
     {
       "id": "la-vache",
@@ -172,7 +186,8 @@
       "distributor": "Distribution France : Nour Film",
       "sales": "Vendeur International : Match Factory",
       "year": 2023,
-      "poster": "/posters/La vache qui chantais le futur.jpg"
+      "poster": "/posters/La vache qui chantais le futur.jpg",
+      "imdb": "https://www.imdb.com/title/tt10657226/"
     },
     {
       "id": "olga",
@@ -184,7 +199,8 @@
       "distributor": "Distribution France : ARP Sélection",
       "sales": "Vendeur International : Pulsar Content",
       "year": 2021,
-      "poster": "/posters/olga.jpg"
+      "poster": "/posters/olga.jpg",
+      "imdb": "https://www.imdb.com/title/tt13287928/"
     },
     {
       "id": "carrement-craignos",
@@ -194,7 +210,8 @@
       "producer": "Douze Doigts Prod, Les Films Balthazar, Papa Films et France Télévisions",
       "distributor": "Diffusion France Télévisions",
       "year": 2021,
-      "poster": "/posters/carrement craignos.jpg"
+      "poster": "/posters/carrement craignos.jpg",
+      "imdb": "https://www.imdb.com/title/tt14303024/"
     },
     {
       "id": "shuga-babi",
@@ -204,7 +221,8 @@
       "producer": "MPM Film et MTV",
       "distributor": "Diffusion MTV",
       "year": 2021,
-      "poster": "/posters/Shuga babi.jpg"
+      "poster": "/posters/Shuga babi.jpg",
+      "imdb": "https://www.imdb.com/title/tt11776762/"
     },
     {
       "id": "abou-leila",
@@ -216,7 +234,8 @@
       "distributor": "Distribution France : UFO",
       "sales": "Vendeur International : Films Boutique",
       "year": 2020,
-      "poster": "/posters/abou leila.jpg"
+      "poster": "/posters/abou leila.jpg",
+      "imdb": "https://www.imdb.com/title/tt10291804/"
     },
     {
       "id": "reves-de-jeunesse",
@@ -228,7 +247,8 @@
       "distributor": "Distribution France : Shellac",
       "sales": "Vendeur International : Urban International",
       "year": 2019,
-      "poster": "/posters/reves-de-jeunesse.jpg"
+      "poster": "/posters/reves-de-jeunesse.jpg",
+      "imdb": "https://www.imdb.com/title/tt8115560/"
     },
     {
       "id": "shine-your-eyes",
@@ -239,7 +259,8 @@
       "festival": "Berlinale 2020 - Panorama",
       "distributor": "Diffusion Netflix",
       "year": 2020,
-      "poster": "/posters/shine your eyes.png"
+      "poster": "/posters/shine your eyes.png",
+      "imdb": "https://www.imdb.com/title/tt9308184/"
     },
     {
       "id": "burning-night",
@@ -249,7 +270,8 @@
       "producer": "Tu Vas Voir",
       "festival": "Festival International du Film De Sao Paulo - Compétition Officielle",
       "year": 2019,
-      "poster": "/posters/Burning night.webp"
+      "poster": "/posters/Burning night.webp",
+      "imdb": "https://www.imdb.com/title/tt9866718/"
     },
     {
       "id": "domingo",
@@ -259,7 +281,8 @@
       "producer": "Adastra Films",
       "sales": "Vendeur International : Picture Tree International",
       "year": 2019,
-      "poster": "/posters/Domingo.png"
+      "poster": "/posters/Domingo.png",
+      "imdb": "https://www.imdb.com/title/tt8767544/"
     },
     {
       "id": "lautre-continent",
@@ -270,7 +293,8 @@
       "distributor": "Distribution France : Sophie Dulac",
       "sales": "Vendeur International : Urban",
       "year": 2019,
-      "poster": "/posters/L'autre continent.jpg"
+      "poster": "/posters/L'autre continent.jpg",
+      "imdb": "https://www.imdb.com/title/tt5973724/"
     },
     {
       "id": "tremblements",
@@ -282,7 +306,8 @@
       "distributor": "Distribution France : Memento Films",
       "sales": "Vendeur International : Film Factory",
       "year": 2019,
-      "poster": "/posters/tremblements.jpg"
+      "poster": "/posters/tremblements.jpg",
+      "imdb": "https://www.imdb.com/title/tt9426734/"
     },
     {
       "id": "rafiki",
@@ -293,7 +318,8 @@
       "festival": "Festival de Cannes - Un Certain Regard",
       "distributor": "Distribution France : Météore Films",
       "year": 2018,
-      "poster": "/posters/rafiki.jpg"
+      "poster": "/posters/rafiki.jpg",
+      "imdb": "https://www.imdb.com/title/tt8286894/"
     },
     {
       "id": "zama",
@@ -305,7 +331,8 @@
       "distributor": "Distribution France : Shellac",
       "sales": "Vendeur International : Match Factory",
       "year": 2018,
-      "poster": "/posters/zama.jpg"
+      "poster": "/posters/zama.jpg",
+      "imdb": "https://www.imdb.com/title/tt2514338/"
     },
     {
       "id": "frost",
@@ -317,7 +344,8 @@
       "distributor": "Distribution France : Rezo",
       "sales": "Vendeur International : Luxbox",
       "year": 2018,
-      "poster": "/posters/Frost.jpg"
+      "poster": "/posters/Frost.jpg",
+      "imdb": "https://www.imdb.com/title/tt5715880/"
     },
     {
       "id": "apres-la-guerre",
@@ -328,7 +356,8 @@
       "festival": "Festival de Cannes - Un Certain Regard",
       "distributor": "Vendeur International et Distribution France : Pyramide",
       "year": 2018,
-      "poster": "/posters/apres-la-guerre.jpg"
+      "poster": "/posters/apres-la-guerre.jpg",
+      "imdb": "https://www.imdb.com/title/tt5735622/"
     },
     {
       "id": "mariana",
@@ -340,7 +369,8 @@
       "distributor": "Distribution France : Nour Films",
       "sales": "Vendeur International : Films Boutique",
       "year": 2017,
-      "poster": "/posters/mariana.jpg"
+      "poster": "/posters/mariana.jpg",
+      "imdb": "https://www.imdb.com/title/tt6113248/"
     },
     {
       "id": "droles-d-oiseaux",
@@ -352,7 +382,8 @@
       "distributor": "Distribution France : Shellac",
       "sales": "Vendeur International : MPM",
       "year": 2017,
-      "poster": "/posters/droles-d-oiseaux.jpg"
+      "poster": "/posters/droles-d-oiseaux.jpg",
+      "imdb": "https://www.imdb.com/title/tt5592754/"
     }
   ]
 }

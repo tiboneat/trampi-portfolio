@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     description: 'Directeur de post-production depuis 2016. Plus de 40 films et séries supervisés, sélectionnés dans les plus grands festivals internationaux.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image',
         width: 1200,
         height: 630,
         alt: 'Fabien Trampont - Directeur de Post-Production',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fabien Trampont | Directeur de Post-Production',
     description: 'Directeur de post-production depuis 2016. Plus de 40 films et séries supervisés à Cannes, Venise, Berlin, Annecy.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image'],
   },
   robots: {
     index: true,
@@ -90,11 +90,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon.png', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png' },
+      { url: '/favicon.svg' },
     ],
   },
   manifest: '/manifest.json',
