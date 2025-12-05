@@ -80,3 +80,6 @@ Je peux vous aider à :
 
 **Une fois les images dans le dossier, le site les affichera automatiquement !**
 
+
+
+

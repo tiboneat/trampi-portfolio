@@ -11,7 +11,7 @@
       "release": "Sortie salle 22/01/25",
       "sales": "Vendeur International : Urban Sales",
       "year": 2024,
-      "poster": "/posters/brule-le-sang.jpg"
+      "poster": "/posters/Brule-le-sang_120x160_HD-scaled.jpg"
     },
     {
       "id": "par-amour",
@@ -23,7 +23,7 @@
       "release": "Sortie salle 15/01/25",
       "sales": "Vendeur International : Playtime",
       "year": 2024,
-      "poster": "/posters/par-amour.jpg"
+      "poster": "/posters/Par amour.jpg"
     },
     {
       "id": "six-jours",
@@ -36,7 +36,7 @@
       "release": "Sortie salle 01/01/25",
       "sales": "Vendeur International : SND",
       "year": 2025,
-      "poster": "/posters/six-jours.jpg"
+      "poster": "/posters/6 jours.jpg"
     },
     {
       "id": "les-pistolets-en-plastique",
@@ -49,7 +49,7 @@
       "release": "Sortie salle 26/06/24",
       "sales": "Vendeur International : Charades",
       "year": 2024,
-      "poster": "/posters/les-pistolets-en-plastique.jpg"
+      "poster": "/posters/les pistolets en plastique.jpg"
     },
     {
       "id": "linda-veut-du-poulet",
@@ -62,7 +62,7 @@
       "release": "Sortie salle 06/12/23",
       "sales": "Vendeur International : Charades",
       "year": 2023,
-      "poster": "/posters/linda-veut-du-poulet.jpg"
+      "poster": "/posters/linda veut du poulet.jpg"
     },
     {
       "id": "la-meilleure-version-de-moi-meme",
@@ -73,7 +73,7 @@
       "distributor": "Canal+",
       "release": "Diffusion Décembre 2021",
       "year": 2021,
-      "poster": "/posters/la-meilleure-version.jpg"
+      "poster": "/posters/la meilleure version de moi meme.webp"
     }
   ],
   "other": [
@@ -92,14 +92,14 @@
     },
     {
       "id": "carrement-craignos-s2",
-      "title": "CARRÉMENT CRAIGNOS - Saison 2",
+      "title": "CARRÉMENT CRAIGNOS",
       "director": "Jean-Pascal Zadi",
       "type": "Série 9×26'",
       "producer": "Papa Films, Douze Doigt Productions et Les Films Balthazar",
       "distributor": "France Télévisions",
       "release": "Diffusion 2021",
       "year": 2021,
-      "poster": "/posters/carrement-craignos.jpg"
+      "poster": "/posters/carrement craignos.jpg"
     },
     {
       "id": "abou-leila",
@@ -112,7 +112,7 @@
       "release": "Sortie salle 27/05/20",
       "sales": "Vendeur International : Films Boutique",
       "year": 2019,
-      "poster": "/posters/abou-leila.jpg"
+      "poster": "/posters/abou leila.jpg"
     },
     {
       "id": "zama",
@@ -138,7 +138,169 @@
       "release": "Sortie salle 31/05/17",
       "sales": "Vendeur International : MPM Film",
       "year": 2017,
-      "poster": "/posters/droles-oiseaux.jpg"
+      "poster": "/posters/droles-d-oiseaux.jpg"
+    },
+    {
+      "id": "dodo",
+      "title": "DODO",
+      "director": "Panos H. Koutras",
+      "type": "Long métrage",
+      "producer": "MPM Film",
+      "festival": "Sélection Officielle – Festival de Cannes 2022",
+      "year": 2022,
+      "poster": "/posters/dodo.jpg"
+    },
+    {
+      "id": "shine-your-eyes",
+      "title": "SHINE YOUR EYES",
+      "director": "Matias Mariani",
+      "type": "Long métrage",
+      "producer": "Adastra Films",
+      "festival": "SXSW 2020",
+      "year": 2020,
+      "poster": "/posters/shine your eyes.png"
+    },
+    {
+      "id": "saules-aveugles",
+      "title": "SAULES AVEUGLES, FEMME ENDORMIE",
+      "director": "Pierre Földes",
+      "type": "Long métrage d'animation",
+      "producer": "Miyu Productions",
+      "festival": "Festival d'Annecy 2022 - Contrechamp",
+      "year": 2022,
+      "poster": "/posters/saules aveugles femme endormie.jpg"
+    },
+    {
+      "id": "apres-la-guerre",
+      "title": "APRÈS LA GUERRE",
+      "director": "Annarita Zambrano",
+      "type": "Long métrage",
+      "producer": "In Vivo Films",
+      "festival": "Un Certain Regard – Festival de Cannes 2017",
+      "year": 2017,
+      "poster": "/posters/apres-la-guerre.jpg"
+    },
+    {
+      "id": "rafiki",
+      "title": "RAFIKI",
+      "director": "Wanuri Kahiu",
+      "type": "Long métrage",
+      "producer": "MPM Film",
+      "festival": "Un Certain Regard – Festival de Cannes 2018",
+      "year": 2018,
+      "poster": "/posters/rafiki.jpg"
+    },
+    {
+      "id": "tremblements",
+      "title": "TREMBLEMENTS",
+      "director": "Jayro Bustamante",
+      "type": "Long métrage",
+      "producer": "MPM Film",
+      "festival": "Berlinale 2019 - Panorama",
+      "year": 2019,
+      "poster": "/posters/tremblements.jpg"
+    },
+    {
+      "id": "reves-de-jeunesse",
+      "title": "RÊVES DE JEUNESSE",
+      "director": "Alain Raoust",
+      "type": "Long métrage",
+      "year": 2019,
+      "poster": "/posters/reves-de-jeunesse.jpg"
+    },
+    {
+      "id": "mariana",
+      "title": "MARIANA",
+      "director": "Marcela Said",
+      "type": "Long métrage",
+      "festival": "Berlinale 2017",
+      "year": 2017,
+      "poster": "/posters/mariana.jpg"
+    },
+    {
+      "id": "le-paradis",
+      "title": "LE PARADIS",
+      "director": "Zeno Graton",
+      "type": "Long métrage",
+      "festival": "Festival de Cannes 2023",
+      "year": 2023,
+      "poster": "/posters/Le paradis.jpg"
+    },
+    {
+      "id": "levante",
+      "title": "LEVANTE",
+      "director": "Lillah Halla",
+      "type": "Long métrage",
+      "festival": "Quinzaine des Cinéastes 2023",
+      "year": 2023,
+      "poster": "/posters/Levante.jpg"
+    },
+    {
+      "id": "un-varon",
+      "title": "UN VARÓN",
+      "director": "Fabián Hernández",
+      "type": "Long métrage",
+      "festival": "Semaine de la Critique – Cannes 2022",
+      "year": 2022,
+      "poster": "/posters/Un Varon.jpg"
+    },
+    {
+      "id": "frost",
+      "title": "FROST",
+      "director": "Sharunas Bartas",
+      "type": "Long métrage",
+      "festival": "Festival de Cannes 2017",
+      "year": 2017,
+      "poster": "/posters/Frost.jpg"
+    },
+    {
+      "id": "pulse",
+      "title": "PULSE",
+      "director": "Christophe Hermans",
+      "type": "Long métrage",
+      "year": 2022,
+      "poster": "/posters/Pulse.jpg"
+    },
+    {
+      "id": "lautre-continent",
+      "title": "L'AUTRE CONTINENT",
+      "director": "Romain Cogitore",
+      "type": "Long métrage",
+      "year": 2022,
+      "poster": "/posters/L'autre continent.jpg"
+    },
+    {
+      "id": "domingo",
+      "title": "DOMINGO",
+      "director": "Clara Stern",
+      "type": "Long métrage",
+      "year": 2022,
+      "poster": "/posters/Domingo.png"
+    },
+    {
+      "id": "la-vache",
+      "title": "LA VACHE QUI CHANTAIT LE FUTUR",
+      "director": "Francisca Alegría",
+      "type": "Long métrage",
+      "festival": "Sundance 2022",
+      "year": 2022,
+      "poster": "/posters/La vache qui chantais le futur.jpg"
+    },
+    {
+      "id": "le-pion",
+      "title": "LE PION DU GÉNÉRAL",
+      "director": "Zaza Urushadze",
+      "type": "Long métrage",
+      "year": 2018,
+      "poster": "/posters/Le pion du général.jpg"
+    },
+    {
+      "id": "shuga-babi",
+      "title": "SHUGA BABI",
+      "director": "Dania Reymond-Boughenou",
+      "type": "Long métrage",
+      "year": 2023,
+      "poster": "/posters/Shuga babi.jpg"
     }
   ]
 }
