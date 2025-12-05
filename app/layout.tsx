@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Montserrat, Inter } from 'next/font/google'
 import './globals.css'
+import { LanguageProvider } from '@/context/LanguageContext'
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -152,7 +153,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${montserrat.variable} ${inter.variable} font-inter antialiased bg-cinema-black text-white`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )

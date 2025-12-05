@@ -2,15 +2,42 @@
 
 import { Mail, Phone, MapPin, Film, Calendar, Award, Users, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/context/LanguageContext'
 
 const Header = () => {
+  const { t } = useLanguage()
+
   const stats = [
-    { icon: Calendar, value: '10', label: "années d'expérience" },
-    { icon: Film, value: '40', label: 'Films et séries' },
-    { icon: Sparkles, value: '😉', label: 'Un nombre incalculable de sélections en festivals', isEmoji: true },
-    { icon: Users, label: "Management d'équipes" },
-    { icon: Award, label: 'Enseignement' },
+    { icon: Calendar, value: '10', label: t("années d'expérience", "years of experience") },
+    { icon: Film, value: '40', label: t('Films et séries', 'Films and series') },
+    { icon: Sparkles, value: '😉', label: t('Un nombre incalculable de sélections en festivals', 'Countless festival selections'), isEmoji: true },
+    { icon: Users, label: t("Management d'équipes", "Team management") },
+    { icon: Award, label: t('Enseignement', 'Teaching') },
   ]
+
+  // Animation variants pour des entrées plus fluides
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  }
 
   return (
     <header 
@@ -30,13 +57,13 @@ const Header = () => {
         <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-cinema-black"></div>
       </div>
 
-      <div className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-16 sm:py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-center mb-8 sm:mb-12"
-        >
+      <motion.div 
+        className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-16 sm:py-20"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div variants={itemVariants} className="text-center mb-8 sm:mb-12">
           {/* Ornement */}
           <div className="flex items-center justify-center mb-6 sm:mb-8" aria-hidden="true">
             <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-cinema-gold"></div>
@@ -45,20 +72,23 @@ const Header = () => {
           </div>
 
           {/* Nom */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-silver uppercase">
+          <motion.h1 
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-silver uppercase"
+          >
             Fabien Trampont
-          </h1>
+          </motion.h1>
 
           {/* Titre sur 3 lignes */}
-          <div className="relative inline-block mb-4 sm:mb-6">
+          <motion.div variants={itemVariants} className="relative inline-block mb-4 sm:mb-6">
             <p className="relative text-2xl sm:text-3xl md:text-4xl text-cinema-gold font-light tracking-[0.1em] sm:tracking-[0.15em] uppercase leading-relaxed">
-              Directeur
+              {t('Directeur', 'Post-Production')}
               <br />
-              <span className="text-xl sm:text-2xl md:text-3xl">de</span>
-              <br />
-              Post-Production
+              <span className="text-xl sm:text-2xl md:text-3xl">{t('de', '')}</span>
+              {t('de', '') && <br />}
+              {t('Post-Production', 'Director')}
             </p>
-          </div>
+          </motion.div>
 
           {/* Ligne décorative */}
           <div className="mb-6 sm:mb-8" aria-hidden="true">
@@ -66,23 +96,34 @@ const Header = () => {
           </div>
 
           {/* Phrase */}
-          <p className="text-sm sm:text-base md:text-lg text-cinema-silver max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2">
-            Rendre la post-production fluide, sereine et fidèle à la vision du projet
-          </p>
+          <motion.p 
+            variants={itemVariants}
+            className="text-sm sm:text-base md:text-lg text-cinema-silver max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
+          >
+            {t(
+              'Rendre la post-production fluide, sereine et fidèle à la vision du projet',
+              'Making post-production smooth, serene and true to the project\'s vision'
+            )}
+          </motion.p>
         </motion.div>
 
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          variants={itemVariants}
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-4xl mx-auto"
           role="list"
-          aria-label="Statistiques clés"
+          aria-label={t('Statistiques clés', 'Key statistics')}
         >
           {stats.map((stat, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.5 + index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
               className="text-center p-3 sm:p-4 bg-cinema-dark/30 backdrop-blur-sm border border-white/5 rounded-sm"
               role="listitem"
             >
@@ -94,21 +135,19 @@ const Header = () => {
                 <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-cinema-gold" aria-hidden="true" />
               )}
               <div className="text-cinema-silver/70 text-[10px] sm:text-xs uppercase tracking-wider leading-tight">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
         {/* Coordonnées */}
         <motion.address
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.7 }}
+          variants={itemVariants}
           className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm not-italic"
         >
           <a 
             href="mailto:fabien.trampont@gmail.com"
             className="flex items-center gap-2 text-cinema-silver hover:text-cinema-gold transition-colors min-h-[44px] px-2"
-            aria-label="Envoyer un email à Fabien Trampont"
+            aria-label={t('Envoyer un email à Fabien Trampont', 'Send an email to Fabien Trampont')}
           >
             <Mail size={16} aria-hidden="true" />
             <span>fabien.trampont@gmail.com</span>
@@ -119,7 +158,7 @@ const Header = () => {
           <a 
             href="tel:+33621152533"
             className="flex items-center gap-2 text-cinema-silver hover:text-cinema-gold transition-colors min-h-[44px] px-2"
-            aria-label="Appeler Fabien Trampont"
+            aria-label={t('Appeler Fabien Trampont', 'Call Fabien Trampont')}
           >
             <Phone size={16} aria-hidden="true" />
             <span>06 21 15 25 33</span>
@@ -132,7 +171,7 @@ const Header = () => {
             <span>Paris</span>
           </div>
         </motion.address>
-      </div>
+      </motion.div>
 
       <div className="film-scanline" aria-hidden="true"></div>
     </header>

@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X, Film } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
+import LanguageToggle from './LanguageToggle'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,12 +18,10 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Fermer le menu mobile quand on clique sur un lien
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false)
   }
 
-  // Empêcher le scroll du body quand le menu mobile est ouvert
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -33,8 +34,8 @@ const Navigation = () => {
   }, [isMobileMenuOpen])
 
   const navLinks = [
-    { href: '#projects', label: 'Portfolio' },
-    { href: '#about', label: 'Qui je suis / Ma vision' },
+    { href: '#projects', label: t('Portfolio', 'Portfolio') },
+    { href: '#about', label: t('Qui je suis / Ma vision', 'About / Vision') },
     { href: '#contact', label: 'Contact' },
   ]
 
@@ -61,30 +62,36 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="relative text-white/80 hover:text-cinema-gold transition-colors duration-300 text-sm uppercase tracking-[0.15em] font-light group py-2"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-cinema-gold group-hover:w-full transition-all duration-300" aria-hidden="true"></span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <ul className="flex items-center gap-6 lg:gap-8">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="relative text-white/80 hover:text-cinema-gold transition-colors duration-300 text-sm uppercase tracking-[0.15em] font-light group py-2"
+                  >
+                    {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-cinema-gold group-hover:w-full transition-all duration-300" aria-hidden="true"></span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <LanguageToggle />
+          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative w-10 h-10 flex items-center justify-center text-cinema-gold border border-cinema-gold/50 rounded-sm hover:bg-cinema-gold/10 transition-colors min-w-[44px] min-h-[44px]"
-            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            {isMobileMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
-          </button>
+          {/* Mobile: Language Toggle + Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="relative w-10 h-10 flex items-center justify-center text-cinema-gold border border-cinema-gold/50 rounded-sm hover:bg-cinema-gold/10 transition-colors min-w-[44px] min-h-[44px]"
+              aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              {isMobileMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

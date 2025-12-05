@@ -2,45 +2,61 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Film, Award, X, ExternalLink } from 'lucide-react'
+import { Film, Award, X } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 import projectsData from '@/data/projects.json'
 
 interface Project {
   id: string
   title: string
+  titleEn?: string
   director: string
+  directorEn?: string
   type: string
+  typeEn?: string
   producer?: string
+  producerEn?: string
   festival?: string
+  festivalEn?: string
   distributor?: string
+  distributorEn?: string
   release?: string
   sales?: string
+  salesEn?: string
   year: number
   poster: string
-  imdb?: string
 }
 
-const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => void }) => {
+const ProjectCard = ({ project, onClick, lang }: { project: Project; onClick: () => void; lang: string }) => {
+  const title = lang === 'en' && project.titleEn ? project.titleEn : project.title
+  const type = lang === 'en' && project.typeEn ? project.typeEn : project.type
+  const festival = lang === 'en' && project.festivalEn ? project.festivalEn : project.festival
+
   return (
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
+      viewport={{ once: true, margin: "-80px" }}
       onClick={onClick}
       className="group cursor-pointer relative focus-within:ring-2 focus-within:ring-cinema-gold rounded-sm"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && onClick()}
-      aria-label={`Voir les détails de ${project.title} réalisé par ${project.director}`}
+      aria-label={`${lang === 'fr' ? 'Voir les détails de' : 'View details of'} ${title}`}
     >
       <div className="relative h-[380px] sm:h-[420px] md:h-[480px] overflow-hidden rounded-sm border border-white/10 bg-cinema-dark">
-        <img
+        <motion.img
           src={project.poster}
-          alt={`Affiche du film ${project.title}`}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          alt={`${lang === 'fr' ? 'Affiche du film' : 'Movie poster'} ${title}`}
+          className="w-full h-full object-cover"
           loading="lazy"
           decoding="async"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         />
         
         {/* Overlay */}
@@ -55,15 +71,15 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
           <div className="flex items-center gap-2 text-cinema-gold/80 mb-1 sm:mb-2">
             <Film size={12} aria-hidden="true" />
-            <span className="text-[10px] sm:text-xs uppercase tracking-wider">{project.type}</span>
+            <span className="text-[10px] sm:text-xs uppercase tracking-wider">{type}</span>
           </div>
-          <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white tracking-wide">{project.title}</h3>
+          <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white tracking-wide">{title}</h3>
           <p className="text-cinema-gold-light/80 text-xs sm:text-sm">{project.director}</p>
           
-          {project.festival && (
+          {festival && (
             <div className="flex items-start gap-2 text-white/60 text-[10px] sm:text-xs mt-2 sm:mt-3">
               <Award size={12} className="mt-0.5 flex-shrink-0 text-cinema-gold" aria-hidden="true" />
-              <span className="line-clamp-2">{project.festival.replace(/\d{4}/g, '').replace(/\s+/g, ' ').trim()}</span>
+              <span className="line-clamp-2">{festival.replace(/\d{4}/g, '').replace(/\s+/g, ' ').trim()}</span>
             </div>
           )}
         </div>
@@ -72,14 +88,23 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
   )
 }
 
-const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => {
-  const cleanFestival = project.festival ? project.festival.replace(/\d{4}/g, '').replace(/\s+/g, ' ').trim() : null
+const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose: () => void; lang: string; t: (fr: string, en: string) => string }) => {
+  const title = lang === 'en' && project.titleEn ? project.titleEn : project.title
+  const type = lang === 'en' && project.typeEn ? project.typeEn : project.type
+  const director = lang === 'en' && project.directorEn ? project.directorEn : project.director
+  const producer = lang === 'en' && project.producerEn ? project.producerEn : project.producer
+  const festival = lang === 'en' && project.festivalEn ? project.festivalEn : project.festival
+  const distributor = lang === 'en' && project.distributorEn ? project.distributorEn : project.distributor
+  const sales = lang === 'en' && project.salesEn ? project.salesEn : project.sales
+
+  const cleanFestival = festival ? festival.replace(/\d{4}/g, '').replace(/\s+/g, ' ').trim() : null
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
       onClick={onClose}
       className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
       role="dialog"
@@ -87,16 +112,17 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
       aria-labelledby="modal-title"
     >
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
+        initial={{ scale: 0.9, opacity: 0, y: 20 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.95, opacity: 0, y: 10 }}
+        transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
         onClick={(e) => e.stopPropagation()}
         className="bg-cinema-dark border border-white/10 rounded-sm max-w-4xl w-full relative my-4 sm:my-8 max-h-[90vh] overflow-y-auto"
       >
         <button
           onClick={onClose}
           className="absolute top-3 sm:top-4 right-3 sm:right-4 text-white/60 hover:text-cinema-gold transition-colors z-10 bg-black/50 backdrop-blur-sm p-2 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center"
-          aria-label="Fermer la fenêtre"
+          aria-label={t('Fermer la fenêtre', 'Close window')}
         >
           <X size={20} aria-hidden="true" />
         </button>
@@ -105,72 +131,52 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
           <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-sm overflow-hidden border border-white/10">
             <img
               src={project.poster}
-              alt={`Affiche du film ${project.title}`}
+              alt={`${t('Affiche du film', 'Movie poster')} ${title}`}
               className="w-full h-full object-cover"
             />
           </div>
 
           <div className="space-y-4 sm:space-y-5 py-2 sm:py-4">
             <div>
-              <h2 id="modal-title" className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-wide">{project.title}</h2>
-              <p className="text-lg sm:text-xl text-cinema-gold-light">{project.director}</p>
+              <h2 id="modal-title" className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-wide">{title}</h2>
+              <p className="text-lg sm:text-xl text-cinema-gold-light">{director}</p>
               <div className="h-px w-16 bg-cinema-gold/50 mt-4" aria-hidden="true" />
             </div>
             
             <dl className="space-y-2 sm:space-y-3 text-sm">
               <div className="flex gap-3">
-                <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">Type</dt>
-                <dd className="text-white/80">{project.type}</dd>
+                <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Type', 'Type')}</dt>
+                <dd className="text-white/80">{type}</dd>
               </div>
               <div className="flex gap-3">
-                <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">Année</dt>
+                <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Année', 'Year')}</dt>
                 <dd className="text-white/80">{project.year}</dd>
               </div>
-              {project.producer && (
+              {producer && (
                 <div className="flex gap-3">
-                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">Production</dt>
-                  <dd className="text-white/80">{project.producer}</dd>
+                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Production', 'Production')}</dt>
+                  <dd className="text-white/80">{producer}</dd>
                 </div>
               )}
               {cleanFestival && (
                 <div className="flex gap-3">
-                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">Festival</dt>
+                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Festival', 'Festival')}</dt>
                   <dd className="text-white/80">{cleanFestival}</dd>
                 </div>
               )}
-              {project.distributor && (
+              {distributor && (
                 <div className="flex gap-3">
-                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">Distribution</dt>
-                  <dd className="text-white/80">{project.distributor}</dd>
+                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Distribution', 'Distribution')}</dt>
+                  <dd className="text-white/80">{distributor}</dd>
                 </div>
               )}
-              {project.sales && (
+              {sales && (
                 <div className="flex gap-3">
-                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">Ventes</dt>
-                  <dd className="text-white/80">{project.sales}</dd>
+                  <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Ventes', 'Sales')}</dt>
+                  <dd className="text-white/80">{sales}</dd>
                 </div>
               )}
             </dl>
-
-            {/* Bouton IMDb */}
-            {project.imdb && (
-              <div className="pt-4 mt-4 border-t border-white/10">
-                <a
-                  href={project.imdb}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#F5C518] text-black font-bold text-sm tracking-wide hover:bg-[#E4B817] transition-colors rounded-sm min-h-[44px]"
-                  onClick={(e) => e.stopPropagation()}
-                  aria-label={`Voir ${project.title} sur IMDb (s'ouvre dans un nouvel onglet)`}
-                >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M14.31 9.588v.005c-.077-.048-.227-.07-.42-.07v4.815c.27 0 .44-.06.5-.165.062-.105.09-.39.09-.855v-2.735c0-.345-.008-.59-.022-.735-.016-.145-.07-.24-.15-.26zM22 2v20H2V2h20zM4.05 14.94V9.06h1.71v5.88H4.05zm5.2 0h-1.13l-.13-.48c-.37.37-.89.55-1.55.55-.44 0-.75-.15-.93-.45-.17-.3-.26-.73-.26-1.3v-3.2c0-.5.13-.88.38-1.15.25-.27.65-.4 1.2-.4.45 0 .84.1 1.17.3v-1.39h1.25v7.52zm1.72-7.12h2.06c.68 0 1.18.12 1.5.36.32.24.49.68.49 1.3v3.5c0 .63-.18 1.07-.54 1.32-.36.25-.93.37-1.71.37H10.97V7.82zm4.64 7.12h-1.25v-7.52h1.25v7.52zm5.03-1.68c-.14.43-.39.75-.75.96-.36.21-.82.32-1.38.32-.56 0-1.02-.11-1.38-.32-.36-.21-.63-.53-.81-.96-.18-.43-.27-.99-.27-1.68v-1.23c0-.69.09-1.25.27-1.68.18-.43.45-.75.81-.96.36-.21.82-.32 1.38-.32.56 0 1.02.11 1.38.32.36.21.61.53.75.96.14.43.21.99.21 1.68v1.23c0 .69-.07 1.25-.21 1.68z"/>
-                  </svg>
-                  Voir sur IMDb
-                  <ExternalLink size={14} aria-hidden="true" />
-                </a>
-              </div>
-            )}
           </div>
         </div>
       </motion.div>
@@ -181,6 +187,18 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [showAllProjects, setShowAllProjects] = useState(false)
+  const { lang, t } = useLanguage()
+
+  // Animation pour le conteneur de la grille
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
 
   return (
     <section 
@@ -190,9 +208,9 @@ const Projects = () => {
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.header
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
         >
@@ -205,20 +223,27 @@ const Projects = () => {
             <span className="text-cinema-gold">Portfolio</span>
           </h2>
           <p className="text-white/50 text-base sm:text-lg max-w-2xl mx-auto mt-4 sm:mt-6 font-light px-4">
-            Films et séries supervisés en post-production
+            {t('Films et séries supervisés en post-production', 'Films and series supervised in post-production')}
           </p>
         </motion.header>
 
         {/* Featured Projects */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {projectsData.featured.map((project) => (
             <ProjectCard
               key={project.id}
               project={project as Project}
               onClick={() => setSelectedProject(project as Project)}
+              lang={lang}
             />
           ))}
-        </div>
+        </motion.div>
 
         {/* Other Projects */}
         <AnimatePresence>
@@ -227,36 +252,53 @@ const Projects = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="overflow-hidden"
             >
               <div className="mb-8 sm:mb-10 text-center">
                 <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold/30 to-transparent mx-auto mb-4 sm:mb-6" aria-hidden="true" />
-                <h3 className="text-xl sm:text-2xl font-light text-white/80">Autres Projets</h3>
+                <h3 className="text-xl sm:text-2xl font-light text-white/80">
+                  {t('Autres Projets', 'Other Projects')}
+                </h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+              <motion.div 
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
                 {projectsData.other.map((project) => (
                   <ProjectCard
                     key={project.id}
                     project={project as Project}
                     onClick={() => setSelectedProject(project as Project)}
+                    lang={lang}
                   />
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
 
         {/* Show More Button */}
-        <div className="text-center mt-8 sm:mt-12">
+        <motion.div 
+          className="text-center mt-8 sm:mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <button
             onClick={() => setShowAllProjects(!showAllProjects)}
             className="px-6 sm:px-8 py-3 border border-cinema-gold/50 text-cinema-gold text-xs sm:text-sm uppercase tracking-wider hover:bg-cinema-gold/10 transition-all duration-300 min-h-[44px]"
             aria-expanded={showAllProjects}
           >
-            {showAllProjects ? 'Voir moins' : `Voir les ${projectsData.other.length} autres projets`}
+            {showAllProjects 
+              ? t('Voir moins', 'Show less') 
+              : t(`Voir les ${projectsData.other.length} autres projets`, `View ${projectsData.other.length} more projects`)
+            }
           </button>
-        </div>
+        </motion.div>
       </div>
 
       <AnimatePresence>
@@ -264,6 +306,8 @@ const Projects = () => {
           <ProjectModal
             project={selectedProject}
             onClose={() => setSelectedProject(null)}
+            lang={lang}
+            t={t}
           />
         )}
       </AnimatePresence>

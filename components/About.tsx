@@ -2,8 +2,34 @@
 
 import { motion } from 'framer-motion'
 import { Mail, BookOpen } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 const About = () => {
+  const { t } = useLanguage()
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  }
+
   return (
     <section 
       id="about" 
@@ -12,72 +38,102 @@ const About = () => {
     >
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.header
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12"
         >
           <h2 id="about-title" className="text-3xl sm:text-4xl md:text-5xl font-light mb-4 tracking-wide">
-            <span className="text-cinema-gold">Qui je suis</span>
+            <span className="text-cinema-gold">{t('Qui je suis', 'About me')}</span>
             <span className="text-white/50"> / </span>
-            <span className="text-cinema-gold">Ma vision</span>
+            <span className="text-cinema-gold">{t('Ma vision', 'My vision')}</span>
           </h2>
           <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto mt-4 sm:mt-6" aria-hidden="true" />
         </motion.header>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           className="space-y-4 sm:space-y-6 text-white/80 text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
         >
-          <p>
-            Je m'appelle <span className="text-cinema-gold">Fabien</span> et je suis directeur de post-production depuis 2016.
-          </p>
+          <motion.p variants={itemVariants}>
+            {t(
+              "Je m'appelle ",
+              "My name is "
+            )}
+            <span className="text-cinema-gold">Fabien</span>
+            {t(
+              " et je suis directeur de post-production depuis 2016.",
+              " and I've been a post-production director since 2016."
+            )}
+          </motion.p>
           
-          <p>
-            Porté par une vraie passion pour l'image et les récits, j'accompagne réalisateurs et producteurs sur des films et séries qui demandent un accompagnement artistique et technique rigoureux.
-          </p>
+          <motion.p variants={itemVariants}>
+            {t(
+              "Porté par une vraie passion pour l'image et les récits, j'accompagne réalisateurs et producteurs sur des films et séries qui demandent un accompagnement artistique et technique rigoureux.",
+              "Driven by a true passion for images and storytelling, I work alongside directors and producers on films and series that require rigorous artistic and technical support."
+            )}
+          </motion.p>
           
-          <p>
-            <span className="text-cinema-gold">Mon rôle :</span> garantir une post-production fluide, maîtrisée et pleinement fidèle à la vision créative du film.
-          </p>
+          <motion.p variants={itemVariants}>
+            <span className="text-cinema-gold">{t('Mon rôle :', 'My role:')}</span>
+            {t(
+              " garantir une post-production fluide, maîtrisée et pleinement fidèle à la vision créative du film.",
+              " ensuring smooth, controlled post-production that fully respects the film's creative vision."
+            )}
+          </motion.p>
           
-          <p>
-            J'anticipe les enjeux artistiques, techniques et budgétaires, je structure les workflows, j'organise les plannings et je coordonne les livraisons pour que chaque étape se déroule avec clarté et efficacité.
-          </p>
+          <motion.p variants={itemVariants}>
+            {t(
+              "J'anticipe les enjeux artistiques, techniques et budgétaires, je structure les workflows, j'organise les plannings et je coordonne les livraisons pour que chaque étape se déroule avec clarté et efficacité.",
+              "I anticipate artistic, technical and budgetary challenges, structure workflows, organize schedules and coordinate deliveries so that each step proceeds with clarity and efficiency."
+            )}
+          </motion.p>
           
-          <p className="italic text-cinema-gold/80">
-            Pour moi, la post-production doit être un espace créatif et serein.
-          </p>
+          <motion.p variants={itemVariants} className="italic text-cinema-gold/80">
+            {t(
+              "Pour moi, la post-production doit être un espace créatif et serein.",
+              "For me, post-production should be a creative and serene space."
+            )}
+          </motion.p>
           
-          <p>
-            Un moment où le film ou la série se précise, où les intentions s'affinent, et où chacun peut travailler dans la même direction — avec précision, confiance et plaisir.
-          </p>
+          <motion.p variants={itemVariants}>
+            {t(
+              "Un moment où le film ou la série se précise, où les intentions s'affinent, et où chacun peut travailler dans la même direction — avec précision, confiance et plaisir.",
+              "A time when the film or series takes shape, intentions are refined, and everyone can work in the same direction — with precision, confidence and enjoyment."
+            )}
+          </motion.p>
         </motion.div>
 
         {/* Enseignement */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
           className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-white/10"
         >
           <div className="flex items-center gap-3 mb-4 sm:mb-6">
             <BookOpen className="text-cinema-gold" size={20} aria-hidden="true" />
-            <h3 className="text-lg sm:text-xl font-light text-white">Enseignement & Interventions</h3>
+            <h3 className="text-lg sm:text-xl font-light text-white">
+              {t('Enseignement & Interventions', 'Teaching & Lectures')}
+            </h3>
           </div>
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            {['ESRA', 'CinéFabrique', 'Futurae'].map((school) => (
-              <span
+            {['ESRA', 'CinéFabrique', 'Futurae'].map((school, index) => (
+              <motion.span
                 key={school}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                viewport={{ once: true }}
                 className="px-4 sm:px-5 py-2 bg-cinema-dark/50 border border-cinema-gold/30 text-cinema-gold text-xs sm:text-sm tracking-wider"
               >
                 {school}
-              </span>
+              </motion.span>
             ))}
           </div>
         </motion.div>
@@ -86,17 +142,17 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
           className="mt-12 sm:mt-16 text-center"
         >
           <a
             href="mailto:fabien.trampont@gmail.com?subject=Discussion%20projet"
             className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-cinema-gold text-cinema-black font-medium tracking-wider uppercase text-xs sm:text-sm hover:bg-cinema-gold-light transition-all duration-300 min-h-[44px]"
-            aria-label="Envoyer un email pour discuter de votre projet"
+            aria-label={t('Envoyer un email pour discuter de votre projet', 'Send an email to discuss your project')}
           >
             <Mail size={16} aria-hidden="true" />
-            Discutons de votre projet
+            {t('Discutons de votre projet', "Let's discuss your project")}
           </a>
         </motion.div>
       </div>
