@@ -480,6 +480,105 @@ html[data-theme="light"]::after {
   );
 }
 
+/* ==========================================
+   GLITCH VHS / CORRUPTION VIDÉO
+   ========================================== */
+
+.glitch-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
+/* Lignes de scan VHS */
+.glitch-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(255, 255, 255, 0.03) 2px,
+    rgba(255, 255, 255, 0.03) 4px
+  );
+  animation: glitch-scanline 0.1s steps(2) infinite;
+}
+
+@keyframes glitch-scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Décalage RGB / Chromatic aberration */
+.glitch-rgb {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, rgba(255, 0, 0, 0.03) 33%, transparent 33%),
+    linear-gradient(90deg, transparent 66%, rgba(0, 255, 255, 0.03) 66%);
+  animation: glitch-rgb 0.15s steps(1) infinite;
+}
+
+@keyframes glitch-rgb {
+  0% { transform: translateX(-2px); }
+  25% { transform: translateX(2px); }
+  50% { transform: translateX(-1px); }
+  75% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
+/* Bande de corruption horizontale */
+.glitch-band {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(201, 169, 97, 0.15) 40%,
+    rgba(255, 255, 255, 0.2) 60%,
+    transparent 100%
+  );
+  animation: glitch-band 0.1s steps(3) infinite;
+  filter: blur(1px);
+}
+
+@keyframes glitch-band {
+  0% { transform: translateX(-100%) skewX(-5deg); }
+  100% { transform: translateX(100%) skewX(5deg); }
+}
+
+/* Noise burst */
+.glitch-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  animation: glitch-noise 0.1s steps(2) infinite;
+}
+
+@keyframes glitch-noise {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(1px, 1px); }
+}
+
+/* Désactiver les glitches si préférence reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .glitch-container {
+    display: none;
+  }
+}
+
 /* Marques de synchronisation / repères d'étalonnage */
 .sync-marks {
   position: fixed;
