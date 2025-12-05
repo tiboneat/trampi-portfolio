@@ -5,7 +5,6 @@ import About from '@/components/About'
 import Footer from '@/components/Footer'
 import Timecode from '@/components/Timecode'
 import SyncMarks from '@/components/SyncMarks'
-import GlitchEffect from '@/components/GlitchEffect'
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <Footer />
       <Timecode />
       <SyncMarks />
-      <GlitchEffect />
     </main>
   )
 }
