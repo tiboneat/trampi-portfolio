@@ -4,29 +4,33 @@ import { Sun, Moon } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
+  const [isDark, setIsDark] = useState(true)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light'
-    if (savedTheme) {
-      setTheme(savedTheme)
-      document.documentElement.classList.remove('dark', 'light')
-      document.documentElement.classList.add(savedTheme)
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('light')
-      document.documentElement.classList.remove('dark')
-      document.documentElement.classList.add('light')
+    // Vérifier si un thème est sauvegardé
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'light') {
+      setIsDark(false)
+      document.documentElement.setAttribute('data-theme', 'light')
+    } else {
+      setIsDark(true)
+      document.documentElement.setAttribute('data-theme', 'dark')
     }
   }, [])
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-    document.documentElement.classList.remove('dark', 'light')
-    document.documentElement.classList.add(newTheme)
+    const newIsDark = !isDark
+    setIsDark(newIsDark)
+    
+    if (newIsDark) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
   }
 
   if (!mounted) {
@@ -39,9 +43,9 @@ const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className="relative w-10 h-10 flex items-center justify-center bg-cinema-dark/50 backdrop-blur-sm border border-cinema-gold/30 rounded-sm hover:bg-cinema-gold/10 transition-all duration-300 min-w-[44px] min-h-[44px]"
-      aria-label={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+      aria-label={isDark ? 'Passer en mode clair' : 'Passer en mode sombre'}
     >
-      {theme === 'dark' ? (
+      {isDark ? (
         <Sun size={18} className="text-cinema-gold" />
       ) : (
         <Moon size={18} className="text-cinema-gold" />

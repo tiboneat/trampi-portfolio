@@ -145,14 +145,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className="scroll-smooth dark">
+    <html lang="fr" className="scroll-smooth" data-theme="dark">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${montserrat.variable} ${inter.variable} font-inter antialiased transition-colors duration-300 bg-cinema-black dark:bg-cinema-black light:bg-light-bg text-white dark:text-white light:text-light-text`}>
+      <body className={`${montserrat.variable} ${inter.variable} font-inter antialiased`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

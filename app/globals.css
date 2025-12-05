@@ -25,15 +25,20 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
-  .dark body, html.dark body {
-    @apply bg-cinema-black text-cinema-white;
+  /* Mode sombre (défaut) */
+  html[data-theme="dark"] body,
+  html:not([data-theme]) body {
+    background-color: #000000;
+    color: #F5F5F5;
   }
 
-  .light body, html.light body {
-    @apply bg-light-bg text-light-text;
+  /* Mode clair */
+  html[data-theme="light"] body {
+    background-color: #F8F6F1;
+    color: #1A1A1A;
   }
 
   @supports (-webkit-touch-callout: none) {
@@ -44,7 +49,8 @@
 
   /* Effet de grain de film sur tout le site - désactivé sur mobile et en mode clair */
   @media (min-width: 768px) {
-    html.dark body::before {
+    html[data-theme="dark"] body::before,
+    html:not([data-theme]) body::before {
       content: '';
       position: fixed;
       top: 0;
@@ -55,6 +61,10 @@
       opacity: 0.015;
       pointer-events: none;
       z-index: 9999;
+    }
+
+    html[data-theme="light"] body::before {
+      display: none;
     }
   }
 
@@ -435,5 +445,103 @@
     content: " (" attr(href) ")";
     font-size: 0.8em;
     color: #666;
+  }
+}
+
+/* ==========================================
+   MODE CLAIR - Surcharges globales
+   ========================================== */
+
+html[data-theme="light"] {
+  /* Header */
+  & header {
+    background-color: #F8F6F1 !important;
+  }
+
+  /* Navigation */
+  & nav {
+    &.bg-cinema-black\/90 {
+      background-color: rgba(248, 246, 241, 0.95) !important;
+    }
+  }
+
+  /* Sections */
+  & section {
+    transition: background-color 0.4s ease;
+  }
+
+  & .bg-cinema-dark {
+    background-color: #FFFFFF !important;
+  }
+
+  & .bg-cinema-black {
+    background-color: #F8F6F1 !important;
+  }
+
+  /* Textes */
+  & .text-white {
+    color: #1A1A1A !important;
+  }
+
+  & .text-white\/80,
+  & .text-white\/70,
+  & .text-white\/60,
+  & .text-white\/50,
+  & .text-white\/40 {
+    color: #666666 !important;
+  }
+
+  & .text-cinema-silver {
+    color: #1A1A1A !important;
+  }
+
+  & .text-cinema-silver\/70 {
+    color: #666666 !important;
+  }
+
+  /* Bordures */
+  & .border-white\/10,
+  & .border-white\/5 {
+    border-color: #E5E5E5 !important;
+  }
+
+  & .border-cinema-gold\/20 {
+    border-color: rgba(201, 169, 97, 0.3) !important;
+  }
+
+  /* Cards et backgrounds */
+  & .bg-cinema-dark\/30,
+  & .bg-cinema-dark\/50 {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  & .bg-black\/70,
+  & .bg-black\/50,
+  & .bg-black\/95,
+  & .bg-black\/80 {
+    background-color: rgba(248, 246, 241, 0.95) !important;
+  }
+
+  /* Modal */
+  & [role="dialog"] {
+    & > div {
+      background-color: #FFFFFF !important;
+    }
+  }
+
+  /* Scrollbar mode clair */
+  &::-webkit-scrollbar-track {
+    background: #F8F6F1 !important;
+  }
+
+  /* Footer */
+  & footer {
+    background-color: #F8F6F1 !important;
+    border-color: #E5E5E5 !important;
+  }
+
+  /* Film scanline - masquer en mode clair */
+  & .film-scanline {
+    display: none !important;
   }
 }
