@@ -37,7 +37,7 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
         <img
           src={project.poster}
           alt={`Affiche du film ${project.title}`}
-          className="w-full h-full object-contain bg-black transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
           decoding="async"
         />
@@ -101,11 +101,11 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
         </button>
 
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6">
-          <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-sm overflow-hidden border border-white/10 bg-black flex items-center justify-center">
+          <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-sm overflow-hidden border border-white/10">
             <img
               src={project.poster}
               alt={`Affiche du film ${project.title}`}
-              className="max-w-full max-h-full object-contain"
+              className="w-full h-full object-cover"
             />
           </div>
 
