@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Film, Award, X } from 'lucide-react'
+import { Film, Award, X, Play } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import projectsData from '@/data/projects.json'
 
@@ -25,6 +25,7 @@ interface Project {
   salesEn?: string
   year: number
   poster: string
+  trailer?: string
 }
 
 const ProjectCard = ({ project, onClick, lang }: { project: Project; onClick: () => void; lang: string }) => {
@@ -177,6 +178,23 @@ const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose
                 </div>
               )}
             </dl>
+
+            {/* Bouton Bande-annonce */}
+            {project.trailer && (
+              <div className="pt-4 mt-4 border-t border-white/10 dark:border-white/10 light:border-light-border">
+                <a
+                  href={project.trailer}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-cinema-gold text-cinema-black font-bold text-sm tracking-wide hover:bg-cinema-gold-light transition-colors rounded-sm min-h-[44px]"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={t(`Voir la bande-annonce de ${title}`, `Watch the trailer for ${title}`)}
+                >
+                  <Play size={16} fill="currentColor" aria-hidden="true" />
+                  {t('Bande-annonce', 'Trailer')}
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>

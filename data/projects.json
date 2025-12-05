@@ -14,7 +14,8 @@
       "sales": "Vendeur International : WTFilms",
       "salesEn": "International Sales: WTFilms",
       "year": 2026,
-      "poster": "/posters/grand ciel.webp"
+      "poster": "/posters/grand ciel.webp",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=300430.html"
     },
     {
       "id": "brule-le-sang",
@@ -31,7 +32,8 @@
       "sales": "Vendeur International : Urban Sales",
       "salesEn": "International Sales: Urban Sales",
       "year": 2025,
-      "poster": "/posters/Brule-le-sang_120x160_HD-scaled.jpg"
+      "poster": "/posters/Brule-le-sang_120x160_HD-scaled.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=288554.html"
     },
     {
       "id": "par-amour",
@@ -46,7 +48,8 @@
       "sales": "Vendeur International : Playtime",
       "salesEn": "International Sales: Playtime",
       "year": 2025,
-      "poster": "/posters/Par amour.jpg"
+      "poster": "/posters/Par amour.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=321707.html"
     },
     {
       "id": "six-jours",
@@ -60,7 +63,8 @@
       "distributor": "Vendeur International et Distribution France : SND",
       "distributorEn": "International Sales and French Distribution: SND",
       "year": 2025,
-      "poster": "/posters/6 jours.jpg"
+      "poster": "/posters/6 jours.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=321604.html"
     },
     {
       "id": "les-pistolets-en-plastique",
@@ -77,7 +81,8 @@
       "sales": "Vendeur International : Charades",
       "salesEn": "International Sales: Charades",
       "year": 2024,
-      "poster": "/posters/les pistolets en plastique.jpg"
+      "poster": "/posters/les pistolets en plastique.jpg",
+      "trailer": "https://www.allocine.fr/video/player_gen_cmedia=20603357&cfilm=306256.html"
     },
     {
       "id": "la-meilleure-version-de-moi-meme",
@@ -90,7 +95,8 @@
       "distributor": "Diffusion Canal+",
       "distributorEn": "Broadcast on Canal+",
       "year": 2022,
-      "poster": "/posters/la meilleure version de moi meme.webp"
+      "poster": "/posters/la meilleure version de moi meme.webp",
+      "trailer": "https://www.allocine.fr/series/ficheserie_gen_cserie=29436.html"
     }
   ],
   "other": [
