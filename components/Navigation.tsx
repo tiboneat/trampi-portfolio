@@ -11,9 +11,26 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Fermer le menu mobile quand on clique sur un lien
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false)
+  }
+
+  // Empêcher le scroll du body quand le menu mobile est ouvert
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   const navLinks = [
     { href: '#projects', label: 'Portfolio' },
@@ -28,62 +45,67 @@ const Navigation = () => {
           ? 'bg-cinema-black/90 backdrop-blur-md shadow-2xl border-b border-cinema-gold/20' 
           : 'bg-transparent'
       }`}
+      role="navigation"
+      aria-label="Navigation principale"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo - pas de cursor pointer */}
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="relative flex items-center justify-center w-10 h-10 border border-cinema-gold/50 rounded-sm">
-                <Film className="text-cinema-gold" size={20} />
-              </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-cinema-gold/50 rounded-sm">
+              <Film className="text-cinema-gold" size={16} aria-hidden="true" />
             </div>
-            <div className="hidden md:block">
-              <div className="text-sm tracking-[0.15em] text-cinema-gold font-light">
-                Fabien Trampont
-              </div>
-            </div>
+            <span className="text-xs sm:text-sm tracking-[0.1em] sm:tracking-[0.15em] text-cinema-gold font-light">
+              Fabien Trampont
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="relative text-white/80 hover:text-cinema-gold transition-colors duration-300 text-sm uppercase tracking-[0.15em] font-light group"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-px bg-cinema-gold group-hover:w-full transition-all duration-300"></span>
-              </a>
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="relative text-white/80 hover:text-cinema-gold transition-colors duration-300 text-sm uppercase tracking-[0.15em] font-light group py-2"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-px bg-cinema-gold group-hover:w-full transition-all duration-300" aria-hidden="true"></span>
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative w-10 h-10 flex items-center justify-center text-cinema-gold border border-cinema-gold/50 rounded-sm hover:bg-cinema-gold/10 transition-colors"
-            aria-label="Toggle menu"
+            className="md:hidden relative w-10 h-10 flex items-center justify-center text-cinema-gold border border-cinema-gold/50 rounded-sm hover:bg-cinema-gold/10 transition-colors min-w-[44px] min-h-[44px]"
+            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {isMobileMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-cinema-gold/20 bg-cinema-black/95 backdrop-blur-md">
-            <div className="flex flex-col space-y-4">
+          <div 
+            id="mobile-menu"
+            className="md:hidden fixed inset-0 top-16 bg-cinema-black/98 backdrop-blur-md z-40"
+          >
+            <ul className="flex flex-col items-center justify-center h-full space-y-8">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-white/80 hover:text-cinema-gold transition-colors duration-300 text-sm uppercase tracking-[0.15em] font-light py-2"
-                >
-                  {link.label}
-                </a>
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={handleLinkClick}
+                    className="text-white/80 hover:text-cinema-gold transition-colors duration-300 text-xl uppercase tracking-[0.2em] font-light py-4 px-8 block min-h-[44px]"
+                  >
+                    {link.label}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         )}
       </div>

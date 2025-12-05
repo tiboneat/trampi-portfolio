@@ -5,29 +5,33 @@ import { Mail, BookOpen } from 'lucide-react'
 
 const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-cinema-black relative overflow-hidden">
+    <section 
+      id="about" 
+      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black relative overflow-hidden"
+      aria-labelledby="about-title"
+    >
       <div className="max-w-4xl mx-auto relative z-10">
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-wide">
+          <h2 id="about-title" className="text-3xl sm:text-4xl md:text-5xl font-light mb-4 tracking-wide">
             <span className="text-cinema-gold">Qui je suis</span>
             <span className="text-white/50"> / </span>
             <span className="text-cinema-gold">Ma vision</span>
           </h2>
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto mt-6" />
-        </motion.div>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto mt-4 sm:mt-6" aria-hidden="true" />
+        </motion.header>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="space-y-6 text-white/80 text-lg leading-relaxed font-light"
+          className="space-y-4 sm:space-y-6 text-white/80 text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
         >
           <p>
             Je m'appelle <span className="text-cinema-gold">Fabien</span> et je suis directeur de post-production depuis 2016.
@@ -60,17 +64,17 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 pt-12 border-t border-white/10"
+          className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-white/10"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <BookOpen className="text-cinema-gold" size={24} />
-            <h3 className="text-xl font-light text-white">Enseignement & Interventions</h3>
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            <BookOpen className="text-cinema-gold" size={20} aria-hidden="true" />
+            <h3 className="text-lg sm:text-xl font-light text-white">Enseignement & Interventions</h3>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {['ESRA', 'CinéFabrique', 'Futurae'].map((school) => (
               <span
                 key={school}
-                className="px-5 py-2 bg-cinema-dark/50 border border-cinema-gold/30 text-cinema-gold text-sm tracking-wider"
+                className="px-4 sm:px-5 py-2 bg-cinema-dark/50 border border-cinema-gold/30 text-cinema-gold text-xs sm:text-sm tracking-wider"
               >
                 {school}
               </span>
@@ -84,13 +88,14 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center"
         >
           <a
             href="mailto:fabien.trampont@gmail.com?subject=Discussion%20projet"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-cinema-gold text-cinema-black font-medium tracking-wider uppercase text-sm hover:bg-cinema-gold-light transition-all duration-300"
+            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-cinema-gold text-cinema-black font-medium tracking-wider uppercase text-xs sm:text-sm hover:bg-cinema-gold-light transition-all duration-300 min-h-[44px]"
+            aria-label="Envoyer un email pour discuter de votre projet"
           >
-            <Mail size={18} />
+            <Mail size={16} aria-hidden="true" />
             Discutons de votre projet
           </a>
         </motion.div>

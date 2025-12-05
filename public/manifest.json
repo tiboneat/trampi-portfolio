@@ -1,0 +1,22 @@
+{
+  "name": "Fabien Trampont - Directeur de Post-Production",
+  "short_name": "F. Trampont",
+  "description": "Portfolio de Fabien Trampont, directeur de post-production cinéma",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#C9A961",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
