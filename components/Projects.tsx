@@ -30,22 +30,21 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
       className="group cursor-pointer relative"
     >
       <div className="relative h-[480px] overflow-hidden rounded-sm border border-white/10 bg-cinema-dark">
-        {/* Image de l'affiche */}
         <img
           src={project.poster}
           alt={`Affiche de ${project.title}`}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-500" />
+        {/* Overlay toujours visible mais plus fort au hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70" />
         
         {/* Badge année */}
         <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm px-3 py-1 border border-cinema-gold/30">
           <span className="text-cinema-gold text-sm font-medium">{project.year}</span>
         </div>
 
-        {/* Infos en bas */}
+        {/* Infos toujours visibles */}
         <div className="absolute bottom-0 left-0 right-0 p-5">
           <div className="flex items-center gap-2 text-cinema-gold/80 mb-2">
             <Film size={14} />
@@ -55,9 +54,9 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
           <p className="text-cinema-gold-light/80 text-sm">{project.director}</p>
           
           {project.festival && (
-            <div className="flex items-start gap-2 text-white/60 text-xs mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="flex items-start gap-2 text-white/60 text-xs mt-3">
               <Award size={12} className="mt-0.5 flex-shrink-0 text-cinema-gold" />
-              <span className="line-clamp-2">{project.festival}</span>
+              <span className="line-clamp-2">{project.festival.replace(/\d{4}/g, '').replace(/\s+/g, ' ').trim()}</span>
             </div>
           )}
         </div>
@@ -67,6 +66,9 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
 }
 
 const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => {
+  // Nettoyer le festival (enlever l'année)
+  const cleanFestival = project.festival ? project.festival.replace(/\d{4}/g, '').replace(/\s+/g, ' ').trim() : null
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -90,7 +92,6 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
         </button>
 
         <div className="grid md:grid-cols-2 gap-6 p-6">
-          {/* Affiche */}
           <div className="relative h-[500px] rounded-sm overflow-hidden border border-white/10">
             <img
               src={project.poster}
@@ -99,7 +100,6 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
             />
           </div>
 
-          {/* Détails */}
           <div className="space-y-5 py-4">
             <div>
               <h2 className="text-3xl font-bold text-white mb-2 tracking-wide">{project.title}</h2>
@@ -122,10 +122,10 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
                   <span className="text-white/80">{project.producer}</span>
                 </div>
               )}
-              {project.festival && (
+              {cleanFestival && (
                 <div className="flex gap-3">
-                  <span className="text-cinema-gold w-28 flex-shrink-0">Festivals</span>
-                  <span className="text-white/80">{project.festival}</span>
+                  <span className="text-cinema-gold w-28 flex-shrink-0">Festival</span>
+                  <span className="text-white/80">{cleanFestival}</span>
                 </div>
               )}
               {project.distributor && (
@@ -134,25 +134,12 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
                   <span className="text-white/80">{project.distributor}</span>
                 </div>
               )}
-              {project.release && (
-                <div className="flex gap-3">
-                  <span className="text-cinema-gold w-28 flex-shrink-0">Sortie</span>
-                  <span className="text-white/80">{project.release}</span>
-                </div>
-              )}
               {project.sales && (
                 <div className="flex gap-3">
                   <span className="text-cinema-gold w-28 flex-shrink-0">Ventes</span>
                   <span className="text-white/80">{project.sales}</span>
                 </div>
               )}
-            </div>
-
-            <div className="pt-4 mt-4 border-t border-white/10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/30 border border-cinema-gold/30">
-                <Award size={14} className="text-cinema-gold" />
-                <span className="text-cinema-gold text-xs uppercase tracking-wider">Post-Production : Fabien Trampont</span>
-              </div>
             </div>
           </div>
         </div>
@@ -237,7 +224,6 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Modal */}
       <AnimatePresence>
         {selectedProject && (
           <ProjectModal

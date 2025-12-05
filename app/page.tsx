@@ -1,9 +1,7 @@
 import Navigation from '@/components/Navigation'
 import Header from '@/components/Header'
-import About from '@/components/About'
 import Projects from '@/components/Projects'
-import Experience from '@/components/Experience'
-import Formation from '@/components/Formation'
+import About from '@/components/About'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -12,11 +10,8 @@ export default function Home() {
       <Navigation />
       <Header />
       <Projects />
-      <Experience />
       <About />
-      <Formation />
       <Footer />
     </main>
   )
 }
-

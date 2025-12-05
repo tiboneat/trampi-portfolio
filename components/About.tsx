@@ -1,109 +1,98 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Film, Users, Award, BookOpen, Check } from 'lucide-react'
+import { Mail, BookOpen } from 'lucide-react'
 
 const About = () => {
-  const stats = [
-    { icon: Film, value: '30+', label: 'Films & Séries' },
-    { icon: Award, value: '8', label: 'Années d\'expérience' },
-    { icon: Users, label: 'Management d\'équipes' },
-    { icon: BookOpen, label: 'Enseignement' },
-  ]
-
-  const skills = [
-    'Gestion des enjeux artistiques, techniques et budgétaires',
-    'Pilotage complet de la post-production : planning, organisation, workflows et livraisons',
-    'Recrutement, management et coordination d\'équipes artistiques et techniques',
-    'Enseignement et formation : ESRA, CinéFabrique, Futurae',
-  ]
-
   return (
-    <section id="about" className="section-padding bg-cinema-black relative overflow-hidden">
-      {/* Ornement de fond */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full opacity-5">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-cinema-gold rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-64 h-64 bg-cinema-gold rounded-full filter blur-3xl"></div>
-      </div>
-      
-      <div className="container-custom relative z-10">
+    <section id="about" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-cinema-black relative overflow-hidden">
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
-          <div className="flex items-center justify-center mb-6">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent to-cinema-gold"></div>
-            <span className="mx-4 text-cinema-gold text-sm uppercase tracking-[0.3em]">Profil</span>
-            <div className="h-px w-20 bg-gradient-to-l from-transparent to-cinema-gold"></div>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-wide">
-            <span className="text-cinema-white">À </span>
-            <span className="text-gradient-gold">propos</span>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-wide">
+            <span className="text-cinema-gold">Qui je suis</span>
+            <span className="text-white/50"> / </span>
+            <span className="text-cinema-gold">Ma vision</span>
           </h2>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto mt-6" />
         </motion.div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center p-8 bg-cinema-dark/50 backdrop-blur-sm border-cinema rounded-sm hover-cinema group"
-            >
-              <stat.icon className="w-10 h-10 mx-auto mb-4 text-cinema-gold group-hover:text-cinema-gold-light transition-colors" />
-              {stat.value && (
-                <div className="text-4xl font-bold text-cinema-white mb-2 font-cinzel">{stat.value}</div>
-              )}
-              <div className="text-cinema-silver text-sm uppercase tracking-wider">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="space-y-6 text-white/80 text-lg leading-relaxed font-light"
         >
-          <div className="bg-cinema-dark/30 backdrop-blur-sm border-cinema rounded-sm p-10 md:p-14">
-            <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-4 text-cinema-gold tracking-wide font-cinzel">
-                Directeur de post-production depuis 2016
-              </h3>
-              <div className="h-px w-24 bg-gradient-to-r from-cinema-gold to-transparent mb-6"></div>
-              <p className="text-lg text-cinema-white leading-relaxed">
-                Spécialisé dans la supervision de films et séries à haute valeur artistique, 
-                je pilote l'intégralité du processus de post-production pour garantir l'excellence 
-                technique et la vision créative de chaque projet.
-              </p>
-            </div>
+          <p>
+            Je m'appelle <span className="text-cinema-gold">Fabien</span> et je suis directeur de post-production depuis 2016.
+          </p>
+          
+          <p>
+            Porté par une vraie passion pour l'image et les récits, j'accompagne réalisateurs et producteurs sur des films et séries qui demandent un accompagnement artistique et technique rigoureux.
+          </p>
+          
+          <p>
+            <span className="text-cinema-gold">Mon rôle :</span> garantir une post-production fluide, maîtrisée et pleinement fidèle à la vision créative du film.
+          </p>
+          
+          <p>
+            J'anticipe les enjeux artistiques, techniques et budgétaires, je structure les workflows, j'organise les plannings et je coordonne les livraisons pour que chaque étape se déroule avec clarté et efficacité.
+          </p>
+          
+          <p className="italic text-cinema-gold/80">
+            Pour moi, la post-production doit être un espace créatif et serein.
+          </p>
+          
+          <p>
+            Un moment où le film ou la série se précise, où les intentions s'affinent, et où chacun peut travailler dans la même direction — avec précision, confiance et plaisir.
+          </p>
+        </motion.div>
 
-            <div className="space-y-5">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-4 group"
-                >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-sm border-cinema flex items-center justify-center mt-1 group-hover:bg-cinema-gold/10 transition-colors">
-                    <Check className="w-4 h-4 text-cinema-gold" />
-                  </div>
-                  <p className="text-cinema-silver leading-relaxed">{skill}</p>
-                </motion.div>
-              ))}
-            </div>
+        {/* Enseignement */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 pt-12 border-t border-white/10"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <BookOpen className="text-cinema-gold" size={24} />
+            <h3 className="text-xl font-light text-white">Enseignement & Interventions</h3>
           </div>
+          <div className="flex flex-wrap gap-3">
+            {['ESRA', 'CinéFabrique', 'Futurae'].map((school) => (
+              <span
+                key={school}
+                className="px-5 py-2 bg-cinema-dark/50 border border-cinema-gold/30 text-cinema-gold text-sm tracking-wider"
+              >
+                {school}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Bouton contact */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <a
+            href="mailto:fabien.trampont@gmail.com?subject=Discussion%20projet"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-cinema-gold text-cinema-black font-medium tracking-wider uppercase text-sm hover:bg-cinema-gold-light transition-all duration-300"
+          >
+            <Mail size={18} />
+            Discutons de votre projet
+          </a>
         </motion.div>
       </div>
     </section>
