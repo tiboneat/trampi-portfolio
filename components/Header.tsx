@@ -1,13 +1,12 @@
 'use client'
 
-import { Mail, Phone, MapPin, Film, Calendar, Award, Smile } from 'lucide-react'
+import { Mail, Phone, MapPin, Film, Calendar, Award } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const Header = () => {
   const stats = [
     { icon: Calendar, value: '10', label: "années d'expérience" },
     { icon: Film, value: '40', label: 'Films et séries' },
-    { icon: Smile, value: '🎬', label: 'Un nombre incalculable de sélections en festivals' },
     { icon: Award, label: 'Enseignement' },
   ]
 
@@ -71,16 +70,14 @@ const Header = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto"
         >
           {stats.map((stat, index) => (
             <div
               key={index}
               className="text-center p-4 bg-cinema-dark/30 backdrop-blur-sm border border-white/5 rounded-sm"
             >
-              {stat.value === '🎬' ? (
-                <div className="text-3xl mb-2">{stat.value}</div>
-              ) : stat.value ? (
+              {stat.value ? (
                 <div className="text-3xl font-light text-cinema-gold mb-1">{stat.value}</div>
               ) : (
                 <stat.icon className="w-8 h-8 mx-auto mb-2 text-cinema-gold" />
