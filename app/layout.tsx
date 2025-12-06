@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Montserrat, Inter } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/context/LanguageContext'
+import projectsData from '@/data/projects.json'
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -101,8 +102,29 @@ export const metadata: Metadata = {
   category: 'entertainment',
 }
 
-// Schema.org JSON-LD
-const jsonLd = {
+// Générer les données schema.org pour chaque film
+const allProjects = [...projectsData.featured, ...projectsData.other]
+
+const movieSchemas = allProjects.map((project, index) => ({
+  '@type': 'Movie',
+  '@id': `https://trampi.vercel.app/#movie-${project.id}`,
+  position: index + 1,
+  name: project.title,
+  datePublished: project.year.toString(),
+  director: {
+    '@type': 'Person',
+    name: project.director
+  },
+  productionCompany: project.producer ? {
+    '@type': 'Organization',
+    name: project.producer
+  } : undefined,
+  image: `https://trampi.vercel.app${project.poster}`,
+  ...(project.festival && { award: project.festival.replace(/\d{4}/g, '').trim() })
+}))
+
+// Schema.org JSON-LD - Person
+const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Fabien Trampont',
@@ -139,6 +161,16 @@ const jsonLd = {
   ]
 }
 
+// Schema.org JSON-LD - ItemList de tous les films
+const filmographyJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Filmographie - Fabien Trampont',
+  description: 'Films et séries supervisés par Fabien Trampont, directeur de post-production',
+  numberOfItems: allProjects.length,
+  itemListElement: movieSchemas
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -147,9 +179,15 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth" data-theme="dark">
       <head>
+        {/* Schema.org - Personne (Fabien Trampont) */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {/* Schema.org - Filmographie (ItemList de tous les films) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(filmographyJsonLd) }}
         />
       </head>
       <body className={`${montserrat.variable} ${inter.variable} font-inter antialiased`}>

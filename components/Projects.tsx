@@ -28,6 +28,39 @@ interface Project {
   trailer?: string
 }
 
+// Générer le schema.org JSON-LD pour un film
+const generateMovieSchema = (project: Project) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Movie',
+  name: project.title,
+  alternateName: project.titleEn,
+  datePublished: project.year.toString(),
+  director: {
+    '@type': 'Person',
+    name: project.director
+  },
+  productionCompany: project.producer ? {
+    '@type': 'Organization',
+    name: project.producer
+  } : undefined,
+  image: `https://trampi.vercel.app${project.poster}`,
+  ...(project.festival && { 
+    award: project.festival.replace(/\d{4}/g, '').trim() 
+  }),
+  ...(project.distributor && {
+    distributor: {
+      '@type': 'Organization',
+      name: project.distributor.replace(/Distribution France\s*:\s*/, '').replace(/Diffusion\s*/, '')
+    }
+  }),
+  contributor: {
+    '@type': 'Person',
+    name: 'Fabien Trampont',
+    jobTitle: 'Directeur de Post-Production',
+    url: 'https://trampi.vercel.app'
+  }
+})
+
 const ProjectCard = ({ project, onClick, lang }: { project: Project; onClick: () => void; lang: string }) => {
   const title = lang === 'en' && project.titleEn ? project.titleEn : project.title
   const type = lang === 'en' && project.typeEn ? project.typeEn : project.type
@@ -230,12 +263,25 @@ const Projects = () => {
     },
   }
 
+  // Tous les projets pour les données structurées
+  const allProjects = [...projectsData.featured, ...projectsData.other] as Project[]
+
   return (
     <section 
       id="projects" 
       className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-white relative overflow-hidden transition-colors duration-300"
       aria-labelledby="portfolio-title"
     >
+      {/* Schema.org JSON-LD pour chaque film */}
+      {allProjects.map((project) => (
+        <script
+          key={`schema-${project.id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ 
+            __html: JSON.stringify(generateMovieSchema(project)) 
+          }}
+        />
+      ))}
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.header
           initial={{ opacity: 0, y: 40 }}
