@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, Users, Handshake, PiggyBank, Settings, GraduationCap } from 'lucide-react'
+import { Briefcase, Users, Network, TrendingUp, Settings, GraduationCap } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 const Services = () => {
@@ -25,7 +25,7 @@ const Services = () => {
       ),
     },
     {
-      icon: Handshake,
+      icon: Network,
       title: t('Supervision des partenaires et prestataires', 'Partner and vendor supervision'),
       description: t(
         'Je coordonne l\'ensemble des partenaires (laboratoires, studios VFX, techniciens) en négociant, anticipant et assurant un suivi rigoureux de chaque étape.',
@@ -33,7 +33,7 @@ const Services = () => {
       ),
     },
     {
-      icon: PiggyBank,
+      icon: TrendingUp,
       title: t('Optimisation budgétaire et stratégique', 'Budget and strategic optimization'),
       description: t(
         'J\'analyse les besoins, propose des solutions pertinentes et identifie les pistes d\'optimisation, tout en respectant l\'ambition artistique et la cohérence technique. Je sécurise le suivi budgétaire jusqu\'aux deliveries France et international.',
