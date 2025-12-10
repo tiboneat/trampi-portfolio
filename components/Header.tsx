@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <header 
-      className="relative min-h-[100svh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden bg-cinema-black dark:bg-cinema-black light:bg-light-bg transition-colors duration-300"
+      className="relative min-h-[85svh] sm:min-h-[75vh] flex items-center justify-center overflow-hidden bg-cinema-black dark:bg-cinema-black light:bg-light-bg transition-colors duration-300"
       role="banner"
       aria-label="Introduction Fabien Trampont"
     >
