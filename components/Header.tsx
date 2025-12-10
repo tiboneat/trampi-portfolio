@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin, Film, Calendar, Wrench } from 'lucide-react'
+import { Mail, Phone, MapPin, Film, Calendar, Wrench, ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import AnimatedCounter from './AnimatedCounter'
@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <header 
-      className="relative min-h-[85svh] sm:min-h-[75vh] flex items-center justify-center overflow-hidden bg-cinema-black dark:bg-cinema-black light:bg-light-bg transition-colors duration-300"
+      className="relative min-h-[100svh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-cinema-black dark:bg-cinema-black light:bg-light-bg transition-colors duration-300"
       role="banner"
       aria-label="Introduction Fabien Trampont"
     >
@@ -171,6 +171,26 @@ const Header = () => {
           </div>
         </motion.address>
       </motion.div>
+
+      {/* Indicateur de scroll */}
+      <motion.a
+        href="#projects"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cinema-gold/60 hover:text-cinema-gold transition-colors cursor-pointer"
+        aria-label={t('Voir le portfolio', 'View portfolio')}
+      >
+        <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-light">
+          {t('Découvrir', 'Discover')}
+        </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown size={24} />
+        </motion.div>
+      </motion.a>
 
       <div className="film-scanline" aria-hidden="true"></div>
     </header>
