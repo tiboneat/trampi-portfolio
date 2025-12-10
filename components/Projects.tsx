@@ -371,7 +371,7 @@ const Projects = () => {
           >
             {showAllProjects 
               ? t('Voir moins', 'Show less') 
-              : t(`Voir les ${projectsData.other.length} autres projets`, `View ${projectsData.other.length} more projects`)
+              : t('Voir les autres projets', 'View more projects')
             }
           </button>
         </motion.div>

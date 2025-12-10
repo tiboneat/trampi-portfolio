@@ -1,8 +1,9 @@
 'use client'
 
-import { Mail, Phone, MapPin, Film, Calendar, Award, Users, Sparkles } from 'lucide-react'
+import { Mail, Phone, MapPin, Film, Calendar, Wrench } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
+import AnimatedCounter from './AnimatedCounter'
 
 const Header = () => {
   const { t } = useLanguage()
@@ -10,9 +11,7 @@ const Header = () => {
   const stats = [
     { icon: Calendar, value: '10', label: t("années d'expérience", "years of experience") },
     { icon: Film, value: '40', label: t('Films et séries', 'Films and series') },
-    { icon: Sparkles, value: '😉', label: t('Un nombre incalculable de sélections en festivals', 'Countless festival selections'), isEmoji: true },
-    { icon: Users, label: t("Management d'équipes", "Team management") },
-    { icon: Award, label: t('Enseignement', 'Teaching') },
+    { icon: Wrench, label: t('Un nombre incalculable de problèmes réglés', 'Countless problems solved'), isCounter: true },
   ]
 
   // Animation variants pour des entrées plus fluides
@@ -74,14 +73,14 @@ const Header = () => {
           {/* Nom */}
           <motion.h1 
             variants={itemVariants}
-            className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-silver dark:text-cinema-silver light:text-light-text uppercase"
+            className="text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-silver dark:text-cinema-silver light:text-light-text uppercase font-gt-america font-light"
           >
             Fabien Trampont
           </motion.h1>
 
           {/* Titre sur 3 lignes */}
           <motion.div variants={itemVariants} className="relative inline-block mb-4 sm:mb-6">
-            <p className="relative text-2xl sm:text-3xl md:text-4xl text-cinema-gold font-light tracking-[0.1em] sm:tracking-[0.15em] uppercase leading-relaxed">
+            <p className="relative text-2xl sm:text-3xl md:text-4xl text-cinema-gold tracking-[0.1em] sm:tracking-[0.15em] uppercase leading-relaxed font-gt-america font-light">
               {t('Directeur', 'Post-Production')}
               <br />
               <span className="text-xl sm:text-2xl md:text-3xl">{t('de', '')}</span>
@@ -101,8 +100,8 @@ const Header = () => {
             className="text-sm sm:text-base md:text-lg text-cinema-silver dark:text-cinema-silver light:text-light-text-muted max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
           >
             {t(
-              'Rendre la post-production fluide, sereine et fidèle à la vision du projet',
-              'Making post-production smooth, serene and true to the project\'s vision'
+              'Anticiper, organiser, livrer : une post-production parfaitement maîtrisée',
+              'Anticipate, organize, deliver: perfectly mastered post-production'
             )}
           </motion.p>
         </motion.div>
@@ -110,7 +109,7 @@ const Header = () => {
         {/* Stats */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-4xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-3xl mx-auto"
           role="list"
           aria-label={t('Statistiques clés', 'Key statistics')}
         >
@@ -127,8 +126,8 @@ const Header = () => {
               className="text-center p-3 sm:p-4 bg-cinema-dark/30 dark:bg-cinema-dark/30 light:bg-white/50 backdrop-blur-sm border border-white/5 dark:border-white/5 light:border-light-border rounded-sm"
               role="listitem"
             >
-              {stat.isEmoji ? (
-                <div className="text-xl sm:text-2xl mb-1">{stat.value}</div>
+              {stat.isCounter ? (
+                <AnimatedCounter />
               ) : stat.value ? (
                 <div className="text-xl sm:text-2xl md:text-3xl font-light text-cinema-gold mb-1">{stat.value}</div>
               ) : (

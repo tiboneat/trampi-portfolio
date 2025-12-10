@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, BookOpen } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 const About = () => {
@@ -46,8 +46,6 @@ const About = () => {
         >
           <h2 id="about-title" className="text-3xl sm:text-4xl md:text-5xl font-light mb-4 tracking-wide">
             <span className="text-cinema-gold">{t('Qui je suis', 'About me')}</span>
-            <span className="text-white/50"> / </span>
-            <span className="text-cinema-gold">{t('Ma vision', 'My vision')}</span>
           </h2>
           <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto mt-4 sm:mt-6" aria-hidden="true" />
         </motion.header>
@@ -106,36 +104,6 @@ const About = () => {
               "A time when the film or series takes shape, intentions are refined, and everyone can work in the same direction — with precision, confidence and enjoyment."
             )}
           </motion.p>
-        </motion.div>
-
-        {/* Enseignement */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          viewport={{ once: true }}
-          className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-white/10 dark:border-white/10 light:border-light-border"
-        >
-          <div className="flex items-center gap-3 mb-4 sm:mb-6">
-            <BookOpen className="text-cinema-gold" size={20} aria-hidden="true" />
-            <h3 className="text-lg sm:text-xl font-light text-white dark:text-white light:text-light-text">
-              {t('Enseignement & Interventions', 'Teaching & Lectures')}
-            </h3>
-          </div>
-          <div className="flex flex-wrap gap-2 sm:gap-3">
-            {['ESRA', 'CinéFabrique', 'Futurae'].map((school, index) => (
-              <motion.span
-                key={school}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="px-4 sm:px-5 py-2 bg-cinema-dark/50 dark:bg-cinema-dark/50 light:bg-white border border-cinema-gold/30 text-cinema-gold text-xs sm:text-sm tracking-wider"
-              >
-                {school}
-              </motion.span>
-            ))}
-          </div>
         </motion.div>
 
         {/* Bouton contact */}

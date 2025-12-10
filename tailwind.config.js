@@ -30,6 +30,7 @@ module.exports = {
         'inter': ['Inter', 'sans-serif'],
         'cinzel': ['Cinzel', 'serif'],
         'playfair': ['Playfair Display', 'serif'],
+        'gt-america': ['GT America', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in-out',

@@ -36,7 +36,8 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '#projects', label: t('Portfolio', 'Portfolio') },
-    { href: '#about', label: t('Qui je suis / Ma vision', 'About / Vision') },
+    { href: '#services', label: t('Services', 'Services') },
+    { href: '#about', label: t('Qui je suis', 'About') },
     { href: '#contact', label: 'Contact' },
   ]
 
