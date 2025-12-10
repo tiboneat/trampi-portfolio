@@ -154,7 +154,7 @@ const Footer = () => {
           variants={itemVariants}
           className="pt-6 sm:pt-8 border-t border-white/10 dark:border-white/10 light:border-light-border text-center text-white/40 dark:text-white/40 light:text-light-text-muted text-xs sm:text-sm"
         >
-          <p>© {currentYear} Fabien Trampont — {t('Directeur de Post-Production', 'Post-Production Director')}</p>
+          <p>© {currentYear} Fabien Trampont — {t('Directeur de Post-Production', 'Post-Production Supervisor')}</p>
         </motion.div>
       </motion.div>
     </footer>

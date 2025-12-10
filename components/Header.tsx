@@ -85,7 +85,7 @@ const Header = () => {
               <br />
               <span className="text-xl sm:text-2xl md:text-3xl">{t('de', '')}</span>
               {t('de', '') && <br />}
-              {t('Post-Production', 'Director')}
+              {t('Post-Production', 'Supervisor')}
             </p>
           </motion.div>
 
