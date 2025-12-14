@@ -3,6 +3,7 @@
     {
       "id": "grand-ciel",
       "title": "GRAND CIEL",
+      "titleEn": "THE SITE",
       "director": "Akihiro Hata",
       "type": "Long métrage",
       "typeEn": "Feature film",
@@ -20,7 +21,7 @@
     {
       "id": "brule-le-sang",
       "title": "BRÛLE LE SANG",
-      "titleEn": "BURN THE BLOOD",
+      "titleEn": "IN THE NAME OF BLOOD",
       "director": "Akaki Popkhadze",
       "type": "Long métrage",
       "typeEn": "Feature film",
@@ -38,7 +39,7 @@
     {
       "id": "par-amour",
       "title": "PAR AMOUR",
-      "titleEn": "FOR LOVE",
+      "titleEn": "CALL OF WATER",
       "director": "Elise Otzenberger",
       "type": "Long métrage",
       "typeEn": "Feature film",
@@ -232,7 +233,7 @@
     {
       "id": "le-pion-du-general",
       "title": "LE PION DU GÉNÉRAL",
-      "titleEn": "THE GENERAL'S PAWN",
+      "titleEn": "AUTOBIOGRAPHY",
       "director": "Makbul Mubarak",
       "type": "Long métrage",
       "typeEn": "Feature film",
@@ -265,7 +266,6 @@
     {
       "id": "carrement-craignos",
       "title": "CARRÉMENT CRAIGNOS",
-      "titleEn": "TOTALLY LAME",
       "director": "Jean-Pascal Zadi",
       "type": "Série",
       "typeEn": "Series",
@@ -309,7 +309,7 @@
     {
       "id": "reves-de-jeunesse",
       "title": "RÊVES DE JEUNESSE",
-      "titleEn": "DREAMS OF YOUTH",
+      "titleEn": "AS HAPPY AS POSSIBLE",
       "director": "Alain Raoust",
       "type": "Long métrage",
       "typeEn": "Feature film",
@@ -364,7 +364,7 @@
     {
       "id": "lautre-continent",
       "title": "L'AUTRE CONTINENT",
-      "titleEn": "THE OTHER CONTINENT",
+      "titleEn": "TERRITORY OF LOVE",
       "director": "Romain Cogitore",
       "type": "Long métrage",
       "typeEn": "Feature film",
@@ -443,7 +443,7 @@
     {
       "id": "apres-la-guerre",
       "title": "APRÈS LA GUERRE",
-      "titleEn": "AFTER THE WAR",
+      "titleEn": "DOPO LA GUERRA",
       "director": "Annarita Zambrano",
       "type": "Long métrage",
       "typeEn": "Feature film",
@@ -475,7 +475,7 @@
     {
       "id": "droles-d-oiseaux",
       "title": "DRÔLES D'OISEAUX",
-      "titleEn": "FUNNY BIRDS",
+      "titleEn": "STRANGE BIRDS",
       "director": "Elise Girard",
       "type": "Long métrage",
       "typeEn": "Feature film",

@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Projects from '@/components/Projects'
 import Services from '@/components/Services'
 import About from '@/components/About'
+import Testimonials from '@/components/Testimonials'
 import Footer from '@/components/Footer'
 import Timecode from '@/components/Timecode'
 import SyncMarks from '@/components/SyncMarks'
@@ -15,6 +16,7 @@ export default function Home() {
       <Projects />
       <About />
       <Services />
+      <Testimonials />
       <Footer />
       <Timecode />
       <SyncMarks />

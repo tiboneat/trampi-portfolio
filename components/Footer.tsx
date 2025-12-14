@@ -40,17 +40,17 @@ const Footer = () => {
       role="contentinfo"
     >
       <motion.div 
-        className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 sm:py-16"
+        className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Contact */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-base sm:text-lg font-light mb-4 sm:mb-6 text-cinema-gold tracking-wider">Contact</h3>
-            <address className="space-y-3 sm:space-y-4 not-italic">
+            <h3 className="text-sm sm:text-base font-light mb-3 sm:mb-4 text-cinema-gold tracking-wider">Contact</h3>
+            <address className="space-y-2 sm:space-y-3 not-italic">
               <a
                 href="mailto:fabien.trampont@gmail.com"
                 className="flex items-center gap-3 text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px]"
@@ -76,8 +76,8 @@ const Footer = () => {
 
           {/* Navigation */}
           <motion.nav variants={itemVariants} aria-label={t('Navigation du pied de page', 'Footer navigation')}>
-            <h3 className="text-base sm:text-lg font-light mb-4 sm:mb-6 text-cinema-gold tracking-wider">Navigation</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="text-sm sm:text-base font-light mb-3 sm:mb-4 text-cinema-gold tracking-wider">Navigation</h3>
+            <ul className="space-y-1 sm:space-y-2">
               <li>
                 <a
                   href="#projects"
@@ -115,10 +115,10 @@ const Footer = () => {
 
           {/* Liens utiles */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-base sm:text-lg font-light mb-4 sm:mb-6 text-cinema-gold tracking-wider">
+            <h3 className="text-sm sm:text-base font-light mb-3 sm:mb-4 text-cinema-gold tracking-wider">
               {t('Liens utiles', 'Useful links')}
             </h3>
-            <ul className="space-y-3 sm:space-y-4">
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <a
                   href="https://www.imdb.com/fr/name/nm8268744/"
@@ -152,7 +152,7 @@ const Footer = () => {
         {/* Copyright */}
         <motion.div 
           variants={itemVariants}
-          className="pt-6 sm:pt-8 border-t border-white/10 dark:border-white/10 light:border-light-border text-center text-white/40 dark:text-white/40 light:text-light-text-muted text-xs sm:text-sm"
+          className="pt-4 sm:pt-6 border-t border-white/10 dark:border-white/10 light:border-light-border text-center text-white/40 dark:text-white/40 light:text-light-text-muted text-xs"
         >
           <p>© {currentYear} Fabien Trampont — {t('Directeur de Post-Production', 'Post-Production Supervisor')}</p>
         </motion.div>
