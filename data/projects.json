@@ -15,7 +15,7 @@
       "sales": "Vendeur International : WTFilms",
       "salesEn": "International Sales: WTFilms",
       "year": 2026,
-      "poster": "/posters/grand ciel.webp",
+      "poster": "/posters/grand-ciel.png",
       "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=300430.html"
     },
     {
@@ -49,7 +49,7 @@
       "sales": "Vendeur International : Playtime",
       "salesEn": "International Sales: Playtime",
       "year": 2025,
-      "poster": "/posters/Par amour.jpg",
+      "poster": "/posters/par-amour.png",
       "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=321707.html"
     },
     {
@@ -82,7 +82,7 @@
       "sales": "Vendeur International : Charades",
       "salesEn": "International Sales: Charades",
       "year": 2024,
-      "poster": "/posters/les pistolets en plastique.jpg",
+      "poster": "/posters/les-pistolets-en-plastique.png",
       "trailer": "https://www.allocine.fr/video/player_gen_cmedia=20603357&cfilm=306256.html"
     },
     {
@@ -96,7 +96,7 @@
       "distributor": "Diffusion Canal+",
       "distributorEn": "Broadcast on Canal+",
       "year": 2022,
-      "poster": "/posters/la meilleure version de moi meme.webp",
+      "poster": "/posters/la-meilleure-version.png",
       "trailer": "https://www.allocine.fr/series/ficheserie_gen_cserie=29436.html"
     }
   ],
@@ -181,7 +181,7 @@
       "sales": "Vendeur International : Cercamon",
       "salesEn": "International Sales: Cercamon",
       "year": 2023,
-      "poster": "/posters/Un Varon.jpg"
+      "poster": "/posters/un-varon.png"
     },
     {
       "id": "pulse",
@@ -304,7 +304,7 @@
       "sales": "Vendeur International : Films Boutique",
       "salesEn": "International Sales: Films Boutique",
       "year": 2020,
-      "poster": "/posters/abou leila.jpg"
+      "poster": "/posters/abou-leila.png"
     },
     {
       "id": "reves-de-jeunesse",

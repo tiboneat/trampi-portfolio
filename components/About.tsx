@@ -33,7 +33,7 @@ const About = () => {
   return (
     <section 
       id="about" 
-      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black dark:bg-cinema-black light:bg-light-bg relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black dark:bg-cinema-black light:bg-light-bg relative overflow-hidden transition-colors duration-300"
       aria-labelledby="about-title"
     >
       <div className="max-w-5xl mx-auto relative z-10">
@@ -42,7 +42,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12"
+          className="text-center mb-6 sm:mb-8"
         >
           <h2 id="about-title" className="text-3xl sm:text-4xl md:text-5xl font-light mb-4 tracking-wide">
             <span className="text-cinema-gold">{t('Qui je suis', 'About me')}</span>

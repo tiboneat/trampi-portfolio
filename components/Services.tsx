@@ -84,7 +84,7 @@ const Services = () => {
   return (
     <section 
       id="expertise" 
-      className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-white relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-white relative overflow-hidden transition-colors duration-300"
       aria-labelledby="expertise-title"
     >
       <div className="max-w-6xl mx-auto relative z-10">
@@ -93,7 +93,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-10"
         >
           <h2 id="expertise-title" className="text-3xl sm:text-4xl md:text-5xl font-light mb-4 tracking-wide">
             <span className="text-cinema-gold">{t('Expertise', 'Expertise')}</span>
