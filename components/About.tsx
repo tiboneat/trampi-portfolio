@@ -78,55 +78,72 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="lg:col-span-8 space-y-4 sm:space-y-6 text-white/80 dark:text-white/80 light:text-light-text text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
+            className="lg:col-span-8 space-y-6 sm:space-y-8 text-white/80 dark:text-white/80 light:text-light-text text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
           >
             <motion.p variants={itemVariants}>
               {t(
-                "Je m'appelle ",
-                "My name is "
-              )}
-              <span className="text-cinema-gold">Fabien</span>
-              {t(
-                " et je suis directeur de post-production depuis 2016.",
-                " and I've been a post-production director since 2016."
+                "Moi, c'est Fabien, directeur de post-production depuis 2016. Pour comprendre comment j'en suis arrivé là, il faut rembobiner un peu.",
+                "I'm Fabien, post-production supervisor since 2016. To understand how I got here, we need to rewind a bit."
               )}
             </motion.p>
-            
-            <motion.p variants={itemVariants}>
-              {t(
-                "Porté par une vraie passion pour l'image et les récits, j'accompagne réalisateurs et producteurs sur des films et séries qui demandent un accompagnement artistique et technique rigoureux.",
-                "Driven by a true passion for images and storytelling, I work alongside directors and producers on films and series that require rigorous artistic and technical support."
-              )}
-            </motion.p>
-            
-            <motion.p variants={itemVariants}>
-              <span className="text-cinema-gold">{t('Mon rôle :', 'My role:')}</span>
-              {t(
-                " garantir une post-production fluide, maîtrisée et pleinement fidèle à la vision créative du film.",
-                " ensuring smooth, controlled post-production that fully respects the film's creative vision."
-              )}
-            </motion.p>
-            
-            <motion.p variants={itemVariants}>
-              {t(
-                "J'anticipe les enjeux artistiques, techniques et budgétaires, je structure les workflows, j'organise les plannings et je coordonne les livraisons pour que chaque étape se déroule avec clarté et efficacité.",
-                "I anticipate artistic, technical and budgetary challenges, structure workflows, organize schedules and coordinate deliveries so that each step proceeds with clarity and efficiency."
-              )}
-            </motion.p>
-            
-            <motion.p variants={itemVariants} className="italic text-cinema-gold/80">
-              {t(
-                "Pour moi, la post-production doit être un espace créatif et serein.",
-                "For me, post-production should be a creative and serene space."
-              )}
-            </motion.p>
-            
-            <motion.p variants={itemVariants}>
-              {t(
-                "Un moment où le film ou la série se précise, où les intentions s'affinent, et où chacun peut travailler dans la même direction — avec précision, confiance et plaisir.",
-                "A time when the film or series takes shape, intentions are refined, and everyone can work in the same direction — with precision, confidence and enjoyment."
-              )}
-            </motion.p>
+
+            <motion.div variants={itemVariants}>
+              <h3 className="text-cinema-gold font-medium mb-2">{t('Genèse d\'un pirate repenti...', 'Genesis of a reformed pirate...')}</h3>
+              <p>
+                {t(
+                  "À la maison, le cinéma n'avait pas sa place. On parlait surtout d'informatique, de peinture et de sport. Et à la télé, le programme, c'était Thalassa !",
+                  "At home, cinema had no place. We mostly talked about computers, painting and sports. And on TV, the program was Thalassa!"
+                )}
+              </p>
+              <p className="mt-3">
+                {t(
+                  "Alors, pour voir des films, il a fallu ruser. C'est la nuit, dans ma chambre d'ado, que je me suis construit ma propre culture. Ma chambre était recouverte d'affiches (dont une version XXL du Cinquième Élément) et mon ordinateur tournait à plein régime. J'étais un \"binge-watcher\" avant l'heure, dévorant des disques durs entiers de films. Je vous rassure, j'ai depuis largement remboursé ma dette. Mon appartement déborde de Blu-ray et DVD ; je vais au cinéma dès que possible et je collectionne les abonnements aux plateformes.",
+                  "So, to watch movies, I had to be creative. It was at night, in my teenage bedroom, that I built my own culture. My room was covered with posters (including an XXL version of The Fifth Element) and my computer was running at full speed. I was a binge-watcher before its time, devouring entire hard drives of movies. Don't worry, I've since paid off my debt. My apartment is overflowing with Blu-rays and DVDs; I go to the cinema whenever I can and collect platform subscriptions."
+                )}
+              </p>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <h3 className="text-cinema-gold font-medium mb-2">{t('Le déclic...', 'The turning point...')}</h3>
+              <p>
+                {t(
+                  "Côté pro, j'ai mis du temps à réaliser qu'il existait un monde professionnel derrière cette passion. Contre l'avis de mes parents, j'ai foncé dans l'audiovisuel : d'abord en marketing chez un distributeur, puis comme commercial dans un laboratoire de post-production.",
+                  "On the professional side, it took me a while to realize that there was a professional world behind this passion. Against my parents' advice, I dove into the audiovisual industry: first in marketing at a distributor, then as a sales rep at a post-production lab."
+                )}
+              </p>
+              <p className="mt-3">
+                {t(
+                  "Et un jour, tout s'est aligné. Mes expériences, mes compétences, mes envies... c'est devenu limpide : accompagner la fabrication d'un film du début à la fin, voilà ce que je voulais faire. Le poste de directeur de post-production s'est imposé comme une évidence.",
+                  "And one day, everything aligned. My experiences, my skills, my desires... it became crystal clear: supporting the making of a film from start to finish, that's what I wanted to do. The position of post-production supervisor became obvious."
+                )}
+              </p>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <h3 className="text-cinema-gold font-medium mb-2">{t('Ma mission aujourd\'hui...', 'My mission today...')}</h3>
+              <p>
+                {t(
+                  "Ce qui me passionne, ce sont les équipes. Chaque projet réunit des personnalités, des talents et des méthodes très différentes, avec leurs enjeux techniques, leurs contraintes de planning et de budget. Ma mission, c'est d'absorber cette complexité et de créer un cadre clair, rassurant et efficace où chacun peut donner le meilleur.",
+                  "What I'm passionate about is teams. Each project brings together very different personalities, talents and methods, with their technical challenges, scheduling and budget constraints. My mission is to absorb this complexity and create a clear, reassuring and effective framework where everyone can give their best."
+                )}
+              </p>
+              <p className="mt-3 italic text-cinema-gold/80">
+                {t(
+                  "Transformer un processus complexe en un parcours fluide : c'est là que je suis le plus utile, et c'est là que je m'épanouis.",
+                  "Transforming a complex process into a smooth journey: that's where I'm most useful, and that's where I thrive."
+                )}
+              </p>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <h3 className="text-cinema-gold font-medium mb-2">{t('Le sens du timing...', 'The sense of timing...')}</h3>
+              <p>
+                {t(
+                  "L'audiovisuel est aussi intimement lié à ma vie. J'ai rencontré ma femme lors d'une projection presse. Quelques années plus tard, en quittant le Festival de Cannes, elle m'appelait — alors que je montais à peine dans le train — pour me dire que notre fille arrivait plus tôt que prévu. Je suis arrivé pile à l'heure. Comme quoi, en post-prod comme dans la vie, tout est une question de timing.",
+                  "The audiovisual world is also intimately linked to my life. I met my wife at a press screening. A few years later, leaving the Cannes Film Festival, she called me — just as I was getting on the train — to tell me our daughter was arriving earlier than expected. I arrived right on time. As they say, in post-production as in life, it's all about timing."
+                )}
+              </p>
+            </motion.div>
           </motion.div>
         </div>
 

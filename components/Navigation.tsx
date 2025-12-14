@@ -36,8 +36,8 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '#projects', label: t('Films & Séries', 'Films & Series') },
-    { href: '#services', label: t('Services', 'Services') },
     { href: '#about', label: t('Qui je suis', 'About') },
+    { href: '#expertise', label: t('Expertise', 'Expertise') },
     { href: '#contact', label: 'Contact' },
   ]
 

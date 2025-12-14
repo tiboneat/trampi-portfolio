@@ -88,18 +88,18 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#services"
-                  className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
                   href="#about"
                   className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
                 >
                   {t('Qui je suis', 'About')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#expertise"
+                  className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
+                >
+                  Expertise
                 </a>
               </li>
               <li>
