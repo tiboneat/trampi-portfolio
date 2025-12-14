@@ -83,7 +83,7 @@ const Footer = () => {
                   href="#projects"
                   className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
                 >
-                  Portfolio
+                  Films & Séries
                 </a>
               </li>
               <li>

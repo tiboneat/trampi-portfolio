@@ -296,10 +296,10 @@ const Projects = () => {
             <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-cinema-gold/50" />
           </div>
           <h2 id="portfolio-title" className="text-4xl sm:text-5xl md:text-6xl font-light mb-4 tracking-wide">
-            <span className="text-cinema-gold">Portfolio</span>
+            <span className="text-cinema-gold">{t('Films & Séries', 'Films & Series')}</span>
           </h2>
           <p className="text-white/50 dark:text-white/50 light:text-light-text-muted text-base sm:text-lg max-w-2xl mx-auto mt-4 sm:mt-6 font-light px-4">
-            {t('Films et séries supervisés en post-production', 'Films and series supervised in post-production')}
+            {t('supervisés en post-production', 'supervised in post-production')}
           </p>
         </motion.header>
 

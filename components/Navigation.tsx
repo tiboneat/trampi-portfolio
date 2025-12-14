@@ -35,7 +35,7 @@ const Navigation = () => {
   }, [isMobileMenuOpen])
 
   const navLinks = [
-    { href: '#projects', label: t('Portfolio', 'Portfolio') },
+    { href: '#projects', label: t('Films & Séries', 'Films & Series') },
     { href: '#services', label: t('Services', 'Services') },
     { href: '#about', label: t('Qui je suis', 'About') },
     { href: '#contact', label: 'Contact' },

@@ -73,14 +73,14 @@ const Header = () => {
           {/* Nom */}
           <motion.h1 
             variants={itemVariants}
-            className="text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-silver dark:text-cinema-silver light:text-light-text uppercase font-gt-america font-light"
+            className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-gold uppercase"
           >
             Fabien Trampont
           </motion.h1>
 
           {/* Titre sur 3 lignes */}
           <motion.div variants={itemVariants} className="relative inline-block mb-4 sm:mb-6">
-            <p className="relative text-2xl sm:text-3xl md:text-4xl text-cinema-gold tracking-[0.1em] sm:tracking-[0.15em] uppercase leading-relaxed font-gt-america font-light">
+            <p className="relative text-2xl sm:text-3xl md:text-4xl text-cinema-silver dark:text-cinema-silver light:text-light-text tracking-[0.1em] sm:tracking-[0.15em] uppercase leading-relaxed font-light">
               {t('Directeur', 'Post-Production')}
               <br />
               <span className="text-xl sm:text-2xl md:text-3xl">{t('de', '')}</span>
@@ -173,24 +173,30 @@ const Header = () => {
       </motion.div>
 
       {/* Indicateur de scroll */}
-      <motion.a
-        href="#projects"
+      <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cinema-gold/60 hover:text-cinema-gold transition-colors cursor-pointer"
-        aria-label={t('Voir le portfolio', 'View portfolio')}
+        className="absolute bottom-6 sm:bottom-8 left-0 right-0 flex justify-center"
       >
-        <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-light">
-          {t('Découvrir', 'Discover')}
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        <button
+          onClick={() => {
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+          }}
+          className="flex flex-col items-center gap-2 text-cinema-gold/60 hover:text-cinema-gold transition-colors cursor-pointer"
+          aria-label={t('Voir les films et séries', 'View films and series')}
         >
-          <ChevronDown size={24} />
-        </motion.div>
-      </motion.a>
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-light">
+            {t('Découvrir', 'Discover')}
+          </span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown size={24} />
+          </motion.div>
+        </button>
+      </motion.div>
 
       <div className="film-scanline" aria-hidden="true"></div>
     </header>
