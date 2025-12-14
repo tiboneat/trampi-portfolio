@@ -104,6 +104,14 @@ const Footer = () => {
               </li>
               <li>
                 <a
+                  href="#testimonials"
+                  className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
+                >
+                  {t('Témoignages', 'Testimonials')}
+                </a>
+              </li>
+              <li>
+                <a
                   href="#contact"
                   className="text-white/70 dark:text-white/70 light:text-light-text-muted hover:text-cinema-gold transition-colors text-xs sm:text-sm min-h-[44px] inline-flex items-center"
                 >

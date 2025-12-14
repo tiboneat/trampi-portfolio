@@ -38,6 +38,7 @@ const Navigation = () => {
     { href: '#projects', label: t('Films & Séries', 'Films & Series') },
     { href: '#about', label: t('Qui je suis', 'About') },
     { href: '#expertise', label: t('Expertise', 'Expertise') },
+    { href: '#testimonials', label: t('Témoignages', 'Testimonials') },
     { href: '#contact', label: 'Contact' },
   ]
 
