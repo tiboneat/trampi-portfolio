@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <header 
-      className="relative min-h-[100svh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-cinema-black dark:bg-cinema-black light:bg-light-bg transition-colors duration-300"
+      className="relative min-h-[100svh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-cinema-black dark:bg-cinema-black light:bg-white transition-colors duration-300"
       role="banner"
       aria-label="Introduction Fabien Trampont"
     >
@@ -123,7 +123,7 @@ const Header = () => {
                 delay: 0.5 + index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
-              className="text-center p-3 sm:p-4 bg-cinema-dark/30 dark:bg-cinema-dark/30 light:bg-white/50 backdrop-blur-sm border border-white/5 dark:border-white/5 light:border-light-border rounded-sm"
+              className="text-center p-3 sm:p-4 bg-cinema-dark/30 dark:bg-cinema-dark/30 light:bg-light-bg/80 backdrop-blur-sm border border-white/5 dark:border-white/5 light:border-light-border rounded-sm"
               role="listitem"
             >
               {stat.isCounter ? (

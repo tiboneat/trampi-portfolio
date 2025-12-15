@@ -84,7 +84,7 @@ const Services = () => {
   return (
     <section 
       id="expertise" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-white relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-[#FAFAF8] relative overflow-hidden transition-colors duration-300"
       aria-labelledby="expertise-title"
     >
       <div className="max-w-6xl mx-auto relative z-10">
@@ -112,7 +112,7 @@ const Services = () => {
             <motion.article
               key={index}
               variants={itemVariants}
-              className="p-6 sm:p-8 bg-cinema-black/50 dark:bg-cinema-black/50 light:bg-light-bg border border-white/5 dark:border-white/5 light:border-light-border rounded-sm hover:border-cinema-gold/30 transition-colors duration-300"
+              className="p-6 sm:p-8 bg-cinema-black/50 dark:bg-cinema-black/50 light:bg-light-bg/60 border border-white/5 dark:border-white/5 light:border-light-border rounded-sm hover:border-cinema-gold/30 transition-colors duration-300"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-cinema-gold/10 rounded-sm border border-cinema-gold/30">

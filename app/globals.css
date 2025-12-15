@@ -70,7 +70,7 @@
 
   /* Mode clair */
   html[data-theme="light"] body {
-    background-color: #F8F6F1;
+    background-color: #FFFFFF;
     color: #1A1A1A;
   }
 
@@ -820,99 +820,46 @@ html[data-theme="light"] .timecode {
 }
 
 /* ==========================================
-   MODE CLAIR - Surcharges globales
+   MODE CLAIR - Styles harmonisés
    ========================================== */
 
+/* Variables CSS pour le mode clair */
 html[data-theme="light"] {
-  /* Header */
-  & header {
-    background-color: #F8F6F1 !important;
-  }
+  --light-bg-primary: #FFFFFF;
+  --light-bg-secondary: #F8F6F1;
+  --light-text-primary: #1A1A1A;
+  --light-text-secondary: #4A4A4A;
+  --light-text-muted: #666666;
+  --light-border: #E8E4DC;
+  --light-card-bg: rgba(248, 246, 241, 0.5);
+}
 
-  /* Navigation */
-  & nav {
-    &.bg-cinema-black\/90 {
-      background-color: rgba(248, 246, 241, 0.95) !important;
-    }
-  }
+/* Body et fond principal */
+html[data-theme="light"] body {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FDFCFA 100%);
+}
 
-  /* Sections */
-  & section {
-    transition: background-color 0.4s ease;
-  }
+/* Sections alternées avec nuances subtiles */
+html[data-theme="light"] section {
+  transition: background-color 0.4s ease;
+}
 
-  & .bg-cinema-dark {
-    background-color: #FFFFFF !important;
-  }
+/* Scrollbar mode clair */
+html[data-theme="light"]::-webkit-scrollbar-track {
+  background: #F8F6F1;
+}
 
-  & .bg-cinema-black {
-    background-color: #F8F6F1 !important;
-  }
+html[data-theme="light"]::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C9A961 0%, #A08050 100%);
+}
 
-  /* Textes */
-  & .text-white {
-    color: #1A1A1A !important;
-  }
+/* Film scanline - masquer en mode clair */
+html[data-theme="light"] .film-scanline {
+  display: none !important;
+}
 
-  & .text-white\/80,
-  & .text-white\/70,
-  & .text-white\/60,
-  & .text-white\/50,
-  & .text-white\/40 {
-    color: #666666 !important;
-  }
-
-  & .text-cinema-silver {
-    color: #1A1A1A !important;
-  }
-
-  & .text-cinema-silver\/70 {
-    color: #666666 !important;
-  }
-
-  /* Bordures */
-  & .border-white\/10,
-  & .border-white\/5 {
-    border-color: #E5E5E5 !important;
-  }
-
-  & .border-cinema-gold\/20 {
-    border-color: rgba(201, 169, 97, 0.3) !important;
-  }
-
-  /* Cards et backgrounds */
-  & .bg-cinema-dark\/30,
-  & .bg-cinema-dark\/50 {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  & .bg-black\/70,
-  & .bg-black\/50,
-  & .bg-black\/95,
-  & .bg-black\/80 {
-    background-color: rgba(248, 246, 241, 0.95) !important;
-  }
-
-  /* Modal */
-  & [role="dialog"] {
-    & > div {
-      background-color: #FFFFFF !important;
-    }
-  }
-
-  /* Scrollbar mode clair */
-  &::-webkit-scrollbar-track {
-    background: #F8F6F1 !important;
-  }
-
-  /* Footer */
-  & footer {
-    background-color: #F8F6F1 !important;
-    border-color: #E5E5E5 !important;
-  }
-
-  /* Film scanline - masquer en mode clair */
-  & .film-scanline {
-    display: none !important;
-  }
+/* Selection en mode clair */
+html[data-theme="light"] ::selection {
+  background: rgba(201, 169, 97, 0.25);
+  color: #1A1A1A;
 }

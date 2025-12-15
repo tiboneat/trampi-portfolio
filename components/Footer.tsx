@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <footer 
       id="contact" 
-      className="bg-cinema-black dark:bg-cinema-black light:bg-light-bg border-t border-white/10 dark:border-white/10 light:border-light-border transition-colors duration-300"
+      className="bg-cinema-black dark:bg-cinema-black light:bg-[#F5F3EE] border-t border-white/10 dark:border-white/10 light:border-light-border transition-colors duration-300"
       role="contentinfo"
     >
       <motion.div 

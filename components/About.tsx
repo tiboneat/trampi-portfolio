@@ -33,7 +33,7 @@ const About = () => {
   return (
     <section 
       id="about" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black dark:bg-cinema-black light:bg-light-bg relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black dark:bg-cinema-black light:bg-white relative overflow-hidden transition-colors duration-300"
       aria-labelledby="about-title"
     >
       <div className="max-w-5xl mx-auto relative z-10">

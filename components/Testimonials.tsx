@@ -76,7 +76,7 @@ const Testimonials = () => {
   return (
     <section 
       id="testimonials" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-white relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-[#FAFAF8] relative overflow-hidden transition-colors duration-300"
       aria-labelledby="testimonials-title"
     >
       <div className="max-w-5xl mx-auto relative z-10">
@@ -104,7 +104,7 @@ const Testimonials = () => {
             <motion.article
               key={index}
               variants={itemVariants}
-              className="relative p-6 sm:p-8 bg-cinema-black/50 dark:bg-cinema-black/50 light:bg-light-bg border border-white/5 dark:border-white/5 light:border-light-border rounded-sm"
+              className="relative p-6 sm:p-8 bg-cinema-black/50 dark:bg-cinema-black/50 light:bg-light-bg/60 border border-white/5 dark:border-white/5 light:border-light-border rounded-sm"
             >
               <Quote className="absolute top-4 left-4 w-8 h-8 text-cinema-gold/20" aria-hidden="true" />
               <blockquote className="relative z-10">

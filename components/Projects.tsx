@@ -269,7 +269,7 @@ const Projects = () => {
   return (
     <section 
       id="projects" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-white relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-[#FAFAF8] relative overflow-hidden transition-colors duration-300"
       aria-labelledby="portfolio-title"
     >
       {/* Schema.org JSON-LD pour chaque film */}
