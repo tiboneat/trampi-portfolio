@@ -46,7 +46,7 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-cinema-black/90 dark:bg-cinema-black/90 light:bg-light-bg/95 backdrop-blur-md shadow-2xl border-b border-cinema-gold/20 dark:border-cinema-gold/20 light:border-light-border' 
+          ? 'bg-theme-primary/90 backdrop-blur-md shadow-2xl border-b border-theme-gold' 
           : 'bg-transparent'
       }`}
       role="navigation"
@@ -75,7 +75,7 @@ const Navigation = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="relative text-white/80 dark:text-white/80 light:text-light-text/80 hover:text-cinema-gold transition-colors duration-300 text-sm uppercase tracking-[0.15em] font-light group py-2"
+                    className="relative text-theme-secondary hover:text-cinema-gold transition-colors duration-300 text-sm uppercase tracking-[0.15em] font-light group py-2"
                   >
                     {link.label}
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-cinema-gold group-hover:w-full transition-all duration-300" aria-hidden="true"></span>
@@ -107,7 +107,7 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div 
             id="mobile-menu"
-            className="md:hidden fixed inset-0 top-16 bg-cinema-black/98 dark:bg-cinema-black/98 light:bg-light-bg/98 backdrop-blur-md z-40"
+            className="md:hidden fixed inset-0 top-16 bg-theme-primary/98 backdrop-blur-md z-40"
           >
             <ul className="flex flex-col items-center justify-center h-full space-y-8">
               {navLinks.map((link) => (
@@ -115,7 +115,7 @@ const Navigation = () => {
                   <a
                     href={link.href}
                     onClick={handleLinkClick}
-                    className="text-white/80 hover:text-cinema-gold transition-colors duration-300 text-xl uppercase tracking-[0.2em] font-light py-4 px-8 block min-h-[44px]"
+                    className="text-theme-secondary hover:text-cinema-gold transition-colors duration-300 text-xl uppercase tracking-[0.2em] font-light py-4 px-8 block min-h-[44px]"
                   >
                     {link.label}
                   </a>

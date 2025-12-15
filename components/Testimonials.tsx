@@ -76,7 +76,7 @@ const Testimonials = () => {
   return (
     <section 
       id="testimonials" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-[#FAFAF8] relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-theme-secondary relative overflow-hidden transition-colors duration-300"
       aria-labelledby="testimonials-title"
     >
       <div className="max-w-5xl mx-auto relative z-10">
@@ -104,17 +104,17 @@ const Testimonials = () => {
             <motion.article
               key={index}
               variants={itemVariants}
-              className="relative p-6 sm:p-8 bg-cinema-black/50 dark:bg-cinema-black/50 light:bg-light-bg/60 border border-white/5 dark:border-white/5 light:border-light-border rounded-sm"
+              className="relative p-6 sm:p-8 bg-theme-card border border-theme rounded-sm"
             >
               <Quote className="absolute top-4 left-4 w-8 h-8 text-cinema-gold/20" aria-hidden="true" />
               <blockquote className="relative z-10">
-                <p className="text-white/80 dark:text-white/80 light:text-light-text text-sm sm:text-base leading-relaxed italic pl-6 sm:pl-8">
+                <p className="text-theme-secondary text-sm sm:text-base leading-relaxed italic pl-6 sm:pl-8">
                   « {testimonial.quote} »
                 </p>
                 <footer className="mt-4 pl-6 sm:pl-8">
                   <cite className="not-italic">
                     <span className="text-cinema-gold font-medium">{testimonial.author}</span>
-                    <span className="text-white/50 dark:text-white/50 light:text-light-text-muted text-sm"> — {testimonial.role}</span>
+                    <span className="text-theme-muted text-sm"> — {testimonial.role}</span>
                   </cite>
                 </footer>
               </blockquote>
@@ -127,3 +127,6 @@ const Testimonials = () => {
 }
 
 export default Testimonials
+
+
+

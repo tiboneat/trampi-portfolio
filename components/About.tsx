@@ -33,7 +33,7 @@ const About = () => {
   return (
     <section 
       id="about" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-black dark:bg-cinema-black light:bg-white relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-theme-primary relative overflow-hidden transition-colors duration-300"
       aria-labelledby="about-title"
     >
       <div className="max-w-5xl mx-auto relative z-10">
@@ -78,7 +78,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="lg:col-span-8 space-y-6 sm:space-y-8 text-white/80 dark:text-white/80 light:text-light-text text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
+            className="lg:col-span-8 space-y-6 sm:space-y-8 text-theme-secondary text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
           >
             <motion.p variants={itemVariants}>
               {t(

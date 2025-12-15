@@ -38,6 +38,32 @@
 }
 
 @layer base {
+  /* Variables CSS pour les thèmes */
+  html[data-theme="dark"],
+  html:not([data-theme]) {
+    --bg-primary: #000000;
+    --bg-secondary: #0D0D0D;
+    --bg-card: rgba(13, 13, 13, 0.5);
+    --text-primary: #F5F5F5;
+    --text-secondary: #B8B8B8;
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-gold: rgba(201, 169, 97, 0.3);
+    --gradient-bg: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+  }
+
+  html[data-theme="light"] {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FAFAF8;
+    --bg-card: rgba(250, 248, 245, 0.9);
+    --text-primary: #1A1A1A;
+    --text-secondary: #3A3A3A;
+    --text-muted: #6B6B6B;
+    --border-color: #E8E4DC;
+    --border-gold: rgba(201, 169, 97, 0.5);
+    --gradient-bg: radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.04) 100%);
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -59,19 +85,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.4s ease, color 0.4s ease;
-  }
-
-  /* Mode sombre (défaut) */
-  html[data-theme="dark"] body,
-  html:not([data-theme]) body {
-    background-color: #000000;
-    color: #F5F5F5;
-  }
-
-  /* Mode clair */
-  html[data-theme="light"] body {
-    background-color: #FFFFFF;
-    color: #1A1A1A;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
   }
 
   @supports (-webkit-touch-callout: none) {
@@ -145,6 +160,39 @@
   .touch-target {
     min-height: 44px;
     min-width: 44px;
+  }
+
+  /* Classes de thème adaptatives */
+  .bg-theme-primary {
+    background-color: var(--bg-primary);
+  }
+
+  .bg-theme-secondary {
+    background-color: var(--bg-secondary);
+  }
+
+  .bg-theme-card {
+    background-color: var(--bg-card);
+  }
+
+  .text-theme-primary {
+    color: var(--text-primary);
+  }
+
+  .text-theme-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-theme-muted {
+    color: var(--text-muted);
+  }
+
+  .border-theme {
+    border-color: var(--border-color);
+  }
+
+  .border-theme-gold {
+    border-color: var(--border-gold);
   }
 
   /* Effet doré premium */
@@ -486,8 +534,7 @@
    ========================================== */
 
 /* Vignettage - effet salle de cinéma */
-html[data-theme="dark"]::after,
-html:not([data-theme])::after {
+html::after {
   content: '';
   position: fixed;
   top: 0;
@@ -496,21 +543,7 @@ html:not([data-theme])::after {
   height: 100%;
   pointer-events: none;
   z-index: 9997;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    transparent 50%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
-}
-
-html[data-theme="light"]::after {
-  background: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    transparent 60%,
-    rgba(0, 0, 0, 0.08) 100%
-  );
+  background: var(--gradient-bg);
 }
 
 /* ==========================================
@@ -823,25 +856,38 @@ html[data-theme="light"] .timecode {
    MODE CLAIR - Styles harmonisés
    ========================================== */
 
-/* Variables CSS pour le mode clair */
-html[data-theme="light"] {
-  --light-bg-primary: #FFFFFF;
-  --light-bg-secondary: #F8F6F1;
-  --light-text-primary: #1A1A1A;
-  --light-text-secondary: #4A4A4A;
-  --light-text-muted: #666666;
-  --light-border: #E8E4DC;
-  --light-card-bg: rgba(248, 246, 241, 0.5);
-}
-
-/* Body et fond principal */
+/* Body et fond principal en mode clair */
 html[data-theme="light"] body {
   background: linear-gradient(180deg, #FFFFFF 0%, #FDFCFA 100%);
 }
 
-/* Sections alternées avec nuances subtiles */
+/* Sections alternées avec nuances subtiles en mode clair */
 html[data-theme="light"] section {
   transition: background-color 0.4s ease;
+}
+
+html[data-theme="light"] section.bg-theme-primary {
+  background-color: #FFFFFF;
+}
+
+html[data-theme="light"] section.bg-theme-secondary {
+  background-color: #FAFAF8;
+}
+
+/* Améliorer la lisibilité des textes en mode clair */
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] h5,
+html[data-theme="light"] h6 {
+  color: #1A1A1A;
+}
+
+html[data-theme="light"] p,
+html[data-theme="light"] li,
+html[data-theme="light"] span {
+  color: var(--text-secondary);
 }
 
 /* Scrollbar mode clair */
@@ -862,4 +908,124 @@ html[data-theme="light"] .film-scanline {
 html[data-theme="light"] ::selection {
   background: rgba(201, 169, 97, 0.25);
   color: #1A1A1A;
+}
+
+/* Ajustements supplémentaires pour le mode clair */
+html[data-theme="light"] .sync-mark {
+  opacity: 0.15;
+}
+
+html[data-theme="light"] .sync-mark::before,
+html[data-theme="light"] .sync-mark::after {
+  background: #8B7355;
+}
+
+html[data-theme="light"] .sync-mark span {
+  border-color: #8B7355;
+}
+
+html[data-theme="light"] .timecode {
+  background: rgba(255, 255, 255, 0.9);
+  color: #8B7355;
+  border-color: rgba(139, 115, 85, 0.4);
+}
+
+/* Améliorer les contrastes pour les liens en mode clair */
+html[data-theme="light"] a:hover {
+  color: #A68950;
+}
+
+/* Ajuster les ombres pour le mode clair */
+html[data-theme="light"] .card-cinema,
+html[data-theme="light"] .bg-theme-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Bordures plus visibles en mode clair */
+html[data-theme="light"] .border-theme {
+  border-color: #E8E4DC;
+}
+
+html[data-theme="light"] .border-theme-gold {
+  border-color: rgba(201, 169, 97, 0.5);
+}
+
+/* Rendre les images moins saturées en mode clair */
+html[data-theme="light"] img {
+  filter: saturate(0.95) brightness(1.02);
+}
+
+/* Améliorer le bouton CTA en mode clair */
+html[data-theme="light"] .btn-cinema {
+  border-color: rgba(201, 169, 97, 0.6);
+}
+
+html[data-theme="light"] .btn-cinema:hover {
+  background: rgba(201, 169, 97, 0.15);
+  box-shadow: 0 0 25px rgba(201, 169, 97, 0.4);
+}
+
+/* Navigation en mode clair */
+html[data-theme="light"] nav {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Améliorer les cartes de projet en mode clair */
+html[data-theme="light"] .poster-spotlight {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .poster-spotlight:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Meilleur contraste pour les textes dorés en mode clair */
+html[data-theme="light"] .text-cinema-gold {
+  color: #A68950;
+}
+
+/* Effet de hover sur les liens en mode clair */
+html[data-theme="light"] a.text-theme-secondary:hover {
+  color: #A68950;
+}
+
+/* Améliorer les modales en mode clair */
+html[data-theme="light"] [role="dialog"] {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Améliorer les formulaires et inputs en mode clair */
+html[data-theme="light"] input,
+html[data-theme="light"] textarea,
+html[data-theme="light"] select {
+  background-color: #FFFFFF;
+  border-color: #E8E4DC;
+  color: #1A1A1A;
+}
+
+html[data-theme="light"] input:focus,
+html[data-theme="light"] textarea:focus,
+html[data-theme="light"] select:focus {
+  border-color: rgba(201, 169, 97, 0.6);
+  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+}
+
+/* Améliorer les titres dorés en mode clair */
+html[data-theme="light"] .text-cinema-gold-light {
+  color: #B8955E;
+}
+
+/* Améliorer le contraste des icônes en mode clair */
+html[data-theme="light"] svg {
+  opacity: 0.9;
+}
+
+/* Ajuster l'opacité des overlays d'images en mode clair */
+html[data-theme="light"] .image-overlay::after {
+  opacity: 0.4;
+}
+
+html[data-theme="light"] .image-overlay:hover::after {
+  opacity: 0.2;
 }

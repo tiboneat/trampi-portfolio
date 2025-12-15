@@ -35,14 +35,14 @@ const ThemeToggle = () => {
 
   if (!mounted) {
     return (
-      <div className="w-10 h-10 bg-cinema-dark/50 backdrop-blur-sm border border-cinema-gold/30 rounded-sm" />
+      <div className="w-10 h-10 bg-theme-card backdrop-blur-sm border border-theme-gold rounded-sm" />
     )
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-10 h-10 flex items-center justify-center bg-cinema-dark/50 backdrop-blur-sm border border-cinema-gold/30 rounded-sm hover:bg-cinema-gold/10 transition-all duration-300 min-w-[44px] min-h-[44px]"
+      className="relative w-10 h-10 flex items-center justify-center bg-theme-card backdrop-blur-sm border border-theme-gold rounded-sm hover:bg-cinema-gold/10 transition-all duration-300 min-w-[44px] min-h-[44px]"
       aria-label={isDark ? 'Passer en mode clair' : 'Passer en mode sombre'}
     >
       {isDark ? (

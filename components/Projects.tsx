@@ -119,7 +119,7 @@ const ProjectCard = ({ project, onClick, lang }: { project: Project; onClick: ()
             <Film size={12} aria-hidden="true" />
             <span className="text-[10px] sm:text-xs uppercase tracking-wider">{type}</span>
           </div>
-          <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white dark:text-white light:text-white tracking-wide">{title}</h3>
+          <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white tracking-wide">{title}</h3>
           <p className="text-cinema-gold-light/80 text-xs sm:text-sm">{project.director}</p>
           
           {festival && (
@@ -152,7 +152,7 @@ const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       onClick={onClose}
-      className="fixed inset-0 bg-black/95 dark:bg-black/95 light:bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
@@ -163,7 +163,7 @@ const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose
         exit={{ scale: 0.95, opacity: 0, y: 10 }}
         transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-cinema-dark dark:bg-cinema-dark light:bg-white border border-white/10 dark:border-white/10 light:border-light-border rounded-sm max-w-4xl w-full relative my-4 sm:my-8 max-h-[90vh] overflow-y-auto"
+        className="bg-theme-primary border border-theme rounded-sm max-w-4xl w-full relative my-4 sm:my-8 max-h-[90vh] overflow-y-auto"
       >
         <button
           onClick={onClose}
@@ -184,7 +184,7 @@ const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose
 
           <div className="space-y-4 sm:space-y-5 py-2 sm:py-4">
             <div>
-              <h2 id="modal-title" className="text-2xl sm:text-3xl font-bold text-white dark:text-white light:text-light-text mb-2 tracking-wide">{title}</h2>
+              <h2 id="modal-title" className="text-2xl sm:text-3xl font-bold text-theme-primary mb-2 tracking-wide">{title}</h2>
               <p className="text-lg sm:text-xl text-cinema-gold-light">{director}</p>
               <div className="h-px w-16 bg-cinema-gold/50 mt-4" aria-hidden="true" />
             </div>
@@ -192,41 +192,41 @@ const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose
             <dl className="space-y-2 sm:space-y-3 text-sm">
               <div className="flex gap-3">
                 <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Type', 'Type')}</dt>
-                <dd className="text-white/80 dark:text-white/80 light:text-light-text">{type}</dd>
+                <dd className="text-theme-secondary">{type}</dd>
               </div>
               <div className="flex gap-3">
                 <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Année', 'Year')}</dt>
-                <dd className="text-white/80 dark:text-white/80 light:text-light-text">{project.year}</dd>
+                <dd className="text-theme-secondary">{project.year}</dd>
               </div>
               {producer && (
                 <div className="flex gap-3">
                   <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Production', 'Production')}</dt>
-                  <dd className="text-white/80 dark:text-white/80 light:text-light-text">{producer}</dd>
+                  <dd className="text-theme-secondary">{producer}</dd>
                 </div>
               )}
               {cleanFestival && (
                 <div className="flex gap-3">
                   <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Festival', 'Festival')}</dt>
-                  <dd className="text-white/80 dark:text-white/80 light:text-light-text">{cleanFestival}</dd>
+                  <dd className="text-theme-secondary">{cleanFestival}</dd>
                 </div>
               )}
               {distributor && (
                 <div className="flex gap-3">
                   <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Distribution', 'Distribution')}</dt>
-                  <dd className="text-white/80 dark:text-white/80 light:text-light-text">{distributor}</dd>
+                  <dd className="text-theme-secondary">{distributor}</dd>
                 </div>
               )}
               {sales && (
                 <div className="flex gap-3">
                   <dt className="text-cinema-gold w-24 sm:w-28 flex-shrink-0">{t('Ventes', 'Sales')}</dt>
-                  <dd className="text-white/80 dark:text-white/80 light:text-light-text">{sales}</dd>
+                  <dd className="text-theme-secondary">{sales}</dd>
                 </div>
               )}
             </dl>
 
             {/* Bouton Bande-annonce */}
             {project.trailer && (
-              <div className="pt-4 mt-4 border-t border-white/10 dark:border-white/10 light:border-light-border">
+              <div className="pt-4 mt-4 border-t border-theme">
                 <a
                   href={project.trailer}
                   target="_blank"
@@ -269,7 +269,7 @@ const Projects = () => {
   return (
     <section 
       id="projects" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-cinema-dark dark:bg-cinema-dark light:bg-[#FAFAF8] relative overflow-hidden transition-colors duration-300"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-theme-secondary relative overflow-hidden transition-colors duration-300"
       aria-labelledby="portfolio-title"
     >
       {/* Schema.org JSON-LD pour chaque film */}
@@ -298,7 +298,7 @@ const Projects = () => {
           <h2 id="portfolio-title" className="text-4xl sm:text-5xl md:text-6xl font-light mb-4 tracking-wide">
             <span className="text-cinema-gold">{t('Films & Séries', 'Films & Series')}</span>
           </h2>
-          <p className="text-white/50 dark:text-white/50 light:text-light-text-muted text-base sm:text-lg max-w-2xl mx-auto mt-4 sm:mt-6 font-light px-4">
+          <p className="text-theme-muted text-base sm:text-lg max-w-2xl mx-auto mt-4 sm:mt-6 font-light px-4">
             {t('supervisés en post-production', 'supervised in post-production')}
           </p>
         </motion.header>
@@ -333,7 +333,7 @@ const Projects = () => {
             >
               <div className="mb-8 sm:mb-10 text-center">
                 <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold/30 to-transparent mx-auto mb-4 sm:mb-6" aria-hidden="true" />
-                <h3 className="text-xl sm:text-2xl font-light text-white/80 dark:text-white/80 light:text-light-text">
+                <h3 className="text-xl sm:text-2xl font-light text-theme-secondary">
                   {t('Autres Projets', 'Other Projects')}
                 </h3>
               </div>
