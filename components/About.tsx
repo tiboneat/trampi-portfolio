@@ -88,8 +88,8 @@ const About = () => {
             </motion.p>
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-cinema-gold font-medium mb-2">{t('Genèse d\'un pirate repenti...', 'Genesis of a reformed pirate...')}</h3>
               <p>
+                <span className="text-cinema-gold">{t('Genèse d\'un pirate repenti...', 'Genesis of a reformed pirate...')}</span>{' '}
                 {t(
                   "À la maison, le cinéma n'avait pas sa place. On parlait surtout d'informatique, de peinture et de sport. Et à la télé, le programme, c'était Thalassa !",
                   "At home, cinema had no place. We mostly talked about computers, painting and sports. And on TV, the program was Thalassa!"
@@ -104,8 +104,8 @@ const About = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-cinema-gold font-medium mb-2">{t('Le déclic...', 'The turning point...')}</h3>
               <p>
+                <span className="text-cinema-gold">{t('Le déclic...', 'The turning point...')}</span>{' '}
                 {t(
                   "Côté pro, j'ai mis du temps à réaliser qu'il existait un monde professionnel derrière cette passion. Contre l'avis de mes parents, j'ai foncé dans l'audiovisuel : d'abord en marketing chez un distributeur, puis comme commercial dans un laboratoire de post-production.",
                   "On the professional side, it took me a while to realize that there was a professional world behind this passion. Against my parents' advice, I dove into the audiovisual industry: first in marketing at a distributor, then as a sales rep at a post-production lab."
@@ -120,14 +120,14 @@ const About = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-cinema-gold font-medium mb-2">{t('Ma mission aujourd\'hui...', 'My mission today...')}</h3>
               <p>
+                <span className="text-cinema-gold">{t('Ma mission aujourd\'hui...', 'My mission today...')}</span>{' '}
                 {t(
                   "Ce qui me passionne, ce sont les équipes. Chaque projet réunit des personnalités, des talents et des méthodes très différentes, avec leurs enjeux techniques, leurs contraintes de planning et de budget. Ma mission, c'est d'absorber cette complexité et de créer un cadre clair, rassurant et efficace où chacun peut donner le meilleur.",
                   "What I'm passionate about is teams. Each project brings together very different personalities, talents and methods, with their technical challenges, scheduling and budget constraints. My mission is to absorb this complexity and create a clear, reassuring and effective framework where everyone can give their best."
                 )}
               </p>
-              <p className="mt-3 italic text-cinema-gold/80">
+              <p className="mt-3">
                 {t(
                   "Transformer un processus complexe en un parcours fluide : c'est là que je suis le plus utile, et c'est là que je m'épanouis.",
                   "Transforming a complex process into a smooth journey: that's where I'm most useful, and that's where I thrive."
@@ -136,8 +136,8 @@ const About = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-cinema-gold font-medium mb-2">{t('Le sens du timing...', 'The sense of timing...')}</h3>
               <p>
+                <span className="text-cinema-gold">{t('Le sens du timing...', 'The sense of timing...')}</span>{' '}
                 {t(
                   "L'audiovisuel est aussi intimement lié à ma vie. J'ai rencontré ma femme lors d'une projection presse. Quelques années plus tard, en quittant le Festival de Cannes, elle m'appelait — alors que je montais à peine dans le train — pour me dire que notre fille arrivait plus tôt que prévu. Je suis arrivé pile à l'heure. Comme quoi, en post-prod comme dans la vie, tout est une question de timing.",
                   "The audiovisual world is also intimately linked to my life. I met my wife at a press screening. A few years later, leaving the Cannes Film Festival, she called me — just as I was getting on the train — to tell me our daughter was arriving earlier than expected. I arrived right on time. As they say, in post-production as in life, it's all about timing."

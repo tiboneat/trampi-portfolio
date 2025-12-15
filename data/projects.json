@@ -113,7 +113,8 @@
       "distributor": "Distribution France : Rezo Films",
       "distributorEn": "French Distribution: Rezo Films",
       "year": 2023,
-      "poster": "/posters/Levante.jpg"
+      "poster": "/posters/Levante.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=302693.html"
     },
     {
       "id": "linda-veut-du-poulet",
@@ -132,7 +133,8 @@
       "sales": "Vendeur International : Charades",
       "salesEn": "International Sales: Charades",
       "year": 2023,
-      "poster": "/posters/linda veut du poulet.jpg"
+      "poster": "/posters/linda veut du poulet.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=291771.html"
     },
     {
       "id": "le-paradis",
@@ -147,7 +149,8 @@
       "sales": "Vendeur International : Indie Sales",
       "salesEn": "International Sales: Indie Sales",
       "year": 2023,
-      "poster": "/posters/Le paradis.jpg"
+      "poster": "/posters/Le paradis.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=291708.html"
     },
     {
       "id": "saules-aveugles",
@@ -165,7 +168,8 @@
       "sales": "Vendeur International : Match Factory",
       "salesEn": "International Sales: Match Factory",
       "year": 2023,
-      "poster": "/posters/saules aveugles femme endormie.jpg"
+      "poster": "/posters/saules aveugles femme endormie.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=269783.html"
     },
     {
       "id": "un-varon",
@@ -181,7 +185,8 @@
       "sales": "Vendeur International : Cercamon",
       "salesEn": "International Sales: Cercamon",
       "year": 2023,
-      "poster": "/posters/un-varon.png"
+      "poster": "/posters/un-varon.png",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=303758.html"
     },
     {
       "id": "pulse",
@@ -197,7 +202,8 @@
       "sales": "Vendeur International : Kinology",
       "salesEn": "International Sales: Kinology",
       "year": 2023,
-      "poster": "/posters/Pulse.jpg"
+      "poster": "/posters/Pulse.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=282063.html"
     },
     {
       "id": "la-vache",
@@ -214,7 +220,8 @@
       "sales": "Vendeur International : Match Factory",
       "salesEn": "International Sales: Match Factory",
       "year": 2023,
-      "poster": "/posters/La vache qui chantais le futur.jpg"
+      "poster": "/posters/La vache qui chantais le futur.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=299331.html"
     },
     {
       "id": "dodo",
@@ -228,7 +235,8 @@
       "distributor": "Vendeur International et Distribution France : Pyramide Films",
       "distributorEn": "International Sales and French Distribution: Pyramide Films",
       "year": 2022,
-      "poster": "/posters/dodo.jpg"
+      "poster": "/posters/dodo.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=287318.html"
     },
     {
       "id": "le-pion-du-general",
@@ -245,7 +253,8 @@
       "sales": "Vendeur International : Alpha Violet",
       "salesEn": "International Sales: Alpha Violet",
       "year": 2022,
-      "poster": "/posters/le-pion-du-general.jpg"
+      "poster": "/posters/le-pion-du-general.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=306602.html"
     },
     {
       "id": "olga",
@@ -261,7 +270,8 @@
       "sales": "Vendeur International : Pulsar Content",
       "salesEn": "International Sales: Pulsar Content",
       "year": 2021,
-      "poster": "/posters/olga.jpg"
+      "poster": "/posters/olga.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=284879.html"
     },
     {
       "id": "carrement-craignos",
@@ -304,7 +314,8 @@
       "sales": "Vendeur International : Films Boutique",
       "salesEn": "International Sales: Films Boutique",
       "year": 2020,
-      "poster": "/posters/abou-leila.png"
+      "poster": "/posters/abou-leila.png",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=273642.html"
     },
     {
       "id": "reves-de-jeunesse",
@@ -321,7 +332,8 @@
       "sales": "Vendeur International : Urban International",
       "salesEn": "International Sales: Urban International",
       "year": 2019,
-      "poster": "/posters/reves-de-jeunesse.jpg"
+      "poster": "/posters/reves-de-jeunesse.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=273665.html"
     },
     {
       "id": "shine-your-eyes",
@@ -375,7 +387,8 @@
       "sales": "Vendeur International : Urban",
       "salesEn": "International Sales: Urban",
       "year": 2019,
-      "poster": "/posters/L'autre continent.jpg"
+      "poster": "/posters/L'autre continent.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=262184.html"
     },
     {
       "id": "tremblements",
@@ -392,7 +405,8 @@
       "sales": "Vendeur International : Film Factory",
       "salesEn": "International Sales: Film Factory",
       "year": 2019,
-      "poster": "/posters/tremblements.jpg"
+      "poster": "/posters/tremblements.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=252204.html"
     },
     {
       "id": "rafiki",
@@ -406,7 +420,8 @@
       "distributor": "Distribution France : Météore Films",
       "distributorEn": "French Distribution: Météore Films",
       "year": 2018,
-      "poster": "/posters/rafiki.jpg"
+      "poster": "/posters/rafiki.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=264016.html"
     },
     {
       "id": "zama",
@@ -422,7 +437,8 @@
       "sales": "Vendeur International : Match Factory",
       "salesEn": "International Sales: Match Factory",
       "year": 2018,
-      "poster": "/posters/zama.jpg"
+      "poster": "/posters/zama.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=221314.html"
     },
     {
       "id": "frost",
@@ -438,7 +454,8 @@
       "sales": "Vendeur International : Luxbox",
       "salesEn": "International Sales: Luxbox",
       "year": 2018,
-      "poster": "/posters/Frost.jpg"
+      "poster": "/posters/Frost.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=255486.html"
     },
     {
       "id": "apres-la-guerre",
@@ -454,7 +471,8 @@
       "distributor": "Vendeur International et Distribution France : Pyramide",
       "distributorEn": "International Sales and French Distribution: Pyramide",
       "year": 2018,
-      "poster": "/posters/apres-la-guerre.jpg"
+      "poster": "/posters/apres-la-guerre.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=255509.html"
     },
     {
       "id": "mariana",
@@ -470,7 +488,8 @@
       "sales": "Vendeur International : Films Boutique",
       "salesEn": "International Sales: Films Boutique",
       "year": 2017,
-      "poster": "/posters/mariana.jpg"
+      "poster": "/posters/mariana.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=255696.html"
     },
     {
       "id": "droles-d-oiseaux",
@@ -487,7 +506,8 @@
       "sales": "Vendeur International : MPM",
       "salesEn": "International Sales: MPM",
       "year": 2017,
-      "poster": "/posters/droles-d-oiseaux.jpg"
+      "poster": "/posters/droles-d-oiseaux.jpg",
+      "trailer": "https://www.allocine.fr/film/fichefilm_gen_cfilm=253531.html"
     }
   ]
 }
