@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Film, Award, X, Play } from 'lucide-react'
+import { Film, Award, X, Play, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import projectsData from '@/data/projects.json'
 
@@ -250,7 +250,18 @@ const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [showAllProjects, setShowAllProjects] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
   const { lang, t } = useLanguage()
+
+  const featuredProjects = projectsData.featured as Project[]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % featuredProjects.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length)
+  }
 
   // Animation pour le conteneur de la grille
   const containerVariants = {
@@ -303,23 +314,59 @@ const Projects = () => {
           </p>
         </motion.header>
 
-        {/* Featured Projects */}
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {projectsData.featured.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project as Project}
-              onClick={() => setSelectedProject(project as Project)}
-              lang={lang}
-            />
-          ))}
-        </motion.div>
+        {/* Featured Projects Carousel */}
+        <div className="relative mb-12 sm:mb-16">
+          <div className="relative overflow-hidden">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="max-w-4xl mx-auto"
+              >
+                <ProjectCard
+                  project={featuredProjects[currentSlide]}
+                  onClick={() => setSelectedProject(featuredProjects[currentSlide])}
+                  lang={lang}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 bg-cinema-gold/90 hover:bg-cinema-gold text-cinema-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center z-10"
+            aria-label={t('Projet précédent', 'Previous project')}
+          >
+            <ChevronLeft size={24} aria-hidden="true" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 bg-cinema-gold/90 hover:bg-cinema-gold text-cinema-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center z-10"
+            aria-label={t('Projet suivant', 'Next project')}
+          >
+            <ChevronRight size={24} aria-hidden="true" />
+          </button>
+
+          {/* Indicators */}
+          <div className="flex justify-center gap-2 mt-6 sm:mt-8">
+            {featuredProjects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-1.5 transition-all duration-300 rounded-full ${
+                  index === currentSlide 
+                    ? 'w-8 bg-cinema-gold' 
+                    : 'w-1.5 bg-cinema-gold/30 hover:bg-cinema-gold/50'
+                }`}
+                aria-label={t(`Aller au projet ${index + 1}`, `Go to project ${index + 1}`)}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Other Projects */}
         <AnimatePresence>

@@ -62,36 +62,32 @@ const Header = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="text-center mb-8 sm:mb-12">
+        <motion.div variants={itemVariants} className="text-center mb-6 sm:mb-8">
           {/* Ornement */}
-          <div className="flex items-center justify-center mb-6 sm:mb-8" aria-hidden="true">
+          <div className="flex items-center justify-center mb-4 sm:mb-5" aria-hidden="true">
             <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-cinema-gold"></div>
-            <Film className="mx-2 sm:mx-3 text-cinema-gold" size={18} />
+            <Film className="mx-2 sm:mx-3 text-cinema-gold" size={16} />
             <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-cinema-gold"></div>
           </div>
 
           {/* Nom */}
           <motion.h1 
             variants={itemVariants}
-            className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 tracking-[0.2em] sm:tracking-[0.3em] text-cinema-gold uppercase"
+            className="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-4 tracking-[0.2em] sm:tracking-[0.25em] text-cinema-gold uppercase"
           >
             Fabien Trampont
           </motion.h1>
 
-          {/* Titre sur 3 lignes */}
-          <motion.div variants={itemVariants} className="relative inline-block mb-4 sm:mb-6">
-            <p className="relative text-2xl sm:text-3xl md:text-4xl text-theme-secondary tracking-[0.1em] sm:tracking-[0.15em] uppercase leading-relaxed font-light">
-              {t('Directeur', 'Post-Production')}
-              <br />
-              <span className="text-xl sm:text-2xl md:text-3xl">{t('de', '')}</span>
-              {t('de', '') && <br />}
-              {t('Post-Production', 'Supervisor')}
+          {/* Titre sur 1 ligne */}
+          <motion.div variants={itemVariants} className="relative inline-block mb-3 sm:mb-4">
+            <p className="relative text-lg sm:text-xl md:text-2xl text-theme-secondary tracking-[0.1em] sm:tracking-[0.12em] uppercase font-light">
+              {t('Directeur de Post-Production', 'Post-Production Supervisor')}
             </p>
           </motion.div>
 
           {/* Ligne décorative */}
-          <div className="mb-6 sm:mb-8" aria-hidden="true">
-            <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto"></div>
+          <div className="mb-4 sm:mb-6" aria-hidden="true">
+            <div className="h-px w-16 sm:w-20 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto"></div>
           </div>
 
           {/* Phrase */}
