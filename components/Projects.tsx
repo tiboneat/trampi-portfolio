@@ -249,11 +249,10 @@ const ProjectModal = ({ project, onClose, lang, t }: { project: Project; onClose
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  const [showAllProjects, setShowAllProjects] = useState(false)
-  const [scrollPosition, setScrollPosition] = useState(0)
   const { lang, t } = useLanguage()
 
-  const featuredProjects = projectsData.featured as Project[]
+  // Tous les projets pour le carrousel
+  const allProjects = [...projectsData.featured, ...projectsData.other] as Project[]
 
   const scroll = (direction: 'left' | 'right') => {
     const container = document.getElementById('carousel-container')
@@ -262,20 +261,6 @@ const Projects = () => {
     const scrollAmount = direction === 'left' ? -400 : 400
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
   }
-
-  // Animation pour le conteneur de la grille
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  // Tous les projets pour les données structurées
-  const allProjects = [...projectsData.featured, ...projectsData.other] as Project[]
 
   return (
     <section 
@@ -314,28 +299,28 @@ const Projects = () => {
           </p>
         </motion.header>
 
-        {/* Featured Projects Carousel */}
-        <div className="relative mb-12 sm:mb-16 group">
-          {/* Navigation Arrows */}
+        {/* All Projects Carousel */}
+        <div className="relative mb-12 sm:mb-16">
+          {/* Navigation Arrows - Toujours visibles */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 bg-cinema-gold/90 hover:bg-cinema-gold text-cinema-black p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-lg opacity-0 group-hover:opacity-100 items-center justify-center z-20"
+            className="absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 bg-cinema-gold hover:bg-cinema-gold-light text-cinema-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-2xl z-20 border-2 border-cinema-black/20 hover:scale-110"
             aria-label={t('Faire défiler vers la gauche', 'Scroll left')}
           >
-            <ChevronLeft size={24} aria-hidden="true" />
+            <ChevronLeft size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 bg-cinema-gold/90 hover:bg-cinema-gold text-cinema-black p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-lg opacity-0 group-hover:opacity-100 items-center justify-center z-20"
+            className="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 bg-cinema-gold hover:bg-cinema-gold-light text-cinema-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-2xl z-20 border-2 border-cinema-black/20 hover:scale-110"
             aria-label={t('Faire défiler vers la droite', 'Scroll right')}
           >
-            <ChevronRight size={24} aria-hidden="true" />
+            <ChevronRight size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
           </button>
 
           {/* Carousel Container */}
           <div 
             id="carousel-container"
-            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory"
+            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory px-10 sm:px-12"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -348,7 +333,7 @@ const Projects = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              {featuredProjects.map((project) => (
+              {allProjects.map((project) => (
                 <div 
                   key={project.id} 
                   className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] snap-start"
@@ -364,64 +349,16 @@ const Projects = () => {
           </div>
 
           {/* Gradient overlays for fade effect */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-theme-secondary to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-theme-secondary to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-theme-secondary to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-theme-secondary to-transparent z-10" />
+          
+          {/* Indicateur de scroll mobile */}
+          <div className="flex md:hidden justify-center mt-4 gap-1">
+            <div className="h-1 w-8 bg-cinema-gold/30 rounded-full" />
+            <div className="h-1 w-8 bg-cinema-gold/30 rounded-full" />
+            <div className="h-1 w-8 bg-cinema-gold/30 rounded-full" />
+          </div>
         </div>
-
-        {/* Other Projects */}
-        <AnimatePresence>
-          {showAllProjects && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="overflow-hidden"
-            >
-              <div className="mb-8 sm:mb-10 text-center">
-                <div className="h-px w-24 bg-gradient-to-r from-transparent via-cinema-gold/30 to-transparent mx-auto mb-4 sm:mb-6" aria-hidden="true" />
-                <h3 className="text-xl sm:text-2xl font-light text-theme-secondary">
-                  {t('Autres Projets', 'Other Projects')}
-                </h3>
-              </div>
-              <motion.div 
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {projectsData.other.map((project) => (
-                  <ProjectCard
-                    key={project.id}
-                    project={project as Project}
-                    onClick={() => setSelectedProject(project as Project)}
-                    lang={lang}
-                  />
-                ))}
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Show More Button */}
-        <motion.div 
-          className="text-center mt-8 sm:mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <button
-            onClick={() => setShowAllProjects(!showAllProjects)}
-            className="px-6 sm:px-8 py-3 border border-cinema-gold/50 text-cinema-gold text-xs sm:text-sm uppercase tracking-wider hover:bg-cinema-gold/10 transition-all duration-300 min-h-[44px]"
-            aria-expanded={showAllProjects}
-          >
-            {showAllProjects 
-              ? t('Voir moins', 'Show less') 
-              : t('Voir les autres projets', 'View more projects')
-            }
-          </button>
-        </motion.div>
       </div>
 
       <AnimatePresence>
