@@ -1029,3 +1029,13 @@ html[data-theme="light"] .image-overlay::after {
 html[data-theme="light"] .image-overlay:hover::after {
   opacity: 0.2;
 }
+
+/* Hide scrollbar pour carrousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
