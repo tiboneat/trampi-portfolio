@@ -57,7 +57,7 @@ const Header = () => {
       </div>
 
       <motion.div 
-        className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-16 sm:py-20"
+        className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-12 sm:py-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

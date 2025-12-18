@@ -265,7 +265,7 @@ const Projects = () => {
   return (
     <section 
       id="projects" 
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-theme-secondary relative overflow-hidden transition-colors duration-300"
+      className="py-8 sm:py-12 md:py-14 px-4 sm:px-6 md:px-12 lg:px-20 bg-theme-secondary relative overflow-hidden transition-colors duration-300"
       aria-labelledby="portfolio-title"
     >
       {/* Schema.org JSON-LD pour chaque film */}
@@ -284,7 +284,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12"
+          className="text-center mb-6 sm:mb-8"
         >
           <div className="flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
             <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-cinema-gold/50" />
@@ -300,7 +300,7 @@ const Projects = () => {
         </motion.header>
 
         {/* All Projects Carousel */}
-        <div className="relative mb-12 sm:mb-16">
+        <div className="relative mb-8 sm:mb-10">
           {/* Navigation Arrows - Toujours visibles */}
           <button
             onClick={() => scroll('left')}
