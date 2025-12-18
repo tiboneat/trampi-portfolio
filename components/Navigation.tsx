@@ -56,13 +56,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <a 
-            href="#"
-            onClick={(e) => {
-              e.preventDefault()
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }}
+            href="#about"
             className="flex items-center gap-2 sm:gap-3 cursor-pointer hover:scale-105 transition-all duration-300 group"
-            aria-label="Retour en haut de page"
+            aria-label={t("Aller à la section Qui je suis", "Go to About section")}
           >
             <div className="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-cinema-gold/50 rounded-sm group-hover:border-cinema-gold group-hover:bg-cinema-gold/10 transition-all duration-300">
               <Film className="text-cinema-gold" size={16} aria-hidden="true" />
