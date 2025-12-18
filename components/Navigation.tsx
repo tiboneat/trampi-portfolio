@@ -55,18 +55,22 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 sm:gap-3 cursor-pointer hover:opacity-80 transition-opacity"
+          <a 
+            href="#"
+            onClick={(e) => {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className="flex items-center gap-2 sm:gap-3 cursor-pointer hover:scale-105 transition-all duration-300 group"
             aria-label="Retour en haut de page"
           >
-            <div className="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-cinema-gold/50 rounded-sm">
+            <div className="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-cinema-gold/50 rounded-sm group-hover:border-cinema-gold group-hover:bg-cinema-gold/10 transition-all duration-300">
               <Film className="text-cinema-gold" size={16} aria-hidden="true" />
             </div>
-            <span className="text-xs sm:text-sm tracking-[0.1em] sm:tracking-[0.15em] text-cinema-gold font-light">
+            <span className="text-xs sm:text-sm tracking-[0.1em] sm:tracking-[0.15em] text-cinema-gold font-light group-hover:text-cinema-gold-light transition-colors duration-300">
               Fabien Trampont
             </span>
-          </button>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6">
