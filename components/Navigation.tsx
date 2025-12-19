@@ -107,7 +107,12 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div 
             id="mobile-menu"
-            className="md:hidden fixed inset-0 top-16 bg-theme-primary/98 backdrop-blur-md z-40"
+            className="md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-md z-40"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                setIsMobileMenuOpen(false)
+              }
+            }}
           >
             <ul className="flex flex-col items-center justify-center h-full space-y-8">
               {navLinks.map((link) => (

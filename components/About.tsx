@@ -80,10 +80,16 @@ const About = () => {
             viewport={{ once: true }}
             className="lg:col-span-8 space-y-6 sm:space-y-8 text-theme-secondary text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
           >
+            <motion.p variants={itemVariants} className="font-medium">
+              {t(
+                "Moi, c'est Fabien, directeur de post-production depuis 2016.",
+                "I'm Fabien, post-production supervisor since 2016."
+              )}
+            </motion.p>
             <motion.p variants={itemVariants}>
               {t(
-                "Moi, c'est Fabien, directeur de post-production depuis 2016. Pour comprendre comment j'en suis arrivé là, il faut rembobiner un peu.",
-                "I'm Fabien, post-production supervisor since 2016. To understand how I got here, we need to rewind a bit."
+                "Pour comprendre comment j'en suis arrivé là, il faut rembobiner un peu.",
+                "To understand how I got here, we need to rewind a bit."
               )}
             </motion.p>
 

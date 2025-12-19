@@ -9,9 +9,9 @@ const Header = () => {
   const { t } = useLanguage()
 
   const stats = [
-    { icon: Calendar, value: '10', label: t("années d'expérience", "years of experience") },
-    { icon: Film, value: '40', label: t('Films et séries', 'Films and series') },
-    { icon: Wrench, label: t('Un nombre incalculable de problèmes réglés', 'Countless problems solved'), isCounter: true },
+    { icon: Calendar, value: '10', label: t("années d'expérience", "years of experience"), link: '#expertise' },
+    { icon: Film, value: '40', label: t('Films et séries', 'Films and series'), link: '#projects' },
+    { icon: Wrench, label: t('Un nombre incalculable de problèmes réglés', 'Countless problems solved'), isCounter: true, link: '#about' },
   ]
 
   // Animation variants pour des entrées plus fluides
@@ -110,8 +110,9 @@ const Header = () => {
           aria-label={t('Statistiques clés', 'Key statistics')}
         >
           {stats.map((stat, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={stat.link}
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ 
@@ -119,18 +120,18 @@ const Header = () => {
                 delay: 0.5 + index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
-              className="text-center p-3 sm:p-4 bg-theme-card backdrop-blur-sm border border-theme rounded-sm"
+              className="text-center p-3 sm:p-4 bg-theme-card backdrop-blur-sm border border-theme rounded-sm cursor-pointer hover:border-cinema-gold/50 hover:bg-theme-card/80 transition-all duration-300 group"
               role="listitem"
             >
               {stat.isCounter ? (
                 <AnimatedCounter />
               ) : stat.value ? (
-                <div className="text-xl sm:text-2xl md:text-3xl font-light text-cinema-gold mb-1">{stat.value}</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-light text-cinema-gold mb-1 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
               ) : (
                 <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-cinema-gold" aria-hidden="true" />
               )}
-              <div className="text-theme-muted text-[10px] sm:text-xs uppercase tracking-wider leading-tight">{stat.label}</div>
-            </motion.div>
+              <div className="text-theme-muted text-[10px] sm:text-xs uppercase tracking-wider leading-tight group-hover:text-cinema-gold/80 transition-colors duration-300">{stat.label}</div>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -168,12 +169,12 @@ const Header = () => {
         </motion.address>
       </motion.div>
 
-      {/* Indicateur de scroll */}
+      {/* Indicateur de scroll - Desktop uniquement */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-6 sm:bottom-8 left-0 right-0 flex justify-center"
+        className="hidden sm:flex absolute bottom-6 sm:bottom-8 left-0 right-0 justify-center"
       >
         <button
           onClick={() => {

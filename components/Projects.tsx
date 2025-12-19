@@ -324,6 +324,7 @@ const Projects = () => {
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
+              scrollPaddingLeft: '40px',
             }}
           >
             <motion.div 
@@ -336,7 +337,7 @@ const Projects = () => {
               {allProjects.map((project) => (
                 <div 
                   key={project.id} 
-                  className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] snap-start"
+                  className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] snap-center"
                 >
                   <ProjectCard
                     project={project}
