@@ -35,7 +35,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-xl sm:text-2xl md:text-3xl font-light mb-2 sm:mb-3 tracking-[0.25em] sm:tracking-[0.3em] text-cinema-gold uppercase"
+          className="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-3 tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.3em] text-cinema-gold uppercase"
         >
           Fabien Trampont
         </motion.h1>
@@ -45,7 +45,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-sm sm:text-base md:text-lg text-theme-secondary/80 tracking-[0.15em] uppercase font-light mb-4 sm:mb-6"
+          className="text-sm sm:text-base md:text-lg text-theme-secondary/80 tracking-[0.1em] sm:tracking-[0.15em] uppercase font-light mb-5 sm:mb-6"
         >
           {t('Directeur de Post-Production', 'Post-Production Supervisor')}
         </motion.p>
@@ -55,7 +55,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-theme-muted/70 font-light"
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-theme-muted/70 font-light px-2"
         >
           <a 
             href="#expertise" 

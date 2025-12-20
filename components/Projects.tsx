@@ -343,7 +343,7 @@ const Projects = () => {
           {/* Carousel Container */}
           <div 
             id="carousel-container"
-            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory px-10"
+            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory px-12"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -351,7 +351,7 @@ const Projects = () => {
             }}
           >
             <motion.div 
-              className="flex gap-4 sm:gap-6 pb-4"
+              className="flex gap-6 sm:gap-8 md:gap-10 pb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -360,7 +360,7 @@ const Projects = () => {
               {allProjects.map((project) => (
                 <div 
                   key={project.id} 
-                  className="flex-shrink-0 w-[calc(100vw-5rem)] sm:w-[320px] md:w-[340px] snap-center"
+                  className="flex-shrink-0 w-[calc(100vw-6rem)] sm:w-[340px] md:w-[380px] snap-center snap-always"
                 >
                   <ProjectCard
                     project={project}
