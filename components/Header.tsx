@@ -61,14 +61,14 @@ const Header = () => {
             href="#expertise" 
             className="hover:text-cinema-gold transition-colors tracking-wider"
           >
-            {t('10 ANS', '10 YEARS')}
+            {t('+ 10 ANS D\'EXPÉRIENCE', '+ 10 YEARS EXPERIENCE')}
           </a>
           <span className="text-cinema-gold/30">•</span>
           <a 
             href="#projects" 
             className="hover:text-cinema-gold transition-colors tracking-wider"
           >
-            {t('40 FILMS', '40 FILMS')}
+            {t('+ DE 40 FILMS', '+ 40 FILMS')}
           </a>
           <span className="text-cinema-gold/30">•</span>
           <a 
