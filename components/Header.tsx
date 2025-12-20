@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin, Film, Calendar, Wrench, ChevronDown } from 'lucide-react'
+import { Film, Calendar, Wrench } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import AnimatedCounter from './AnimatedCounter'
@@ -57,14 +57,14 @@ const Header = () => {
       </div>
 
       <motion.div 
-        className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-12 sm:py-16"
+        className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-6 sm:py-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.div variants={itemVariants} className="text-center mb-6 sm:mb-8">
           {/* Ornement */}
-          <div className="flex items-center justify-center mb-4 sm:mb-5" aria-hidden="true">
+          <div className="flex items-center justify-center mb-2 sm:mb-3" aria-hidden="true">
             <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-cinema-gold"></div>
             <Film className="mx-2 sm:mx-3 text-cinema-gold" size={16} />
             <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-cinema-gold"></div>
@@ -79,8 +79,8 @@ const Header = () => {
           </motion.h1>
 
           {/* Titre sur 1 ligne */}
-          <motion.div variants={itemVariants} className="relative inline-block mb-3 sm:mb-4">
-            <p className="relative text-lg sm:text-xl md:text-2xl text-theme-secondary tracking-[0.1em] sm:tracking-[0.12em] uppercase font-light">
+          <motion.div variants={itemVariants} className="relative inline-block mb-2 sm:mb-3">
+            <p className="relative text-base sm:text-xl md:text-2xl text-theme-secondary tracking-[0.1em] sm:tracking-[0.12em] uppercase font-light">
               {t('Directeur de Post-Production', 'Post-Production Supervisor')}
             </p>
           </motion.div>
@@ -93,7 +93,7 @@ const Header = () => {
           {/* Phrase */}
           <motion.p 
             variants={itemVariants}
-            className="text-sm sm:text-base md:text-lg text-theme-muted max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
+            className="text-xs sm:text-base md:text-lg text-theme-muted max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
           >
             {t(
               'Anticiper, organiser, livrer : une post-production parfaitement maîtrisée',
@@ -105,7 +105,7 @@ const Header = () => {
         {/* Stats */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-3xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-3xl mx-auto"
           role="list"
           aria-label={t('Statistiques clés', 'Key statistics')}
         >
@@ -120,79 +120,20 @@ const Header = () => {
                 delay: 0.5 + index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
-              className="text-center p-3 sm:p-4 bg-theme-card backdrop-blur-sm border border-theme rounded-sm cursor-pointer hover:border-cinema-gold/50 hover:bg-theme-card/80 transition-all duration-300 group"
+              className="text-center p-2 sm:p-3 bg-theme-card backdrop-blur-sm border border-theme rounded-sm cursor-pointer hover:border-cinema-gold/50 hover:bg-theme-card/80 transition-all duration-300 group"
               role="listitem"
             >
               {stat.isCounter ? (
                 <AnimatedCounter />
               ) : stat.value ? (
-                <div className="text-xl sm:text-2xl md:text-3xl font-light text-cinema-gold mb-1 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
+                <div className="text-lg sm:text-xl md:text-2xl font-light text-cinema-gold mb-0.5 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
               ) : (
-                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-cinema-gold" aria-hidden="true" />
+                <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-cinema-gold" aria-hidden="true" />
               )}
-              <div className="text-theme-muted text-[10px] sm:text-xs uppercase tracking-wider leading-tight group-hover:text-cinema-gold/80 transition-colors duration-300">{stat.label}</div>
+              <div className="text-theme-muted text-[9px] sm:text-[10px] uppercase tracking-wider leading-tight group-hover:text-cinema-gold/80 transition-colors duration-300">{stat.label}</div>
             </motion.a>
           ))}
         </motion.div>
-
-        {/* Coordonnées */}
-        <motion.address
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm not-italic"
-        >
-          <a 
-            href="mailto:fabien.trampont@gmail.com"
-            className="flex items-center gap-2 text-theme-secondary hover:text-cinema-gold transition-colors min-h-[44px] px-2"
-            aria-label={t('Envoyer un email à Fabien Trampont', 'Send an email to Fabien Trampont')}
-          >
-            <Mail size={16} aria-hidden="true" />
-            <span>fabien.trampont@gmail.com</span>
-          </a>
-          
-          <span className="text-cinema-gold/30 hidden sm:inline" aria-hidden="true">•</span>
-          
-          <a 
-            href="tel:+33621152533"
-            className="flex items-center gap-2 text-theme-secondary hover:text-cinema-gold transition-colors min-h-[44px] px-2"
-            aria-label={t('Appeler Fabien Trampont', 'Call Fabien Trampont')}
-          >
-            <Phone size={16} aria-hidden="true" />
-            <span>06 21 15 25 33</span>
-          </a>
-          
-          <span className="text-cinema-gold/30 hidden sm:inline" aria-hidden="true">•</span>
-          
-          <div className="flex items-center gap-2 text-theme-secondary min-h-[44px] px-2">
-            <MapPin size={16} aria-hidden="true" />
-            <span>Paris</span>
-          </div>
-        </motion.address>
-      </motion.div>
-
-      {/* Indicateur de scroll - Desktop uniquement */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="hidden sm:flex absolute bottom-6 sm:bottom-8 left-0 right-0 justify-center"
-      >
-        <button
-          onClick={() => {
-            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-          }}
-          className="flex flex-col items-center gap-2 text-cinema-gold/60 hover:text-cinema-gold transition-colors cursor-pointer"
-          aria-label={t('Voir les films et séries', 'View films and series')}
-        >
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-light">
-            {t('Découvrir', 'Discover')}
-          </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronDown size={24} />
-          </motion.div>
-        </button>
       </motion.div>
 
       <div className="film-scanline" aria-hidden="true"></div>

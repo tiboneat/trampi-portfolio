@@ -107,20 +107,20 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div 
             id="mobile-menu"
-            className="md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-md z-40"
+            className="md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-md z-40 overflow-y-auto"
             onClick={(e) => {
               if (e.target === e.currentTarget) {
                 setIsMobileMenuOpen(false)
               }
             }}
           >
-            <ul className="flex flex-col items-center justify-center h-full space-y-8">
+            <ul className="flex flex-col items-center justify-center min-h-full py-8 space-y-4 sm:space-y-6">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={handleLinkClick}
-                    className="text-theme-secondary hover:text-cinema-gold transition-colors duration-300 text-xl uppercase tracking-[0.2em] font-light py-4 px-8 block min-h-[44px]"
+                    className="text-theme-secondary hover:text-cinema-gold transition-colors duration-300 text-lg sm:text-xl uppercase tracking-[0.15em] sm:tracking-[0.2em] font-light py-3 px-6 block min-h-[44px] whitespace-nowrap"
                   >
                     {link.label}
                   </a>
