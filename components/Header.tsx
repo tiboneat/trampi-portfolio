@@ -1,6 +1,6 @@
 'use client'
 
-import { Calendar, Wrench } from 'lucide-react'
+import { Film, Calendar, Wrench } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import AnimatedCounter from './AnimatedCounter'
