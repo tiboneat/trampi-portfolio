@@ -179,6 +179,12 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth" data-theme="dark">
       <head>
+        {/* Umami Analytics */}
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="c0f12261-374e-405c-8d9a-8b693acd92fa"
+        />
         {/* Schema.org - Personne (Fabien Trampont) */}
         <script
           type="application/ld+json"
