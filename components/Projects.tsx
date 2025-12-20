@@ -258,7 +258,30 @@ const Projects = () => {
     const container = document.getElementById('carousel-container')
     if (!container) return
     
-    const scrollAmount = direction === 'left' ? -400 : 400
+    // Sur mobile, scroller d'une carte complète (largeur viewport)
+    // Sur desktop, scroller de 400px
+    const isMobile = window.innerWidth < 640
+    const scrollAmount = isMobile 
+      ? (direction === 'left' ? -container.offsetWidth : container.offsetWidth)
+      : (direction === 'left' ? -400 : 400)
+    
+    // Vérifier si on est à la fin
+    if (direction === 'right') {
+      const isAtEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth - 10
+      if (isAtEnd) {
+        // Revenir au début avec animation smooth
+        container.scrollTo({ left: 0, behavior: 'smooth' })
+        return
+      }
+    }
+    
+    // Vérifier si on est au début
+    if (direction === 'left' && container.scrollLeft <= 10) {
+      // Aller à la fin
+      container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' })
+      return
+    }
+    
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
   }
 
@@ -320,11 +343,11 @@ const Projects = () => {
           {/* Carousel Container */}
           <div 
             id="carousel-container"
-            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory px-10 sm:px-12"
+            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory px-10"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              scrollPaddingLeft: '40px',
+              scrollSnapType: 'x mandatory',
             }}
           >
             <motion.div 
@@ -337,7 +360,7 @@ const Projects = () => {
               {allProjects.map((project) => (
                 <div 
                   key={project.id} 
-                  className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] snap-center"
+                  className="flex-shrink-0 w-[calc(100vw-5rem)] sm:w-[320px] md:w-[340px] snap-center"
                 >
                   <ProjectCard
                     project={project}
