@@ -1,6 +1,6 @@
 'use client'
 
-import { Film, Calendar, Wrench } from 'lucide-react'
+import { Calendar, Wrench } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import AnimatedCounter from './AnimatedCounter'
@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <header 
-      className="relative min-h-[100svh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-theme-primary transition-colors duration-300"
+      className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-theme-primary transition-colors duration-300"
       role="banner"
       aria-label="Introduction Fabien Trampont"
     >
@@ -57,43 +57,31 @@ const Header = () => {
       </div>
 
       <motion.div 
-        className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-6 sm:py-8"
+        className="w-full max-w-5xl mx-auto relative z-10 px-4 sm:px-6 md:px-12 py-4 sm:py-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="text-center mb-6 sm:mb-8">
-          {/* Ornement */}
-          <div className="flex items-center justify-center mb-2 sm:mb-3" aria-hidden="true">
-            <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-cinema-gold"></div>
-            <Film className="mx-2 sm:mx-3 text-cinema-gold" size={16} />
-            <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-cinema-gold"></div>
-          </div>
-
+        <motion.div variants={itemVariants} className="text-center mb-3 sm:mb-4">
           {/* Nom */}
           <motion.h1 
             variants={itemVariants}
-            className="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-4 tracking-[0.2em] sm:tracking-[0.25em] text-cinema-gold uppercase"
+            className="text-base sm:text-xl md:text-2xl font-light mb-1.5 sm:mb-2 tracking-[0.2em] sm:tracking-[0.25em] text-cinema-gold uppercase"
           >
             Fabien Trampont
           </motion.h1>
 
           {/* Titre sur 1 ligne */}
-          <motion.div variants={itemVariants} className="relative inline-block mb-2 sm:mb-3">
-            <p className="relative text-base sm:text-xl md:text-2xl text-theme-secondary tracking-[0.1em] sm:tracking-[0.12em] uppercase font-light">
+          <motion.div variants={itemVariants} className="relative inline-block mb-1.5 sm:mb-2">
+            <p className="relative text-sm sm:text-lg md:text-xl text-theme-secondary tracking-[0.1em] sm:tracking-[0.12em] uppercase font-light">
               {t('Directeur de Post-Production', 'Post-Production Supervisor')}
             </p>
           </motion.div>
 
-          {/* Ligne décorative */}
-          <div className="mb-4 sm:mb-6" aria-hidden="true">
-            <div className="h-px w-16 sm:w-20 bg-gradient-to-r from-transparent via-cinema-gold to-transparent mx-auto"></div>
-          </div>
-
           {/* Phrase */}
           <motion.p 
             variants={itemVariants}
-            className="text-xs sm:text-base md:text-lg text-theme-muted max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
+            className="text-xs sm:text-sm text-theme-muted max-w-xl sm:max-w-2xl mx-auto leading-relaxed font-light italic px-2"
           >
             {t(
               'Anticiper, organiser, livrer : une post-production parfaitement maîtrisée',
@@ -120,13 +108,13 @@ const Header = () => {
                 delay: 0.5 + index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
-              className="text-center p-2 sm:p-3 bg-theme-card backdrop-blur-sm border border-theme rounded-sm cursor-pointer hover:border-cinema-gold/50 hover:bg-theme-card/80 transition-all duration-300 group"
+              className="text-center px-3 py-2 sm:px-4 sm:py-2 bg-theme-card backdrop-blur-sm border border-theme rounded-sm cursor-pointer hover:border-cinema-gold/50 hover:bg-theme-card/80 transition-all duration-300 group"
               role="listitem"
             >
               {stat.isCounter ? (
                 <AnimatedCounter />
               ) : stat.value ? (
-                <div className="text-lg sm:text-xl md:text-2xl font-light text-cinema-gold mb-0.5 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
+                <div className="text-base sm:text-lg md:text-xl font-light text-cinema-gold mb-0.5 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
               ) : (
                 <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-cinema-gold" aria-hidden="true" />
               )}

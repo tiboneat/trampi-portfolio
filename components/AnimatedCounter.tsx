@@ -35,7 +35,7 @@ const AnimatedCounter = () => {
   const formattedCount = count.toString().padStart(4, '0')
 
   return (
-    <div className="text-lg sm:text-xl md:text-2xl font-light text-cinema-gold mb-0.5 font-mono tabular-nums">
+    <div className="text-base sm:text-lg md:text-xl font-light text-cinema-gold mb-0.5 font-mono tabular-nums">
       <AnimatePresence mode="popLayout">
         {formattedCount.split('').map((digit, index) => (
           <motion.span
