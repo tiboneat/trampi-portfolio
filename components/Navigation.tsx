@@ -13,7 +13,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 30)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -44,9 +44,9 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled 
-          ? 'bg-theme-primary/95 backdrop-blur-md shadow-2xl border-b border-theme-gold' 
+          ? 'bg-theme-primary/98 backdrop-blur-md shadow-xl border-b border-cinema-gold/40' 
           : 'bg-transparent'
       }`}
       role="navigation"
