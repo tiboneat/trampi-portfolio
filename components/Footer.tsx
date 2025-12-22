@@ -65,7 +65,7 @@ const Footer = () => {
                 aria-label={t('Appeler', 'Call')}
               >
                 <Phone size={16} aria-hidden="true" />
-                <span>06 21 15 25 33</span>
+                <span>+33 6 21 15 25 33</span>
               </a>
               <div className="flex items-center gap-3 text-theme-muted text-xs sm:text-sm">
                 <MapPin size={16} aria-hidden="true" />

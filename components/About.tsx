@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 const About = () => {
@@ -202,25 +201,6 @@ const About = () => {
                 )}
               </p>
             </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Bouton contact */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          viewport={{ once: true }}
-          className="mt-12 sm:mt-16 text-center"
-        >
-          <a
-            href="mailto:fabien.trampont@gmail.com?subject=Discussion%20projet"
-            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-cinema-gold text-cinema-black font-medium tracking-wider uppercase text-xs sm:text-sm hover:bg-cinema-gold-light transition-all duration-300 min-h-[44px]"
-            aria-label={t('Envoyer un email pour discuter de votre projet', 'Send an email to discuss your project')}
-          >
-            <Mail size={16} aria-hidden="true" />
-            {t('Discutons de votre projet', "Let's discuss your project")}
-          </a>
         </motion.div>
       </div>
     </section>

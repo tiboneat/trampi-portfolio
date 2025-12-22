@@ -104,31 +104,32 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div 
-            id="mobile-menu"
-            className="md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-md z-40 overflow-y-auto"
-            onClick={(e) => {
-              if (e.target === e.currentTarget) {
-                setIsMobileMenuOpen(false)
-              }
-            }}
-          >
-            <ul className="flex flex-col items-center justify-center min-h-full py-8 space-y-4 sm:space-y-6">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={handleLinkClick}
-                    className="text-theme-secondary hover:text-cinema-gold transition-colors duration-300 text-lg sm:text-xl uppercase tracking-[0.15em] sm:tracking-[0.2em] font-light py-3 px-6 block min-h-[44px] whitespace-nowrap"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div 
+          id="mobile-menu"
+          className={`md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-md overflow-y-auto transition-all duration-300 ${
+            isMobileMenuOpen ? 'opacity-100 pointer-events-auto z-40' : 'opacity-0 pointer-events-none -z-10'
+          }`}
+          style={{ touchAction: 'auto' }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setIsMobileMenuOpen(false)
+            }
+          }}
+        >
+          <ul className="flex flex-col items-center justify-center min-h-full py-8 space-y-4 sm:space-y-6">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  className="text-theme-secondary hover:text-cinema-gold transition-colors duration-300 text-lg sm:text-xl uppercase tracking-[0.15em] sm:tracking-[0.2em] font-light py-3 px-6 block min-h-[44px] whitespace-nowrap"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   )
