@@ -44,7 +44,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[10000] transition-all duration-300 ${
         isScrolled 
           ? 'bg-theme-primary/98 backdrop-blur-md shadow-xl border-b border-cinema-gold/40' 
           : 'bg-transparent'
@@ -88,7 +88,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile: Language Toggle + Theme Toggle + Menu Button */}
-          <div className="md:hidden flex items-center gap-2 relative z-[110]">
+          <div className="md:hidden flex items-center gap-2 relative z-[10002]">
             <LanguageToggle />
             <ThemeToggle />
             <button
@@ -107,7 +107,7 @@ const Navigation = () => {
         <div 
           id="mobile-menu"
           className={`md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-lg overflow-y-auto transition-all duration-300 ${
-            isMobileMenuOpen ? 'opacity-100 pointer-events-auto z-[90]' : 'opacity-0 pointer-events-none -z-10'
+            isMobileMenuOpen ? 'opacity-100 pointer-events-auto z-[10001]' : 'opacity-0 pointer-events-none -z-10'
           }`}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
