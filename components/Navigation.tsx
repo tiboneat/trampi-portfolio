@@ -45,7 +45,9 @@ const Navigation = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[10000] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
+          isMobileMenuOpen ? 'z-[10002]' : 'z-[10000]'
+        } ${
           isScrolled 
             ? 'bg-theme-primary/98 backdrop-blur-md shadow-xl border-b border-cinema-gold/40' 
             : 'bg-transparent'
@@ -89,7 +91,7 @@ const Navigation = () => {
             </div>
 
             {/* Mobile: Language Toggle + Theme Toggle + Menu Button */}
-            <div className="md:hidden flex items-center gap-2 relative z-[10002]">
+            <div className="md:hidden flex items-center gap-2 relative">
               <LanguageToggle />
               <ThemeToggle />
               <button
@@ -118,6 +120,15 @@ const Navigation = () => {
             }
           }}
         >
+          {/* Bouton fermer en haut à droite du menu */}
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-5 right-4 text-cinema-gold hover:text-cinema-gold-light transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center z-10"
+            aria-label="Fermer le menu"
+          >
+            <X size={24} aria-hidden="true" />
+          </button>
+
           <ul className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] py-8 space-y-4 sm:space-y-6">
             {navLinks.map((link) => (
               <li key={link.href}>
