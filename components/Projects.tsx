@@ -359,7 +359,7 @@ const Projects = () => {
             }}
           >
             <motion.div 
-              className="flex gap-8 sm:gap-8 md:gap-10 pb-4 px-12"
+              className="flex gap-0 sm:gap-8 md:gap-10 pb-4 pl-12 pr-12 sm:px-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -368,7 +368,7 @@ const Projects = () => {
               {allProjects.map((project) => (
                 <div 
                   key={project.id} 
-                  className="flex-shrink-0 w-[calc(100vw-8rem)] sm:w-[340px] md:w-[380px] snap-center snap-always"
+                  className="flex-shrink-0 w-[calc(100vw-6rem)] sm:w-[340px] md:w-[380px] snap-center snap-always"
                 >
                   <ProjectCard
                     project={project}

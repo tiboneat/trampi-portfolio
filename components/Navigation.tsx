@@ -88,7 +88,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile: Language Toggle + Theme Toggle + Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="md:hidden flex items-center gap-2" style={{ zIndex: 10000 }}>
             <LanguageToggle />
             <ThemeToggle />
             <button
@@ -97,6 +97,7 @@ const Navigation = () => {
               aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
+              style={{ zIndex: 10001 }}
             >
               {isMobileMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
             </button>
