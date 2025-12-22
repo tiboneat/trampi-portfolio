@@ -258,31 +258,39 @@ const Projects = () => {
     const container = document.getElementById('carousel-container')
     if (!container) return
     
-    // Sur mobile, scroller d'une carte complète (largeur viewport)
-    // Sur desktop, scroller de 400px
     const isMobile = window.innerWidth < 640
-    const scrollAmount = isMobile 
-      ? (direction === 'left' ? -container.offsetWidth : container.offsetWidth)
-      : (direction === 'left' ? -400 : 400)
+    const currentScroll = container.scrollLeft
+    const maxScroll = container.scrollWidth - container.offsetWidth
     
-    // Vérifier si on est à la fin
     if (direction === 'right') {
-      const isAtEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth - 10
-      if (isAtEnd) {
+      // Vérifier si on est proche de la fin (avec marge de 10px)
+      if (currentScroll >= maxScroll - 10) {
         // Revenir au début avec animation smooth
         container.scrollTo({ left: 0, behavior: 'smooth' })
         return
       }
+      
+      // Scroller vers la droite
+      const scrollAmount = isMobile ? container.offsetWidth : 400
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    } else {
+      // direction === 'left'
+      // Sur mobile : ne pas permettre d'aller à gauche depuis le début
+      if (isMobile && currentScroll <= 10) {
+        // Ne rien faire sur mobile si on est au début
+        return
+      }
+      
+      // Sur desktop : ne pas permettre d'aller à gauche depuis le début (pas de boucle)
+      if (!isMobile && currentScroll <= 10) {
+        // Ne rien faire si on est au début
+        return
+      }
+      
+      // Scroller vers la gauche
+      const scrollAmount = isMobile ? container.offsetWidth : 400
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
     }
-    
-    // Vérifier si on est au début
-    if (direction === 'left' && container.scrollLeft <= 10) {
-      // Aller à la fin
-      container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' })
-      return
-    }
-    
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
   }
 
   return (
@@ -343,7 +351,7 @@ const Projects = () => {
           {/* Carousel Container */}
           <div 
             id="carousel-container"
-            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory px-12"
+            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -351,7 +359,7 @@ const Projects = () => {
             }}
           >
             <motion.div 
-              className="flex gap-6 sm:gap-8 md:gap-10 pb-4"
+              className="flex gap-4 sm:gap-8 md:gap-10 pb-4 px-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -360,7 +368,7 @@ const Projects = () => {
               {allProjects.map((project) => (
                 <div 
                   key={project.id} 
-                  className="flex-shrink-0 w-[calc(100vw-6rem)] sm:w-[340px] md:w-[380px] snap-center snap-always"
+                  className="flex-shrink-0 w-[calc(100vw-7rem)] sm:w-[340px] md:w-[380px] snap-center snap-always"
                 >
                   <ProjectCard
                     project={project}
