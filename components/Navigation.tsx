@@ -107,9 +107,12 @@ const Navigation = () => {
         <div 
           id="mobile-menu"
           className={`md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-md overflow-y-auto transition-all duration-300 ${
-            isMobileMenuOpen ? 'opacity-100 pointer-events-auto z-40' : 'opacity-0 pointer-events-none -z-10'
+            isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
-          style={{ touchAction: 'auto' }}
+          style={{ 
+            touchAction: 'auto',
+            zIndex: isMobileMenuOpen ? 9998 : -1
+          }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setIsMobileMenuOpen(false)
