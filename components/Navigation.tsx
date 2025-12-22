@@ -44,9 +44,9 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         isScrolled 
-          ? 'bg-theme-primary/90 backdrop-blur-md shadow-2xl border-b border-theme-gold' 
+          ? 'bg-theme-primary/95 backdrop-blur-md shadow-2xl border-b border-theme-gold' 
           : 'bg-transparent'
       }`}
       role="navigation"
@@ -88,7 +88,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile: Language Toggle + Theme Toggle + Menu Button */}
-          <div className="md:hidden flex items-center gap-2" style={{ zIndex: 10000 }}>
+          <div className="md:hidden flex items-center gap-2 relative z-[110]">
             <LanguageToggle />
             <ThemeToggle />
             <button
@@ -97,7 +97,6 @@ const Navigation = () => {
               aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
-              style={{ zIndex: 10001 }}
             >
               {isMobileMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
             </button>
@@ -107,13 +106,9 @@ const Navigation = () => {
         {/* Mobile Menu */}
         <div 
           id="mobile-menu"
-          className={`md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-md overflow-y-auto transition-all duration-300 ${
-            isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          className={`md:hidden fixed inset-0 top-16 sm:top-20 bg-theme-primary/98 backdrop-blur-lg overflow-y-auto transition-all duration-300 ${
+            isMobileMenuOpen ? 'opacity-100 pointer-events-auto z-[90]' : 'opacity-0 pointer-events-none -z-10'
           }`}
-          style={{ 
-            touchAction: 'auto',
-            zIndex: isMobileMenuOpen ? 9998 : -1
-          }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setIsMobileMenuOpen(false)

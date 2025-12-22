@@ -332,43 +332,44 @@ const Projects = () => {
 
         {/* All Projects Carousel */}
         <div className="relative mb-8 sm:mb-10">
-          {/* Navigation Arrows - Toujours visibles */}
+          {/* Navigation Arrows */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 bg-cinema-gold hover:bg-cinema-gold-light text-cinema-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-2xl z-20 border-2 border-cinema-black/20 hover:scale-110"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-cinema-gold hover:bg-cinema-gold-light text-cinema-black p-3 rounded-full transition-all duration-300 shadow-xl z-30 border border-cinema-black/20 hover:scale-110"
             aria-label={t('Faire défiler vers la gauche', 'Scroll left')}
           >
-            <ChevronLeft size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
+            <ChevronLeft size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 bg-cinema-gold hover:bg-cinema-gold-light text-cinema-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-sm shadow-2xl z-20 border-2 border-cinema-black/20 hover:scale-110"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-cinema-gold hover:bg-cinema-gold-light text-cinema-black p-3 rounded-full transition-all duration-300 shadow-xl z-30 border border-cinema-black/20 hover:scale-110"
             aria-label={t('Faire défiler vers la droite', 'Scroll right')}
           >
-            <ChevronRight size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
+            <ChevronRight size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
           </button>
 
           {/* Carousel Container */}
           <div 
             id="carousel-container"
-            className="overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory"
+            className="overflow-x-scroll overflow-y-hidden scrollbar-hide snap-x snap-mandatory scroll-smooth"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              scrollSnapType: 'x mandatory',
+              WebkitOverflowScrolling: 'touch',
             }}
           >
             <motion.div 
-              className="flex gap-0 sm:gap-8 md:gap-10 pb-4 pl-12 pr-12 sm:px-12"
+              className="flex gap-4 sm:gap-8 md:gap-10 pb-4 px-14 sm:px-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              {allProjects.map((project) => (
+              {allProjects.map((project, index) => (
                 <div 
                   key={project.id} 
-                  className="flex-shrink-0 w-[calc(100vw-6rem)] sm:w-[340px] md:w-[380px] snap-center snap-always"
+                  className="flex-shrink-0 w-[82vw] sm:w-[340px] md:w-[380px] snap-center"
+                  style={{ scrollSnapAlign: 'center' }}
                 >
                   <ProjectCard
                     project={project}
@@ -381,15 +382,8 @@ const Projects = () => {
           </div>
 
           {/* Gradient overlays for fade effect */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-theme-secondary to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-theme-secondary to-transparent z-10" />
-          
-          {/* Indicateur de scroll mobile */}
-          <div className="flex md:hidden justify-center mt-4 gap-1">
-            <div className="h-1 w-8 bg-cinema-gold/30 rounded-full" />
-            <div className="h-1 w-8 bg-cinema-gold/30 rounded-full" />
-            <div className="h-1 w-8 bg-cinema-gold/30 rounded-full" />
-          </div>
+          <div className="pointer-events-none absolute left-0 top-0 bottom-4 w-14 sm:w-16 bg-gradient-to-r from-theme-secondary via-theme-secondary/80 to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-4 w-14 sm:w-16 bg-gradient-to-l from-theme-secondary via-theme-secondary/80 to-transparent z-10" />
         </div>
       </div>
 
