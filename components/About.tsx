@@ -79,7 +79,7 @@ const About = () => {
             viewport={{ once: true }}
             className="lg:col-span-8 space-y-6 sm:space-y-8 text-theme-secondary text-base sm:text-lg leading-relaxed font-light px-2 sm:px-0"
           >
-            <motion.p variants={itemVariants} className="font-medium">
+            <motion.p variants={itemVariants} className="text-cinema-gold font-medium">
               {t(
                 "Moi, c'est Fabien, directeur de post-production depuis 2016.",
                 "I'm Fabien, post-production supervisor since 2016."
@@ -94,28 +94,16 @@ const About = () => {
 
             <motion.div variants={itemVariants}>
               <p>
-                <span className="text-cinema-gold">{t('Genèse d\'un pirate repenti...', 'Genesis of a reformed pirate...')}</span>{' '}
+                <span className="text-cinema-gold">{t('Naissance d\'une passion...', 'Birth of a passion...')}</span>{' '}
                 {t(
-                  "À la maison, le cinéma n'avait pas sa place. On parlait surtout d'informatique, de peinture et de sport. Et à la télé, le programme, c'était Thalassa !",
-                  "At home, cinema had no place. We mostly talked about computers, painting and sports. And on TV, the program was Thalassa!"
+                  "À la maison, le cinéma n'avait pas vraiment sa place. On parlait surtout d'informatique, de peinture et de sport. Et à la télé, le programme, c'était Thalassa !",
+                  "At home, cinema didn't really have a place. We mostly talked about computers, painting and sports. And on TV, the program was Thalassa!"
                 )}
               </p>
               <p className="mt-3">
                 {t(
-                  "Alors, pour voir des films, il a fallu ruser.",
-                  "So, to watch movies, I had to be creative."
-                )}
-              </p>
-              <p className="mt-3">
-                {t(
-                  "C'est la nuit, dans ma chambre d'ado, que je me suis construit ma propre culture. Affiches aux murs (dont une version XXL du Cinquième Élément), ordinateur à plein régime et disques durs remplis de films : J'étais un \"binge-watcher\" avant l'heure.",
-                  "It was at night, in my teenage bedroom, that I built my own culture. Posters on the walls (including an XXL version of The Fifth Element), computer running at full speed and hard drives full of movies: I was a binge-watcher before its time."
-                )}
-              </p>
-              <p className="mt-3">
-                {t(
-                  "Je vous rassure, j'ai depuis largement remboursé ma dette. Mon appartement déborde de Blu-ray et DVD ; j'ai mon pass cinéma et je collectionne les abonnements aux plateformes.",
-                  "Don't worry, I've since paid off my debt. My apartment is overflowing with Blu-rays and DVDs; I have my cinema pass and collect platform subscriptions."
+                  "Alors, pour voir des films, je m'enfermais dans ma chambre d'ado, recouverte d'affiches récupérées dans le cinéma de ma ville. Nuit après nuit, j'ai construit ma propre culture cinématographique. J'étais un \"binge-watcher\" avant l'heure.",
+                  "So, to watch movies, I locked myself in my teenage bedroom, covered with posters from my local cinema. Night after night, I built my own film culture. I was a binge-watcher before its time."
                 )}
               </p>
             </motion.div>
@@ -130,8 +118,8 @@ const About = () => {
               </p>
               <p className="mt-3">
                 {t(
-                  "Ces années ont été déterminantes. De rendez-vous en rendez-vous, de festivals en festivals, j'ai découvert les cinémas du monde et affiné ma compréhension du marché et de ses enjeux. Être au coeur d'un labo m'a aussi permis de maîtriser concrètement les étapes de la post-production : workflows, contraintes techniques, coûts, délais.",
-                  "These years were decisive. From meeting to meeting, from festival to festival, I discovered world cinema and refined my understanding of the market and its challenges. Being at the heart of a lab also allowed me to master the stages of post-production: workflows, technical constraints, costs, deadlines."
+                  "Ces années ont été déterminantes. De rendez-vous en rendez-vous, de festivals en festivals, j'ai découvert les cinémas du monde et affiné ma compréhension du marché et de ses enjeux. Être au cœur d'un labo m'a aussi permis de maîtriser concrètement toutes les étapes de la post-production.",
+                  "These years were decisive. From meeting to meeting, from festival to festival, I discovered world cinema and refined my understanding of the market and its challenges. Being at the heart of a lab also allowed me to master all the stages of post-production."
                 )}
               </p>
             </motion.div>
@@ -146,7 +134,7 @@ const About = () => {
               </p>
               <p className="mt-3">
                 {t(
-                  "Je me suis lancé en indépendant et grâce à la confiance de plusieurs producteurs, j'ai enchainé les projets, l'aventure commençait.",
+                  "Je me suis lancé en indépendant et grâce à la confiance de plusieurs producteurs, j'ai enchaîné les projets, l'aventure commençait.",
                   "I went freelance and thanks to the trust of several producers, I chained projects together, the adventure was beginning."
                 )}
               </p>
@@ -168,20 +156,14 @@ const About = () => {
               </p>
               <p className="mt-3">
                 {t(
-                  "Transformer ce chaos apparent en un parcours fluide : c'est là que je suis le plus utile, et c'est là que je m'épanouis.",
-                  "Transforming this apparent chaos into a smooth journey: that's where I'm most useful, and that's where I thrive."
+                  "Transformer ce chaos apparent en un parcours fluide : c'est là que je suis le plus utile et que je m'épanouis.",
+                  "Transforming this apparent chaos into a smooth journey: that's where I'm most useful and where I thrive."
                 )}
               </p>
               <p className="mt-3">
                 {t(
                   "On fait même appel à moi pour transmettre cette expérience et donner des cours.",
                   "I'm even called upon to pass on this experience and teach."
-                )}
-              </p>
-              <p className="mt-3">
-                {t(
-                  "Ça y est, mes parents sont fiers !",
-                  "That's it, my parents are proud!"
                 )}
               </p>
             </motion.div>
@@ -201,7 +183,7 @@ const About = () => {
                 )}
               </p>
             </motion.div>
-        </motion.div>
+          </motion.div>
       </div>
     </section>
   )
