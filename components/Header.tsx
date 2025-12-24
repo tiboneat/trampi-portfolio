@@ -10,7 +10,7 @@ const Header = () => {
 
   const stats = [
     { icon: Calendar, value: '10', label: t("années d'expérience", "years of experience"), link: '#expertise' },
-    { icon: Film, value: '40', label: t('Films et séries', 'Films and series'), link: '#projects' },
+    { icon: Film, value: '+40', label: t('Films et séries', 'Films and series'), link: '#projects' },
     { icon: Wrench, label: t('Un nombre incalculable de problèmes réglés', 'Countless problems solved'), isCounter: true, link: '#about' },
   ]
 

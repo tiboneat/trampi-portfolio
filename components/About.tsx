@@ -160,12 +160,6 @@ const About = () => {
                   "Transforming this apparent chaos into a smooth journey: that's where I'm most useful and where I thrive."
                 )}
               </p>
-              <p className="mt-3">
-                {t(
-                  "On fait même appel à moi pour transmettre cette expérience et donner des cours.",
-                  "I'm even called upon to pass on this experience and teach."
-                )}
-              </p>
             </motion.div>
 
             <motion.div variants={itemVariants}>
