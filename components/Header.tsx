@@ -100,15 +100,11 @@ const Header = () => {
               className="text-center px-3 py-2 sm:px-4 sm:py-2 bg-theme-card backdrop-blur-sm border border-theme rounded-sm cursor-pointer hover:border-cinema-gold/50 hover:bg-theme-card/80 transition-all duration-300 group"
               role="listitem"
             >
-              {/* Icône + Valeur sur la même ligne */}
-              <div className="flex items-center justify-center gap-2 mb-1">
-                <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-cinema-gold flex-shrink-0" aria-hidden="true" />
-                {stat.isCounter ? (
-                  <AnimatedCounter />
-                ) : stat.value ? (
-                  <div className="text-base sm:text-lg md:text-xl font-light text-cinema-gold group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
-                ) : null}
-              </div>
+              {stat.isCounter ? (
+                <AnimatedCounter />
+              ) : stat.value ? (
+                <div className="text-base sm:text-lg md:text-xl font-light text-cinema-gold mb-0.5 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
+              ) : null}
               <div className="text-theme-muted text-[9px] sm:text-[10px] uppercase tracking-wider leading-tight group-hover:text-cinema-gold/80 transition-colors duration-300">{stat.label}</div>
             </motion.a>
           ))}
