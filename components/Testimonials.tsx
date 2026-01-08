@@ -45,7 +45,7 @@ const Testimonials = () => {
         "Super collaboration. Un plaisir de travailler avec Fabien",
         "Great collaboration. A pleasure to work with Fabien."
       ),
-      author: "Jean-Christophe Meurisse",
+      author: "Jean-Christophe MEURISSE",
       role: t("Réalisateur", "Director"),
     },
     {
@@ -53,7 +53,7 @@ const Testimonials = () => {
         "J'ai pu collaborer avec Fabien lors de la post-production de mon long-métrage Brûle le sang, et de cette collaboration est surtout née une amitié qui dure jusqu'à aujourd'hui. Brûle le sang était mon premier long-métrage et Fabien a su parfaitement me créer un environnement professionnel où je me sentais soutenu, accompagné et surtout protégé. Notre collaboration a été très fructueuse. Je le recommande vivement : un bon gars qui sait ce qu'il dit et ne lâche rien.",
         "I was able to collaborate with Fabien during the post-production of my feature film In the Name of Blood, and from this collaboration was born above all a friendship that lasts until today. In the Name of Blood was my first feature film and Fabien knew exactly how to create a professional environment where I felt supported, accompanied and above all protected. Our collaboration was very fruitful. I highly recommend him: a good guy who knows what he's talking about and never gives up."
       ),
-      author: "Akaki POKHADZE",
+      author: "Akaki POPKHADZE",
       role: t("Réalisateur", "Director"),
     },
   ]
